@@ -1,0 +1,95 @@
+---
+title: Development Standards
+directoryName: Documentation
+inMenu: true
+---
+
+# Erlware Development Standards
+
+Currently this is a hodgepodge placeholder for ideas and debate.  This
+will be formatted and organized before 1.0 release.
+
+This page is a guideline for those who want to develop Erlware itself.
+These standards are a good reference for Erlang development in
+general, but are a must for those developing on Erlware itself.
+
+
+# Coding Standards
+
+**Terminal size**: 132 is the erlware standard.  Lines should not
+  exceed this character max.
+
+# Documentation Standards
+
+Erlware requires a certain level of documentation for all code
+included in the central repository or as part of any Erlware project
+such as Sinan or Faxien.  Basically the idea is that all API's should
+be documented to a level that a user could figure out how to use them
+without reading the code itself.  Examples of invocation are very
+strongly recommended for all exported functions.
+
+Erlware uses EDoc as its documentation standard.  All code must
+compile with edoc.  To check and see if your docs compile you can use
+the Sinan target **doc**.
+
+## Module Documentation
+
+Documentation for a module should appear at the top of the file.  This
+is optional, but recommended.
+
+## Function Documentation
+
+All Exported functions should be documented. The following is an
+example that includes the minimum level of documentation an exported
+function should exhibit.
+
+
+    %%------------------------------------------------------------------------------
+    %% @doc I am a function and I do things.
+    %% @spec my_func(List, Atom::atom()) -> ok | {error, Reason}
+    %% @end
+    %%------------------------------------------------------------------------------
+    my_func(List, Atom) ->
+    ...
+
+Additional documentation may be added as allowed by Edoc.  Any
+additional user formatted explanation for the function should be
+placed after @doc and before @spec such as in the following example.
+
+
+    %%------------------------------------------------------------------------------
+    %% @doc I am a function and I do such wonderful things.
+    %% <pre>
+    %% Example:
+    %%  my_func([a, b], upgrade)
+    %% </pre>
+    %% @spec my_func(List, Atom::atom()) -> ok | {error, Reason}
+    %% where
+    %%       List = [string()]
+    %% @end
+    %%------------------------------------------------------------------------------
+    my_func(List, Atom) ->
+    ...
+
+
+We do encourage developers to document internal functions but it is
+not required.  If you do document internal functions the documentation
+should contain the @private tag as follows.
+
+
+    %%------------------------------------------------------------------------------
+    %% @private
+    %% @doc I am an internal function and I do things to support an API.
+    %% @spec my_internal_func(String::string()) -> ok | error
+    %% @end
+    %%------------------------------------------------------------------------------
+    my_internal_func(String) ->
+    ...
+
+
+# Additional Resources
+
+For more information in improving the quality and style of your Erlang
+code consult the Erlang [Erlang Programming
+Rules](http://www.erlang.se/doc/programming_rules.shtml) section
+hosted by erlang.org.

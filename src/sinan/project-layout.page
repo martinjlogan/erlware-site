@@ -1,0 +1,56 @@
+---
+title: Project Layout
+directoryName: Faxien
+inMenu: true
+---
+
+Sinan projects have a pretty flexible layout. For the most part you
+can put your OTP applications anywhere you like. The only real
+requirement is that the [Build Config]({relocatable:
+build-config.page}) be at the root of your project. I tend to put my
+OTP apps in a lib directory so I will give an example of a project
+with that format.
+
+Lets start out with project foo, that has libraries bar1 and bar2. My
+layout would look as follows
+
+
+    foo
+     |-_build.cfg
+     |-lib
+        |-bar1
+           |-ebin
+              |- bar1.app
+              |- *.beam
+           |-src
+              |-*.erl
+        |-bar2
+           |-ebin
+              |- bar2.app
+              |- *.beam
+           |-src
+              |-*.erl
+
+
+This layout works just fine. However, you could just as easily have
+the OTP applications at the same level as the build config or buried
+under twenty superfluous directories. It doesn't matter. Sinan will
+discover your projects without any problem at all.
+
+Now lets say you have a very simple project that consists of just a
+single OTP application. You don't really want it bury it under a
+normal layout you just want to build right in the OTP app itself. This
+is just fine. All you need to do is drop a build config into the top
+level of the OTP app and you are golden.
+
+
+    bar1
+     |-_build.cfg
+        |-ebin
+           |- bar1.app
+           |- *.beam
+        |-src
+           |-*.erl
+
+Things will be built into the build directory just like normal and all
+of the usual tasks work.

@@ -1,0 +1,100 @@
+---
+title: The Build Config
+directoryName: Sinan
+inMenu: true
+---
+
+# The Build Config
+
+The build config syntax for Sinan is really just a slightly simplified
+version of [JSON](http://www.json.org/). In my opinion, this makes it
+much more readably then the alternatives (XML and deeply nested Erlang
+tuples). It also helps that I already had a nice [JSON
+Parser](http://code.google.com/p/ktuo/) laying around that I could
+pick up and plug in.
+
+# The Syntax
+
+The syntax is pretty much the same as JSON. The main difference is
+that you may omit double quotes from single words if you wish. I think
+this makes the config files much, much easier to read. Usually, JSON
+would also require that the root object be surrounded by curly braces,
+just like any other object. I have made the config parser slightly
+smarter then that. So for the base object you can omit the curly
+braces.
+
+# Parts of the Config
+
+The basic build config is seperated into seven parts. For the most
+part these parts are pretty self explainitory. However, I will take a
+bit of time and go through each part and explain what it is and how
+its used. Some third-party tasks may require additional configuration
+info.
+
+
+## Project Section
+
+    project : {
+       name : <your project name>,
+       vsn  : "<your project version>"
+    },
+
+
+The project section of the build config is mainly used by the release
+task during generation of the release artifacts. The name of the
+project and the version are the only thing that needs to be specified
+here.
+
+## Repositories
+
+    repositories : ["http://repo.erlware.org/pub"],
+
+
+The repositories part is a list of urls that point to valid erlware
+repositories. The dependency tasks will search the repositories from
+right to left until it finds what it requires. Repositories can be
+hosted anywhere. As long as they are in the right format sinan doesn't
+care where they are.
+
+
+## Build Dir
+
+    build_dir : _build,
+
+The build_dir part simply tells sinan where to output its build
+artifacts. It defaults to _build even if the part isn't in the build
+config. However, you can override it to be whatever you like.
+
+## Ignore Dirs
+
+    ignore_dirs : ["_",
+                   "."],
+
+Sinan searches the project root to find otp applications to
+build. There may be some directories that you don't want sinan to
+search in. That is what this part is for. It tells sinan to ignore
+directories with those prefixes during its search phase. For right
+now, it only recognizes directory prefixes, though you can also put
+full directory names.
+
+## Ignore Apps
+
+    ignore_apps : [],
+
+The ignore apps part of the build config details a list of those OTP
+applications that you **do not want to build**. Sinan will just ignore
+any applications listed in this part.
+
+## Default Task
+
+    default_task :  build,
+
+The default task part details the task sinan should run if no task is
+specified on the command line. 'build' is probably a good default most
+of the time, though you may change it if required.
+
+## Tasks
+
+The tasks section lists all of the tasks that sinan knows about along
+with its dependencies and handlers. For the most part you should
+probably leave this section alone unless you know what you are doing.

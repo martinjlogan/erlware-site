@@ -1,0 +1,12 @@
+---
+title: Erlware Documentation
+---
+# Documentation
+
+  * [License]({relocatable: license.page})
+  * [Development Standards]({relocatable: development-standards.page})
+  * [Erlware Development Model]({relocatable: development-execution-model.page})
+  * [The Structure of a Release]({relocatable: release-anatomy.page})
+  * [The Structure of an Application]({relocatable: application-anatomy.page})
+  * [Repository Layout](relocatable: repository-layout.page})
+

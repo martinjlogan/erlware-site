@@ -1,0 +1,217 @@
+---
+title: Command List
+directoryName: Faxien
+inMenu: true
+---
+
+# Faxien Command List
+
+This summary of commands first presents the commands that are most
+frequently used followed by all remaining commands available through
+the Faxien commandline interface.
+
+# Frequently Used Command Summary
+
+## help
+
+    $ faxien help
+
+Prints out help information for Faxien.
+
+## list
+
+    $faxien list [search_type] [pattern]
+
+Prints out all the applications that have the pattern specified.  If
+no pattern is provided it lists all available applications and
+releases. Search type can be either 'normal' or 'regexp'.  A normal
+search like the following
+
+    $ faxien list yaw
+
+would yield "yaws" as a result.
+
+    $ faxien list regexp y[aw]*s
+
+would also yeild "yaws", though why anyone would ever type such a
+thing I don't know.
+
+## install
+
+    $ faxien install <release_name|path_to_package> [version]
+
+This command fetches a release from a respository and installs it onto
+the local file system if you specify a release name. The default
+location is /usr/local/erlware.  If you specify the path to an
+untarred package or a tarred package with the extension .tar.gz Faxien
+will install that package from the hard disk.
+
+**Example Usage**
+
+    $ faxien install sinan  ## Installs the release from a remote repository
+    $ faxien install /home/martin/sinan.tar.gz  ## installs a local release tarball
+
+
+## install_app
+
+    $ faxien install <app_name|path_to_app_package> \[version\]
+
+This command fetches an application from a respository and installs it
+onto the local file system.  This will also install an application
+package from the local file system.
+
+**Example Usage**
+
+    $ faxien install_app fslib  ## Installs the application from a remote repository
+    $ faxien install_app fslib 5.7.3 ## Installs version 5.7.3 of the application from a remote repository
+    $ faxien install_app /home/martin/fslib.tar.gz  ## installs a local application tarball
+
+
+## publish
+
+    $ faxien publish [repo_url] <path_to_app_or_release> [request_timeout]
+
+Publishes a pre-built application or a release to a remote unguarded
+repository. This function tries to infer whether the package is a
+architecture specific application, a platform independent application,
+or a release. Release packages follow the structure for releases as
+outlined by erlware.org.  A release directory must be of the form
+<release_name>-<release_vsn> in order to be published.  An application
+directory may be of that form but does not have to be as this function
+will determine the version number via the app file provided in the
+ebin directory of the application. Once published the code is then
+available for immediate use by any application is erlware repo
+compatible such as Sinan.
+
+**Note*** Timeout values are in milliseconds
+
+**Example Usage**
+
+    $ faxien publish /home/martin/my_app.tar.gz  ## Publish a tarred application package to the configured default remote repo
+    $ faxien publish /home/martin/my_release 10000  ## Publish an untarred release package to the configured default remote repo with a request timeout of 10 seconds
+    $ faxien publish http://erlware.org/pub /home/martin/my_release  ## publish an untarred release package to a specific remote repository
+
+## More Commands
+
+### publish_erlware ** Depricated **
+
+    $ faxien publish_erlware <path_to_application> [request_timeout]
+
+This command publishes an application to the main erlware repository
+staging area.  From there the code will be reviewed and if all
+criteria are met included in the Erlware repository. Any application
+that is to be considered for inclusion in the Erlware main repo must
+include source code.
+
+**Note*** Timeout values are in milliseconds
+
+**Example Usage**
+
+    $ faxien publish_erlware lib/faxien-0.8.0
+    $ faxien publish_erlware lib/faxien.tar.gz
+    $ faxien publish_erlware lib/faxien.tar.gz 15000
+
+
+### publish_source
+
+    $ faxien publish_source [repo_url] <path_to_application> [request_timeout]
+
+Publishes an unbuilt application containing source code to a remote
+repository.  This will publish source code into the Source area within
+a repo.  This code is then available for immediate use by any
+application that uses erlware ewrepo code such as Sinan.
+
+**Note*** Timeout values are in milliseconds
+
+**Example Usage**
+
+    $ faxien publish_source http://www.jdoe.org/stable lib/faxien 25000
+    $ faxien publish_source http://www.jdoe.org/stable lib/faxien
+
+
+### publish\_arch\_specific\_binary
+
+    $ faxien publish_arch_specific_binary( [repo_url] <path_to_application> [request_timeout]
+
+Publishes an architecture specific pre-built applications to a remote
+repository.  This will publish a pre-built application into a
+directory <arch> within a repo that is named after the architecture
+from which the application is published from.  This code is then
+available for immediate use by any application that uses erlware
+ewrepo code such as Sinan.
+
+**Note*** Timeout values are in milliseconds
+
+**Example Usage**
+
+    $ faxien publish_arch_specific_binary lib/ewrepo
+    $ faxien publish_arch_specific_binary lib/ewrepo 10000
+    $ faxien publish_arch_specific_binary http://www.jdoe.org/stable lib/ewrepo 10000
+
+### upgrade
+
+    $ faxien upgrade [release_name]
+
+Upgrades all installed releases when used with no argument.  Upgrades
+a specific release if a release name is provided.
+
+**Example Usage**
+
+    $ faxien upgrade
+    $ faxien upgrade sinan
+
+
+### upgrade_app
+
+    $ faxien upgrade_app [app_name]
+
+Upgrades all installed applications when used with no argument.
+Upgrades a specific application if an application name is provided.
+
+
+**Example Usage**
+
+    $ faxien upgrade_app
+    $ faxien upgrade_app gas
+
+
+### version
+
+    $ faxien version
+
+Prints out the current Faxien version.
+
+### show_publish_repo
+
+    $ faxien show_publish_repo
+
+show the repo that will be published to when the publish command is
+run.
+
+### set\_publish\_repo
+
+    $ faxien set_publish_repo <repo>
+
+set the repo to publish to when the publish command is run.
+
+### show_repos
+
+    $ faxien show_repos <repo>
+
+show the list of repos to fetch from when the install and install_app
+commands are executed.
+
+### add_repo
+
+    $ faxien add_repo <repo>
+
+add a repo to the list of repos to fetch from when the install and
+install_app commands are executed.
+
+### remove_repo
+
+    $ faxien remove_repo <repo>
+
+remove a repo from the list of repos to fetch from when the install
+and install_app commands are executed.
+

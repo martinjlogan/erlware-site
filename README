@@ -1,0 +1,19 @@
+install webgen and required libs
+
+    $ gem install markdown
+    $ gem install webgen
+
+This assumes that ruby gems are installed
+
+Generate the site
+
+In the top level of the project run
+
+    $ webgen run
+
+
+Syntax of markdown 
+  http://daringfireball.net/projects/markdown/syntax
+
+Webgen
+  http://webgen.rubyforge.org/

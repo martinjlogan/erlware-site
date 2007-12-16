@@ -1,0 +1,4 @@
+File/PageHandler:
+  defaultMetaInfo:
+    blocks: [[content, markdown]]
+
