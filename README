@@ -1,6 +1,6 @@
 install webgen and required libs
 
-    $ gem install markdown
+    $ gem install bluecloth
     $ gem install webgen
 
 This assumes that ruby gems are installed
