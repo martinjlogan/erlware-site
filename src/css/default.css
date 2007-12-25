@@ -28,7 +28,7 @@
 }
 
 #headerbar {
-    background: transparent url(images/bg1.gif) repeat scroll 0%;
+    background: transparent url(../images/bg1.gif) repeat scroll 0%;
     border: 3px solid #CCCCCC;
     margin: 0pt;
     height: 22px;
@@ -93,7 +93,7 @@ pre code {
 }
 
 #menu_title {
-    background:transparent url(images/bg1.gif) repeat scroll 0% 50%;
+    background:transparent url(../images/bg1.gif) repeat scroll 0% 50%;
     border:1px solid #CCCCCC;
     color:#0073BB;
     font-weight:bold;
