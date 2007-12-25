@@ -3,7 +3,7 @@ title: index
 directoryName: OTP Base
 ---
 
-![OTP Base Icon](/images/icon-otp-base3-with-text.jpg)
+![OTP Base Icon]({relocatable:/images/icon-otp-base3-with-text.jpg})
 
 
 # Overview
@@ -28,7 +28,7 @@ OTP Base provides the following core tree structure which corresponds
 to the Erlang OTP
 [Design Principles](http://www.erlang.org/doc/doc-5.5.5/doc/design_principles/part_frame.html)
 
-![OTP Basic Structure](/images/otp-basic-structure.jpg)
+![OTP Basic Structure]({relocatable:/images/otp-basic-structure.jpg})
 
 The release directory specific to an application contains further
 directories for configuration and logging.  These are discussed in

@@ -12,7 +12,7 @@
   </head>
   <body>
     <div id="header">
-      <img id="toplogo" src="/images/top-header.gif" alt"erlware logo" />
+      <img id="toplogo" src="{relocatable:/images/top-header.gif}" alt"erlware logo" />
       <h1>[[ {title: } ]]</h1>
     </div>
 
