@@ -30,7 +30,7 @@ via the command line.
 
 
 *****
-![Troubleshooting](/images/troubleshooting.jpg)
+![Troubleshooting]({relocatable:/images/troubleshooting.jpg})
 
 
 You need to make sure that you have permissions to write to /usr/local
@@ -67,7 +67,7 @@ to the Sinan executable in erlware/bin which by now should be on your
 path.
 
 *****
-![Troubleshooting](/images/troubleshooting.jpg)
+![Troubleshooting]({relocatable:/images/troubleshooting.jpg})
 
 If your Sinan install halts with the following error:
 
