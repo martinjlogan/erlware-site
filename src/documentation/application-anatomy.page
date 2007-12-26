@@ -20,23 +20,23 @@ An OTP application may also have any one of the following directories.
 
 # Anatomy of an Application
 
-Applications under a sinan project must follow a few conventions. They
+OTP applications under a Sinan project must follow a few conventions. They
 have a src and an ebin directory and they must have an
-ebin/<appname>.app. The erlang source files, under src, should follow
-the OTP naming conventions.  If the name of the application is my_app
+`ebin/<appname>.app`. The erlang source files, under `src`, should follow
+the OTP naming conventions. One options is: ff the name of the application is my_app
 then there should exist an erlang file with behaviour(application) of
-the name my_app.erl. All other files should have a prefix representing
+the name `my_app.erl`. All other files should have a prefix representing
 the namespace of the application.
 
-Under the ebin/ directory you must also find the <appname>.app
+Under the `ebin` directory you must also find the `<appname>.app`
 file. This file is used heavily by the sinan build system as well as
 otp. To find out more about this see the documentation at
-www.erlang.org.
+http://www.erlang.org.
 
-Following a build the <project-root>/_build directory will be
+Following a build the `<project-root>/_build` directory will be
 created. Under the build directory will be several directories used by
 the build system. In this case the 'apps' directory will be of
-interest. In the <project-root>/_build/apps/<appname-vsn> will be a
-distribution read version of the app. The ebin directory will contain
+interest. In the `<project-root>/_build/development/apps/<appname-vsn>` will be a
+distribution read version of the app. The `ebin` directory will contain
 the .app and .beam files. The src directory will contain symlinks to
 this source and other required directories will be present.
