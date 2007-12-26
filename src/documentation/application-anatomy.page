@@ -4,6 +4,8 @@ directoryName: Documentation
 inMenu: true
 ---
 
+At its heart an application is a collection of erlang modules coded to address a particular problem domain.
+
 # Application Details
 
 An OTP application must have at least the following directories.
