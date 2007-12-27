@@ -15,7 +15,7 @@ OTP application and release structure. All systems embody the
 # Erlware Quick Start
 
 ## Step 1: Get Faxien
- [Download](http://code.google.com/p/faxien/downloads/list) the
+![Faxien Icon]({relocatable:/images/icon-faxien-small.jpg}) [Download](http://code.google.com/p/faxien/downloads/list) the
 platform specific Faxien boostrapper from
 http://code.google.com/p/faxien/downloads/list then run
 
@@ -24,7 +24,7 @@ http://code.google.com/p/faxien/downloads/list then run
 
 
 ## Step 2: Install Sinan
- Type
+![Faxien Icon]({relocatable:/images/icon-sinan-small.jpg}) Type
 
 
     $ sudo /usr/local/erlware/bin/faxien install sinan.
@@ -102,6 +102,12 @@ field between the Erlang open source community and Ericsson Erlang.
 ## Founders
 
 Martin Logan & Eric Merritt
+
+## Project Owners
+
+Dave Peticolas - Erlware Mode
+Eric Merritt - Sinan
+Martin Logan - Faxien
 
 ## Site Layout & Graphic Design
 

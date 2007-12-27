@@ -2,6 +2,7 @@
     margin-left: 250px;
     margin-right: 20px;
     padding: 10px;
+    font-family: arial, sans-serif;
 }
 
 #header {
@@ -112,6 +113,7 @@ pre code {
      padding-top: 0.5em;
      text-align: left;
      margin-top:3px;
+     font-family: arial, sans-serif;
 }
 
 #menu a, #menu span {

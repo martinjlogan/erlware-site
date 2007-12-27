@@ -3,10 +3,19 @@ title: Erlware Documentation
 ---
 # Documentation
 
+# For Erlware users:
+
+Below is some documentation that will help you to be an effective user of Erlware tools for your own projects.
+
   * [License]({relocatable: license.page})
-  * [Development Standards]({relocatable: development-standards.page})
-  * [Erlware Development Model]({relocatable: development-execution-model.page})
   * [The Structure of a Release]({relocatable: release-anatomy.page})
   * [The Structure of an Application]({relocatable: application-anatomy.page})
+
+# For Erlware developers:
+
+In order to be an effective developer and contributor to Erlware projects you should be familiar with the following docs.
+
+  * [Development Standards]({relocatable: development-standards.page})
+  * [Erlware Development Model]({relocatable: development-execution-model.page})
   * [Repository Layout](relocatable: repository-layout.page})
 

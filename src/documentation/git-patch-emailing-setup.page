@@ -8,7 +8,6 @@ First make sure to install msmtp (on debian or ubuntu just type sudo
 apt-get install msmtp) Place the following in a config file with the
 name .msmtprc in your home directory:
 
------- .msmtprc starts here ------
     account gmail
     host smtp.gmail.com
     auth on
@@ -20,7 +19,6 @@ name .msmtprc in your home directory:
     from <your username here>@gmail.com
     maildomain gmail.com
     account default : gmail
------- .msmtprc ends here ------
 
 Now configure git to use msmtp.  You must do this for each separate
 repository/project

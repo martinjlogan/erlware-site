@@ -8,14 +8,15 @@ inMenu: true
 
 Faxien provides the ability to publish packages, applications and
 releases, to remote repositories for others in your organization or
-across the world to use.  To see what repository Faxien is set to
+across the world to use.  To see which repositories Faxien is set to
 publish to run
 
-    faxien show_publish_repo
+    faxien show_publish_repos
 
-This location can be changed with
+These locations can be changed with
 
-    faxien set_publish_repo <repo>
+    faxien add_publish_repo <repo>
+    faxien remove_publish_repo <repo>
 
 Once in a repository the release or application is ready for immediate
 access by other users of Faxien set to download from that repository
@@ -126,5 +127,4 @@ installed as well, among other things. Once published other users will
 be able to install and start the release simply by running a Faxien
 installation command like "faxien install <release_name>".
 
-TODO A sample release can be found
-[[http://www.martinjlogan.com:8080/full_cycle/full_cycle.tar.gz|here]]
+A sample release can be found [here](http://www.martinjlogan.com:8080/full_cycle/full_cycle.tar.gz)
