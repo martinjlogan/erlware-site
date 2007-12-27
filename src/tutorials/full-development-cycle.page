@@ -216,99 +216,91 @@ Our hello world application is going to be very simple.  It will contain a singl
 
 Create the file `hw_server.erl` in `full_cycle/lib/hello_world/src` and enter the following code into it.
 
-<code>
-%%%-------------------------------------------------------------------
-%%% @doc  The hello world server.
-%%% @end
-%%%-------------------------------------------------------------------
--module(hw_server).
-
-%%--------------------------------------------------------------------
-%% External exports
-%%--------------------------------------------------------------------
--export([
-         start_link/0,
-     init/1
-        ]).
-
-%%--------------------------------------------------------------------
-%% macro definitions
-%%--------------------------------------------------------------------
--define(SERVER, hello_world_server).
-
-%%====================================================================
-%% External functions
-%%====================================================================
-
-%%--------------------------------------------------------------------
-%% @doc Starts the server.
-%% @spec start_link() -> {ok, pid()} | {error, Reason}
-%% @end
-%%--------------------------------------------------------------------
-start_link() ->
-    proc_lib:start(?MODULE, init, [self()]).
-
-%%====================================================================
-%% Callback Functions
-%%====================================================================
-
-%%--------------------------------------------------------------------
-%% @doc Called before the process start functions can return.
-%% @spec init(Parent::pid()) -> void()
-%% @end
-%%--------------------------------------------------------------------
-init(Parent) ->
-    register(?SERVER, self()),
-    proc_lib:init_ack(Parent, {ok, self()}),
-    loop().
-
-%%====================================================================
-%% Internal Functions
-%%====================================================================
-loop() ->
-    receive
-    Pid when is_pid(Pid) -> Pid ! {ok, hello_world};
-    _Msg                 -> ok
-    end,
-    loop().
-</code>
-
+    %%%-------------------------------------------------------------------
+    %%% @doc  The hello world server.
+    %%% @end
+    %%%-------------------------------------------------------------------
+    -module(hw_server).
+    
+    %%--------------------------------------------------------------------
+    %% External exports
+    %%--------------------------------------------------------------------
+    -export([
+             start_link/0,
+         init/1
+            ]).
+    
+    %%--------------------------------------------------------------------
+    %% macro definitions
+    %%--------------------------------------------------------------------
+    -define(SERVER, hello_world_server).
+    
+    %%====================================================================
+    %% External functions
+    %%====================================================================
+    
+    %%--------------------------------------------------------------------
+    %% @doc Starts the server.
+    %% @spec start_link() -> {ok, pid()} | {error, Reason}
+    %% @end
+    %%--------------------------------------------------------------------
+    start_link() ->
+        proc_lib:start(?MODULE, init, [self()]).
+    
+    %%====================================================================
+    %% Callback Functions
+    %%====================================================================
+    
+    %%--------------------------------------------------------------------
+    %% @doc Called before the process start functions can return.
+    %% @spec init(Parent::pid()) -> void()
+    %% @end
+    %%--------------------------------------------------------------------
+    init(Parent) ->
+        register(?SERVER, self()),
+        proc_lib:init_ack(Parent, {ok, self()}),
+        loop().
+    
+    %%====================================================================
+    %% Internal Functions
+    %%====================================================================
+    loop() ->
+        receive
+        Pid when is_pid(Pid) -> Pid ! {ok, hello_world};
+        _Msg                 -> ok
+        end,
+        loop().
+    
 Now if you recall Sinan will only compile modules that are listed in the `modules` list within our .app file; `ebin/hello_world.app`.
 
-<code>
-{modules, [hello_world_app,
-           hello_world_sup,
-           hw_server]},     # add this entry into modules
-</code>
-
+    {modules, [hello_world_app,
+               hello_world_sup,
+               hw_server]},     # add this entry into modules
+    
 Next we need to tell our top level supervisor to start our server. Edit `hello_world_sup.erl` altering the `init/1` function to look like the example below:
 
-<code>
-init([]) ->
-    AChild = {hw_server,{hw_server,start_link,[]},
-              permanent,2000,worker,[hw_server]},
-    {ok,{{one_for_all,0,1}, [AChild]}}.
-</code>
+    init([]) ->
+        AChild = {hw_server,{hw_server,start_link,[]},
+                  permanent,2000,worker,[hw_server]},
+        {ok,{{one_for_all,0,1}, [AChild]}}.
 
 Now to compile
 
-<code>
-$ sinan
-Using task build
-Executing task discover ...
-Discovering project layout and structure ...
-Executing task check_depends ...
-Dependencies are out of date. Should I run dependecies now? yes
-Pulling eunit-2.0 from repository if non-local
-Pulling stdlib-1.14.4 from repository if non-local
-Pulling kernel-2.11.4 from repository if non-local
-Executing task build ...
-Starting compilation process ...
-Building /home/martinjlogan/work/full_cycle/lib/hello_world/src/hello_world_app.erl
-Building /home/martinjlogan/work/full_cycle/lib/hello_world/src/hello_world_sup.erl
-Building /home/martinjlogan/work/full_cycle/lib/hello_world/src/hw_server.erl
-run complete
-</code>
+    $ sinan
+    Using task build
+    Executing task discover ...
+    Discovering project layout and structure ...
+    Executing task check_depends ...
+    Dependencies are out of date. Should I run dependecies now? yes
+    Pulling eunit-2.0 from repository if non-local
+    Pulling stdlib-1.14.4 from repository if non-local
+    Pulling kernel-2.11.4 from repository if non-local
+    Executing task build ...
+    Starting compilation process ...
+    Building /home/martinjlogan/work/full_cycle/lib/hello_world/src/hello_world_app.erl
+    Building /home/martinjlogan/work/full_cycle/lib/hello_world/src/hello_world_sup.erl
+    Building /home/martinjlogan/work/full_cycle/lib/hello_world/src/hw_server.erl
+    run complete
 
 Looks good, our application is complete.  At this point we have a working application.  Lets assume that we have been good programmers and tested this thing somewhat.  Lets further assume that the full_cycle release, which contains our hello_world application among other bits of functionality is something that we want the community at large to be able to download and run similar to the way we downloaded and used Sinan.  To do this we need to take our project create a release and then publish it.
 
@@ -321,16 +313,14 @@ The first thing we will need for a functioning release is a startup script.  Cre
 
 Lets create the `full_cycle` script under the `cmds` directory.
 
-<code>
--name full_cycle
-
-#foreach (arg in argv)
- ${arg}
-#end
-
- -detached
-</code>
-
+    -name full_cycle
+    
+    #foreach (arg in argv)
+     ${arg}
+    #end
+    
+     -detached
+    
 Faxien will do the substitution and flatten out this into a command that is passed to the erlang binary. You don't have to worry about the boot or config flags because faxien will do that for you. The program arguments are passed in a list called argv. We use a foreach loop to unroll argv into a list of commands.
 
 
@@ -338,24 +328,18 @@ Faxien will do the substitution and flatten out this into a command that is pass
 
 Create a release directory called `full_cycle-<vsn>` so in this case `full_cycle-0.1.0`.  This version number is essential, you cannot publish a release if your release directory is not of the form `<release_name>-<release_vsn>`.
 
-<code>
-$ sinan release
-</code>
-
+    $ sinan release
+    
 This will prompt Sinan to create a .rel file under the directory full_cycle/_build/development/releases/0.1.0.  We are going to need to copy the entire "releases" directory under `full_cycle-0.1.0`.  Now copy the `bin` directory under `full_cycle-0.1.0`.  Finally copy your LICENSE and README files if you have them into `full_cycle-0.1.0`.
 
 Running a directory listing in the `full_cycle-0.1.0` directory should yield the following:
 
-<code>
-$ ls
-cmds LICENCE  README  releases
-</code>
-
+    $ ls
+    cmds LICENCE  README  releases
+    
 To publish our release to the world we type
 
-<code>
-$ faxien publish ./full_cycle-0.1.0
-</code>
+    $ faxien publish ./full_cycle-0.1.0
 
 Wait a minute though, not so fast, unless you configured Faxien to publish to a repository running on your local network someone else doing this tutorial could publish right over your release by the time you try to install and run it.
 
@@ -398,8 +382,6 @@ The apps listed will all be started if they can be, eunit for example is not an 
     {ok,hello_world}
 
 Looks like we now have the full_cycle service running on our network.
-
-
 
 
 # Last Words
