@@ -1,0 +1,25 @@
+---
+title: index
+directoryName: Erlware Emacs Mode
+---
+
+# Overview
+
+The Erlware mode for [Emacs](http://www.gnu.org/software/emacs/) and
+[XEmacs](http://xemacs.org) mode is an updated version of the standard
+Erlang mode found on
+[erlang.org](http://www.erlang.org/doc/man/erlang_mode.html).
+
+Enhancements to the original mode include:
+
+  * [edoc](http://www.erlang.org/doc/man/edoc.html) formatting
+    for the skeleton code templates.
+
+  * Skeleton code reformatting for consistency.
+
+Planned improvements to the mode include menu and hot-key support for running 
+[Sinan]({relocatable: ../sinan/index.page}) and
+[Faxien]({relocatable: ../faxien/index.page}) commands.
+
+Much of the [documentation](http://www.erlang.org/doc/man/erlang_mode.html)
+for the original mode still applies to the erlware mode.

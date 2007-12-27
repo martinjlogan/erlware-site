@@ -1,0 +1,38 @@
+---
+title: Getting Started
+directoryName: Erlware Emacs Mode
+inMenu: true
+---
+
+# Getting Started (Installing the Erlware Emacs mode)
+
+First you need to obtain a copy of the source for the mode.
+You can download the latest release from the
+[Google Code](http://code.google.com/p/erlware-mode/downloads/list)
+page for the mode. Or, you can use the [git](http://git.or.cz) to
+stay on the bleeding edge:
+
+    $ git clone http://git.erlware.org/erlware-mode.git
+
+or
+
+    $ git clone git://git.erlware.org/git/erlware-mode.git
+
+Once you have the source on your local system, you need to
+modify your .emacs file to load the mode:
+
+    (setq load-path (cons "<path-to-mode>/erlware-mode" load-path))
+    (require 'erlang-start)
+
+For XEmacs users, you can use:
+
+    (add-to-list 'load-path "<path-to-mode>/erlware-mode")
+
+If your XEmacs installation already has the default Erlang mode
+installed, you will probably need to put the erlware mode directory
+at the front of the path:
+
+    (push "<path-to-mode>/erlware-mode" load-path)
+
+Now if you start your editor and load an Erlang file (or create
+an empy .erl file), you will see an Erlang menu in the menubar.
