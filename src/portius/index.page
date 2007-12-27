@@ -1,0 +1,18 @@
+---
+title: index
+directoryName: Portius
+---
+
+# Overview
+
+Portius is simply about taking packages from one repo, filtering out the bad ones, extracting things like docs, and finally putting them into another repo in the correct place.
+
+# Features
+
+under development
+
+# Whats in a Name?
+
+The 17th century A.D. also saw the first known illustration of sand filters. The Italian physician Lucas Antonius Portius wrote the Soldier’s Vade Mecum in 1685, which details a multiple sand filtration method. In this illustration, Portius described three pairs of sand filters—each pair consisting of a downward-flow filter and an upward-flow filter.
+
+Mr. Portius was a pioneer is filter design and so it fits that he be the namesake of the application responsible for making sure that only well formed pure OTP apps make their way into our public repositories.
