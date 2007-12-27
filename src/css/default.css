@@ -2,6 +2,7 @@
     margin-left: 250px;
     margin-right: 20px;
     padding: 10px;
+    font-size: 11pt;
     font-family: arial, sans-serif;
 }
 
@@ -78,7 +79,7 @@ pre code {
     background-color: #CCCCCC;
     border: 1px dotted #CCCCCC;
     color: black;
-    font-size: 100%;
+    font-size: 85%;
     font-family: monospace;
     padding: 1em;
 }
@@ -102,6 +103,7 @@ pre code {
     padding:3px;
     text-align:left;
     font-weight: bold;
+    font-family: arial;
 }
 
 #menu {
@@ -117,9 +119,10 @@ pre code {
 }
 
 #menu a, #menu span {
+    color:#0073BB;
     text-decoration: none;
-    font-weight: bold;
-    font-size: 130%;
+    font-weight: normal;
+    font-size: 120%;
 }
 
 #menu a:hover {
@@ -167,11 +170,11 @@ h1, h2, h3, h4, h5 {
 
 
 /* special headlines */
-h1 {font-size: 160%; font-weight: bold;}
-h2 {font-size: 140%;}
-h3 {font-size: 120%; border-bottom: none; font-weight: bold;}
-h4 {font-size: 100%; border-bottom: none; font-weight: bold;}
-h5 {font-size: 90%; border-bottom: none; font-weight: bold;}
+h1 {font-size: 135%; font-weight: normal;}
+h2 {font-size: 115%; border-bottom: none; font-weight: normal;}
+h3 {font-size: 105%; border-bottom: none; font-weight: normal;}
+h4 {font-size: 90%; border-bottom: none; font-weight: normal;}
+h5 {font-size: 80%; border-bottom: none; font-weight: normal;}
 
 
 h1 a, h2 a, h3 a, h4 a, h5 a {color: #0073bb;}
@@ -179,7 +182,7 @@ h1 a, h2 a, h3 a, h4 a, h5 a {color: #0073bb;}
 /* ---------- links ---------- */
 
 a {
-    text-decoration: none;
+    text-decoration: underline;
     color: #999999;
 }
 
