@@ -2,3 +2,5 @@ File/PageHandler:
   defaultMetaInfo:
     blocks: [[content, markdown]]
 
+MenuStyle/Vertical:
+  maxLevels: 4
