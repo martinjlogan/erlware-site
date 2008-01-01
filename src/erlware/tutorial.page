@@ -4,4 +4,446 @@ directoryName: Erlware
 inMenu: true
 ---
 
-Erlware tutorial goes here
+# Erlware Quick Start
+
+## Step 1: Get Faxien
+ [Download](http://code.google.com/p/faxien/downloads/list) the
+platform specific Faxien boostrapper from
+http://code.google.com/p/faxien/downloads/list then run
+
+
+    $ sudo sh ./faxien-bootstrap-<platform>.sh
+
+
+## Step 2: Install Sinan
+ Type
+
+
+    $ sudo /usr/local/erlware/bin/faxien install sinan.
+
+
+# The Full Development & Release Cycle
+
+This tutorial will go through a real world example of installing Erlware development tools, creating a release, creating an application, and publishing the release and application for others to use. The full cycle.
+
+# Installing the Development Tools
+
+
+## Installing Faxien
+
+First thing to do is install the Faxien package manager.  Download the
+latest Faxien bootstrapper from
+[Google Code](http://code.google.com/p/faxien). Now run the bootstrap
+command.
+
+
+    $ ./faxien_launcher # installs to /usr/local/erlware. Can use --prefix|-p <directory> to install in non default location.
+
+
+**Tip***
+
+Add /usr/local/erlware/bin to your path so that all applications you
+install with Faxien, including Faxien itself, are easily accessible
+via the command line.
+
+
+*****
+![Troubleshooting]({relocatable:/images/troubleshooting.jpg})
+
+
+You need to make sure that you have permissions to write to /usr/local
+to install Faxien.  Linux/Unix users will probably need to use the
+'sudo' command.  Without the correct permissions the install will
+fail.  If you cannot get write permissions to /usr/local then use the
+--prefix option. The example below demonstrates installing faxien into
+/home/martin/erlware.
+
+
+    ./faxien_launcher --prefix /home/martin
+
+*****
+
+
+Once faxien is installed, assuming the default install location, you can test the installation by typing:
+
+
+    $ /usr/local/erlware/bin/faxien version
+    0.18.1
+
+
+## Installing Sinan
+
+Once Faxien is installed you can use it to easily install Sinan, our
+flagship build system.
+
+
+    $ faxien install sinan
+
+
+This will install Sinan into your erlware directory and place a link
+to the Sinan executable in erlware/bin which by now should be on your
+path.
+
+*****
+![Troubleshooting]({relocatable:/images/troubleshooting.jpg})
+
+If your Sinan install halts with the following error:
+
+
+    $ faxien install sinan
+    Installing Application sgte-0.2.1 -> ok
+    Installing Application projgen-0.1.3 -> ok
+    Installing Application syntax_tools-1.5.3 -> ok
+    Installing Application compiler-4.4.4 -> ok
+    Installing Application edoc-0.7.2 -> ok
+    Installing Application fconf-0.1.1 -> ok
+    Installing Application tools-2.5.4faxien:install/1 exited with: installation_failed
+     - Make sure you have the correct permissions to run Faxien
+     - For error_logger information look at "/usr/local/erlware/log/faxien.err_log"
+     - For sasl log information look at "/usr/local/erlware/log/faxien.sasl_log"
+
+
+This most probably indicates that for your architecture and operating
+system a compiled version of the tools application, one that Sinan
+requires to function, is not present.  The fix for this is easy, help
+us and publish it.  Enter the following command to publish the tools
+application (that's if you have erlang installed at
+/usr/local/lib/erlang though of course you don't have to install
+Erlang from source at all with Erlware)
+
+
+    $ faxien publish /usr/local/lib/erlang/lib/tools-2.5.4
+
+
+Assuming, of course, that erlang is installed at
+/usr/local/lib/erlang. Now re-run the install script to see a
+successful installation.
+
+*****
+
+
+# Creating a Project
+
+The first step in building our software is creating a project to work
+in. A project is at its heart an organized collection of configuration
+and code. To create the project we will be using for this tutorial we
+are going to use the _sinan gen_ utility that is packaged with the
+Sinan release.
+
+
+
+## Using Singen to Create a Project
+
+_*Sinan Gen Is broken* ** these steps must be done manually.  This
+    will be fixed with our next major release._
+
+The following code listing demonstrates how it is done. I have added
+comments for explanation they start with the # sign.  Do not add these
+comments when you create your own project.
+
+
+    $ sinan gen
+    Please specify your name
+    your name> Martin Logan
+    Please specify your email address
+    your email> martinjlogan@erlware.org
+    Please specify the copyright holder
+    copyright holder> Erlware # This will typically be yourself or your company
+    Where is the remote code repository?  # Remote code repositories are where Sinan will look to download your development dependencies.
+Please specify the locations of the repositories.  One repository to a line. Finish with a blank line.
+    repo> http://repo.erlware.org/pub
+    repo> http://www.martinjlogan.com/pub
+    repo>
+    Please specify name of your project
+    project name> full_cycle  # this is the name of your project and should typically be the name of your release (more on that later)
+    Please specify version of your project
+    project version> 0.1.0
+    Please specify the names of the OTP apps that belong to this project. One application to a line. Finish with a blank line.
+    app> hello_world # Here you specify all OTP applications you will be creating as part of your project.  For this example we have only one.
+    app>
+    /home/martinjlogan/work/full_cycle created ok.
+    /home/martinjlogan/work/full_cycle/doc created ok.
+    /home/martinjlogan/work/full_cycle/lib/hello_world created ok.
+    /home/martinjlogan/work/full_cycle/lib/hello_world/ebin created ok.
+    /home/martinjlogan/work/full_cycle/lib/hello_world/include created ok.
+    /home/martinjlogan/work/full_cycle/lib/hello_world/src created ok.
+    Project was created, you should be good to go!
+    $
+
+
+Once completed you will have a directory named full_cycle sitting in
+the directory you ran the _sinan gen_ command from.  In the next
+section we will explore the contents of this project.
+
+# A Brief Look at the Anatomy of a Project
+
+A project is at its heart an organized collection of configuration and
+code.  To really understand what a project is we need to dig a little
+deeper though. First let me say, projects are simple; just want to set
+the tone.
+
+
+
+## What's inside
+
+Let's change directories into our newly created project and run a
+directory listing.
+
+
+    $ cd full_cycle
+    $ ls # directory listing on windows you may type dir
+    _build.cfg  doc  lib
+
+
+We see three names, one file, _build.cfg, and two directories, doc, and lib.  _build.cfg is the project level configuration file. Inside we can see:
+
+<code>
+project : {
+   name : full_cycle
+   vsn  : "0.1.0"
+},
+
+repositories : ["http://repo.erlware.org/pub","http://www.martinjlogan.com:8080/pub"],
+
+dist : {
+     include_dirs : ["cmds"]
+}
+</code>
+
+_build.cfg has a number of other options allowing you to control all phases of Sinan project interaction. For most cases however the basic file you see above will suffice.  The first thing we see is the project meta information, name and version. Following that is a list of repositories that Sinan will seek to download dependencies from; kernal, stdlib, sasl, gas, fslib to name a few.  The last bit of configuration for //dist// is out of the scope of this tutorial.
+
+The doc directory is self explanatory so we will move on to the final directory in our listing which is //lib//.  So change directories into lib and do a listing.  You will see that lib contains a single directory, hello_world.  This is the application we told singen we were going to be developing as part of this project.  This tutorial is going to assume you know at least a little something about application structure. If you don't you can either look at our docs on the subject, or just keep going, you should not have a terrible time following.
+
+# Building the hello_world Application
+
+===== Application Specification (hello_world.app) =====
+
+First we need to edit hello_world.app our application specification file.  This file is found in hello_world/ebin/.  So lets open it up:
+
+<code>
+%% This is the application resource file (.app file) for the hello_world,
+%% application.
+{application, hello_world,
+  [{description, "Your Desc HERE"},
+   {vsn, "0.1.0"},
+   {modules, [hello_world_app,
+              hello_world_sup]},
+   {registered,[hello_world_sup]},
+   {applications, [kernel, stdlib]},
+   {mod, {hello_world_app,[]}},
+   {start_phases, []}]}.
+</code>
+
+Replace the value for the //description// key with "Says hello to the world".  Notice that we have two modules already in our module listing.  Sinan gen has created our application entry point file //"hello_world_app.erl"// and our top level supervisor //"hello_world_sup"// for us.  These files are listed in //modules// because Sinan will only compile files for a given application that are listed within the //modules// list.  The //registered// list tells OTP which registered processes this application contains in order to avoid conflict with other applications in our release.  //applications// tells Sinan what our dependency set is.  If we were dependent on //fslib// and //gas// in addition to //kernel// and //stdlib// we would list both additional apps under //applications//.  The meaning of the rest of the .app file is left as an exercise to the reader.
+
+Lets write our hello world code now.
+
+===== Writing our application =====
+
+Our hello world application is going to be very simple.  It will contain a single simple server that is started by the top level supervisor.  This server will respond to a message consisting of a single Pid by sending back the message {ok, hello_world}.
+
+Create the file //hw_server.erl// in //full_cycle/lib/hello_world/src// and enter the following code into it.
+
+<code>
+%%%-------------------------------------------------------------------
+%%% @doc  The hello world server.
+%%% @end
+%%%-------------------------------------------------------------------
+-module(hw_server).
+
+%%--------------------------------------------------------------------
+%% External exports
+%%--------------------------------------------------------------------
+-export([
+         start_link/0,
+     init/1
+        ]).
+
+%%--------------------------------------------------------------------
+%% macro definitions
+%%--------------------------------------------------------------------
+-define(SERVER, hello_world_server).
+
+%%====================================================================
+%% External functions
+%%====================================================================
+
+%%--------------------------------------------------------------------
+%% @doc Starts the server.
+%% @spec start_link() -> {ok, pid()} | {error, Reason}
+%% @end
+%%--------------------------------------------------------------------
+start_link() ->
+    proc_lib:start(?MODULE, init, [self()]).
+
+%%====================================================================
+%% Callback Functions
+%%====================================================================
+
+%%--------------------------------------------------------------------
+%% @doc Called before the process start functions can return.
+%% @spec init(Parent::pid()) -> void()
+%% @end
+%%--------------------------------------------------------------------
+init(Parent) ->
+    register(?SERVER, self()),
+    proc_lib:init_ack(Parent, {ok, self()}),
+    loop().
+
+%%====================================================================
+%% Internal Functions
+%%====================================================================
+loop() ->
+    receive
+    Pid when is_pid(Pid) -> Pid ! {ok, hello_world};
+    _Msg                 -> ok
+    end,
+    loop().
+</code>
+
+Now if you recall Sinan will only compile modules that are listed in the //modules// list within our .app file; //ebin/hello_world.app//.
+
+<code>
+{modules, [hello_world_app,
+           hello_world_sup,
+           hw_server]},     # add this entry into modules
+</code>
+
+Next we need to tell our top level supervisor to start our server. Edit //hello_world_sup.erl// altering the //init/1// function to look like the example below:
+
+<code>
+init([]) ->
+    AChild = {hw_server,{hw_server,start_link,[]},
+              permanent,2000,worker,[hw_server]},
+    {ok,{{one_for_all,0,1}, [AChild]}}.
+</code>
+
+Now to compile
+
+<code>
+$ sinan
+Using task build
+Executing task discover ...
+Discovering project layout and structure ...
+Executing task check_depends ...
+Dependencies are out of date. Should I run dependecies now? yes
+Pulling eunit-2.0 from repository if non-local
+Pulling stdlib-1.14.4 from repository if non-local
+Pulling kernel-2.11.4 from repository if non-local
+Executing task build ...
+Starting compilation process ...
+Building /home/martinjlogan/work/full_cycle/lib/hello_world/src/hello_world_app.erl
+Building /home/martinjlogan/work/full_cycle/lib/hello_world/src/hello_world_sup.erl
+Building /home/martinjlogan/work/full_cycle/lib/hello_world/src/hw_server.erl
+run complete
+</code>
+
+Looks good, our application is complete.  At this point we have a working application.  Lets assume that we have been good programmers and tested this thing somewhat.  Lets further assume that the full_cycle release, which contains our hello_world application among other bits of functionality is something that we want the community at large to be able to download and run similar to the way we downloaded and used Sinan.  To do this we need to take our project create a release and then publish it.
+
+
+# Creating and Publishing a Release
+
+## Start Up Script
+
+The first thing we will need for a functioning release is a startup script.  Create a directory named //cmds// right underneath the full_cycle directory.  We are going to be launching with faxien so we don't really have to worry about any of the platform specific shells.
+
+Lets create the //full_cycle// script under the //cmds// directory.
+
+<code>
+-name full_cycle
+
+#foreach (arg in argv)
+ ${arg}
+#end
+
+ -detached
+</code>
+
+Faxien will do the substitution and flatten out this into a command that is passed to the erlang binary. You don't have to worry about the boot or config flags because faxien will do that for you. The program arguments are passed in a list called argv. We use a foreach loop to unroll argv into a list of commands.
+
+
+===== Creating the Release Structure =====
+
+Create a release directory called //full_cycle-<vsn>// so in this case //full_cycle-0.1.0//.  This version number is essential, you cannot publish a release if your release directory is not of the form //<release_name>-<release_vsn>//.
+
+<code>
+$ sinan release
+</code>
+
+This will prompt Sinan to create a .rel file under the directory full_cycle/_build/development/releases/0.1.0.  We are going to need to copy the entire "releases" directory under //full_cycle-0.1.0//.  Now copy the //bin// directory under //full_cycle-0.1.0//.  Finally copy your LICENSE and README files if you have them into //full_cycle-0.1.0//.
+
+Running a directory listing in the //full_cycle-0.1.0// directory should yield the following:
+
+<code>
+$ ls
+cmds LICENCE  README  releases
+</code>
+
+To publish our release to the world we type
+
+<code>
+$ faxien publish ./full_cycle-0.1.0
+</code>
+
+Wait a minute though, not so fast, unless you configured Faxien to publish to a repository running on your local network someone else doing this tutorial could publish right over your release by the time you try to install and run it.
+
+So lets just pretend we published our version of full_cycle into www.erlware.org/pub and instead utilize the ability of Faxien to install locally resident release packages just as well as it installs them from remote repositories. To do this we need to take one more step before installing. We need to create a //lib// directory under //full_cycle-0.1.0// and place the //hello_world// application underneath it.  Faxien will first look in the //lib// directory for applications to install and then in remote repo's for further dependencies that do not exist within the //lib// directory.  //hello_world.app// specifies that it depends on //kernel// and //stdlib// in the //applications// dependency list which are apps that are definitely present in remote repositories which is why //hello_world// is the only app we need to place in the lib directory. The compiled version of //hello_world// can be found in //_build/development/apps/hello_world-0.1.0//.  It is important to note that all apps in published and installed packages must have the <name>-<vsn> format.  Now lets install our release.
+
+<code>
+$ faxien install full_cycle-0.1.0/
+Installing Application hello_world-0.1.0 -> ok
+
+Installing Release full_cycle-0.1.0 -> ok
+ok
+</code>
+
+We can now stand up our release and give it a test.
+
+
+
+===== Running and Testing the Release =====
+
+When we execute the full_cycle command, which sits as a soft link in //erlware/bin//, we are starting up the entire release we have created. This means that every application in the full_cycle.rel file starts up in the order they are listed.
+
+<code>
+$ cat /usr/local/erlware/full_cycle-0.1.0/releases/0.1.0/full_cycle.rel
+{release,{"full_cycle","0.1.0"},
+         {erts,"5.5.5"},
+         [{kernel,"2.11.4"},
+          {stdlib,"1.14.4"},
+          {hello_world,"0.1.0"},
+          {eunit,"2.0"}]}.
+</code>
+
+The apps listed will all be started if they can be, eunit for example is not an app that gets started but in this case it will be loaded into memory.  This is a dependency we may want to remove in the future, but for now, it does not hurt. To start and test the release we will run the //hello_world// command then fire up a Erlang shell to interact with it.
+
+<code>
+$ full_cycle
+Starting Full Cycle
+$ erl -name try
+Erlang (BEAM) emulator version 5.5.5 [source] [async-threads:0] [hipe] [kernel-poll:false]
+
+Eshell V5.5.5  (abort with ^G)
+(try@test.erlware.org)1> net_adm:ping('full_cycle@test.erlware.org').
+pong
+(try@test.erlware.org)2> {hello_world_server, 'full_cycle@test.erlware.org'} ! self().
+<0.37.0>
+(try@test.erlware.org)3> receive Msg -> Msg end.
+{ok,hello_world}
+</code>
+
+Looks like we now have the full_cycle service running on our network.
+
+
+
+
+# Last Words
+
+Today we have run through the full cycle of developing, publishing, and installing an Erlang release.  If we had actually run the publish command on full_cycle-0.1.0 the rest of the world could have installed it by typing //faxien install full_cycle//.  The combination of Sinan and Faxien is quite powerful.  We have scratched the surface of what is possible with these Erlware tools we encourage you to dig deeper into the documentation if you want to learn more.
+
+Happy Erlanging.
+
+----
+
+The source code for this application can be found [[http://www.erlware.org/full_cycle/full_cycle.tar.gz|here]] and for the release [[http://www.erlware.org/full_cycle/full_cycle_app.tar.gz|here]].
+
