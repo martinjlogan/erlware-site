@@ -4,30 +4,4 @@ directoryName: Documentation
 inMenu: true
 ---
 
-First make sure to install msmtp (on debian or ubuntu just type sudo
-apt-get install msmtp) Place the following in a config file with the
-name .msmtprc in your home directory:
-
------- .msmtprc starts here ------
-    account gmail
-    host smtp.gmail.com
-    auth on
-    user <your username here>@gmail.com
-    password <your password here>
-    tls on
-    tls_starttls on
-    tls_certcheck off
-    from <your username here>@gmail.com
-    maildomain gmail.com
-    account default : gmail
------- .msmtprc ends here ------
-
-Now configure git to use msmtp.  You must do this for each separate
-repository/project
-
-    $ git config sendemail.smtpserver <path_to_msmtp>
-
-For each project you will be submitting patches for you need to
-configure a subject line.
-
-    $ git config format.subjectprefix "<repo_name> PATCH"
+All information moved to new site
