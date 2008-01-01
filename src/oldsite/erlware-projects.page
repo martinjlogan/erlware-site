@@ -1,6 +1,6 @@
 ---
 title: Erlware Projects
-directoryName: erlware
+directoryName: Old Site
 inMenu: true
 ---
 
@@ -10,12 +10,12 @@ http://git.erlware.org/git/
 
 # Featured Projects
 
-  * [Sinan]({relocatable: /sinan/index.page})
-  * [Faxien]({relocatable: /faxien/index.page})
+  * [Sinan]({relocatable: /oldsite/sinan/index.page})
+  * [Faxien]({relocatable: /oldsite/faxien/index.page})
 
 # Supported Projects
 
-  * [OTP Base]({relocatable: /otpbase/index.page})
+  * [OTP Base]({relocatable: /oldsite/otpbase/index.page})
   * [Reverl](http://code.google.com/p/reverl/) - Reverse proxy, load balancer and HTTPS front-end for Web server(s)
   * [Ktuo](http://code.google.com/p/ktuo/) - This library implements a library for parsing and encoding JSON and tuple objects.
   * [Fconf](http://code.google.com/p/fconf/) - A highly flexible general configuration system for Erlang applications.

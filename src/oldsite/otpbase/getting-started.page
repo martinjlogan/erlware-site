@@ -10,7 +10,7 @@ The first step is to pull down the featured OTP Base download from its
 [home at Google Code](http://code/google.com/p/otp-base). Next you are
 going to need to install two applications the first is FSLib and the
 second is G.A.S. The easiest way to install these is to use the
-[Faxien]({relocatable:/faxien/index.page}) package manager.
+[Faxien]({relocatable:/oldsite/faxien/index.page}) package manager.
 
 
     faxien install_app fslib

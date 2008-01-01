@@ -114,7 +114,7 @@ is another special directory it contains template information to show
 faxien how to start a particular release.  Faxien will generate a
 startup script on install that sits in; //erlware/bin//. For an
 example of a cmds template file see the
-[Full Cycle Tutorial]({relocatable: /tutorials/full-development-cycle.page})
+[Full Cycle Tutorial]({relocatable: /oldsite/tutorials/full-development-cycle.page})
 
 That is really it, a .rel file placed in the
 <release_name>-<release_version>/releases/<release_version> directory

@@ -29,7 +29,7 @@ At any time in a project you can type "sinan dist" to create a release
 tarball that faxien can publish for others to install. (make sure that
 your _build.cfg file contains the proper dist config, to seen an
 example look
-[here]({relocatable: /tutorials/full-development-cycle.page}). When a
+[here]({relocatable: /oldsite/tutorials/full-development-cycle.page}). When a
 release is installed it is placed by default into /usr/local/erlware
 (this location is configurable and may vary by system). Once placed
 into the install directory Faxien prepares it for execution which
