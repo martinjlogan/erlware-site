@@ -376,7 +376,7 @@ Lets create the `full_cycle` script under the `cmds` directory.
      ${arg}
     #end
 
-     -detached
+    -detached
 
 Faxien will do the substitution and flatten out this into a command that is
 passed to the erlang binary. You don't have to worry about the boot or config
