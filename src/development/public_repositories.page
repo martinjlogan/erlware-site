@@ -17,6 +17,24 @@ master's head compose the head of Erlware's development.
 
  * **Dave Peticolas:** [http://git.krondo.com/erlware/][dave]
 
+# Public Developing Pages
+
+## Official Google Code Pages
+
+We use Google Code to host downloads and issues for the next sub-projects:
+
+  * [Reverl][reverl] proxy, load balancer and HTTPS front-end for Web server(s).
+  * [Ktuo][ktuo] - This library implements a library for parsing and encoding
+    JSON and tuple objects.
+  * [Fconf][fconf] - A highly flexible general configuration system for Erlang
+    applications.
+  * [Tercio][tercio] - Erlang centric web application system.
+
+
 [erlware]: http://git.erlware.org "Erlware Repositories"
 [site]: http://erlware.org "Erlware Site"
 [dave]: http://git.krondo.com/erlware/ "Dave Peticolas' Repositories"
+[reverl]: http://code.google.com/p/reverl/ "Reverl Page"
+[ktuo]: http://code.google.com/p/ktuo/ "Ktuo Page"
+[fconf]: http://code.google.com/p/fconf/ "Fconf Page"
+[tercio]: http://code.google.com/p/tercio/ "Tercio Page"
