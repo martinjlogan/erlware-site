@@ -6,7 +6,9 @@ inMenu: true
 
 # The Full Development & Release Cycle
 
-This tutorial will go through a real world example of installing Erlware development tools, creating a release, creating an application, and publishing the release and application for others to use. The full cycle.
+This tutorial will go through a real world example of installing Erlware
+development tools, creating a release, creating an application, and publishing
+the release and application for others to use. The full cycle.
 
 # Installing the Development Tools
 
@@ -325,7 +327,9 @@ Now if you recall Sinan will only compile modules that are listed in the
            hello_world_sup,
                hw_server]},     # add this entry into modules
 
-Next we need to tell our top level supervisor to start our server. Edit `hello_world_sup.erl` altering the `init/1` function to look like the example below:
+Next we need to tell our top level supervisor to start our server. Edit
+`hello_world_sup.erl` altering the `init/1` function to look like the example
+below:
 
     init([]) ->
         AChild = {hw_server,{hw_server,start_link,[]},
@@ -399,7 +403,8 @@ entire "releases" directory under `full_cycle-0.1.0.` Now copy the `bin`
 directory under `full_cycle-0.1.0.`  Finally copy your LICENSE and README files
 if you have them into `full_cycle-0.1.0.`
 
-Running a directory listing in the `full_cycle-0.1.0` directory should yield the following:
+Running a directory listing in the `full_cycle-0.1.0` directory should yield the
+following:
 
     $ ls
     cmds LICENCE  README  releases
@@ -489,4 +494,3 @@ Happy Erlanging.
 The source code for this application can be found
 [here](http://www.erlware.org/full_cycle/full_cycle.tar.gz) and for the release
 [here](http://www.erlware.org/full_cycle/full_cycle_app.tar.gz).
-
