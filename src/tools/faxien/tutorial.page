@@ -3,4 +3,267 @@ title: Tutorial
 inMenu: true
 ---
 
-Faxien tutorial goes here
+# Getting Started (Installing the Faxien package)
+
+First things first. Faxien needs to be installed on the local system.
+In order to do this you must first download the Faxien bootstrap file
+for your system architecture and OS.  Click on the featured download
+at the [Faxien Google Code](http://code.google.com/p/faxien)
+page. Once you have the Faxien bootstrap execute
+
+    sh ./faxien-bootstrap-<platform>.sh
+
+
+Running the above will cause Faxien to be installed into `/usr/local/erlware.`
+
+Faxien can be installed in an alternate location by if the bootstrap is given a
+prefix.  For example if I want Faxien to be installed into
+`/home/martin/erlware` I would run the following command:
+
+
+    sh ./faxien-bootstrap-<platform>.sh /home/martin/erlware
+
+
+## A Tour of the Installed Faxien Release
+
+Lets take a look at what the install script has done.  Change directories into
+`/usr/local/erlware` (if you used the `--prefix` switch then change to the
+directory you specified).  Execute a directory listing in that directory.
+
+
+    /usr/local/erlware$ ls
+    bin  lib erts  log release_packages tmp
+
+
+In the erlware directory we can see the following directories:
+
+ - **release_packages** contains the faxien release which houses the .boot file,
+     and Faxien's configuration.
+ - **bin** directory contains a soft link to the "faxien" script which lies in
+     faxien-0.10.0/bin.
+ - **lib** contains all of the applications the faxien release requires to run.
+ - **log** contains the faxien.err_log and faxien.sasl_log files which are a
+     great help in trouble shooting.
+ - **tmp** some housekeeping which outside the scope of this document.
+
+It is advisable that you add the `erlware/bin` directory to your path so that
+you can execute Faxien and any other release you install without having to type
+the full path to the executable file every time you need it.
+
+# Installing a Package With Faxien
+
+## Basic Installation
+
+Faxien has two main missions, one is installing packages the other is publishing
+them for others to install.  Here we will cover the first of the two main
+missions, installing packages. There are two types of packages **applications**
+and **releases**.  For more info on [[:documentation:release_anatomy|the
+structure and definition of a release see here]].  The most basic way to install
+a release package is as follows:
+
+    faxien install <release_name>
+
+The most basic way to install an application package is as follows:
+
+
+    faxien install_app <app_name>
+
+
+Both of these commands will result in the latest version of the package
+specified being installed from a remote repository into the erlware directory
+(in the case of the applications `erlware/lib`).  Most of the time this is all
+you will ever need.
+
+## Other Useful Types of Installation
+
+The cases illustrated above are the basic cases for installation of packages.
+There are a also number of other useful options to know about.
+
+### Local Installation
+
+Faxien is equally at home installing packages right from the local file system
+as it is from a remote repository. Lets say you have an application called
+`my_app-1.0.3` sitting on the local hard drive in the work directory, and it
+needs to be installed into the erlware directory, this can accomplished by:
+
+
+    faxien install_app work/my_app-1.0.3
+
+
+Faxien will recognize that you are pointing to an application that resides
+locally and will install it directly instead of consulting an online repository.
+The same applies for releases
+
+
+    faxien install work/my_release-2.1.3
+
+
+This will install `home/martin/opt/my_release-2.1.3` from `/home/martin/opt`
+into the erlware directory.
+**Note packages to be installed by Faxien must contain version numbers.** As you
+know releases are a collection of applications, and these applications reside
+under the lib directory of a release.  If a local release does not have a lib
+directory Faxien will fetch the applications that the particular release relies
+on from remote repositories.  Similarly if the lib directory does not contain
+all of the applications the release relies upon Faxien will fetch the missing
+applications from remote repositories.
+
+### Versioned Remote Installation
+
+Faxien install commands will also take a version argument if a specific version
+of a package is to be installed.
+
+
+    faxien install sinan 0.8.3
+
+or
+
+    faxien install_app gas 6.7.0
+
+For a full and detailed listing of all installation command see the [Faxien reference page.]({relocatable: /tools/faxien/reference.page})
+
+# Publishing a Package With Faxien
+
+Faxien provides the ability to publish packages, applications and releases, to
+remote repositories for others in your organization or across the world to use.
+To see what repository Faxien is set to publish to run
+
+    faxien show_publish_repo
+
+This location can be changed with
+
+    faxien set_publish_repo <repo>
+
+Once in a repository the release or application is ready for immediate access by
+other users of Faxien set to download from that repository (the main Erlware
+repo, `repo.erlware.org/pub,` sanity checks apps first so it is not quite
+immediate for that particular repo).
+
+Preparing a package for inclusion into a repository is pretty straight forward.
+The standard for packages are really just OTP compliance though is one optional
+extension.
+
+## Preparing & Publishing an Application Package
+
+All applications to be published to an Erlware repository must be
+pre-compiled. An application typically contains the following directories: `src,
+ebin, priv,` and `include.` An application containing these directories is said
+to be a generic application.  Basically it contains only platform independent
+code and so it is generic with respect to architecture.
+
+If an application contains a `c_src` directory or some other non platform
+independent object code it is considered architecture specific.  It must be
+pre-compiled on the machine that it is being published from.  Faxien will
+determine the architecture of the box it is running on and then publish the
+application into a repository location specific to that local architecture.
+
+All application packages must contain an ebin directory with
+pre-compiled beam files and a `.app` file. Here is what an `.app` file
+should contain (this is the `.app` file for a version of Faxien itself)
+
+
+    {application, faxien,
+     [{description, "Pulls down applications from Erlware repo's"},
+      {vsn, "0.18.0"},
+       {modules, [
+        faxien,
+        fax_publish,
+        fax_install,
+        fax_local_install,
+        fax_manage,
+        fax_validation,
+        fax_util]},
+      {registered, []},
+      {versioned_dependencies, [{ibrowse, "1.2.4.1", gte}]},
+      {applications, [eunit, kernel, stdlib, xmerl, ibrowse, ewrepo, ewlib, gas]}]}.
+
+
+Note the "applications" tuple.  This should contain a list of all the
+applications that the application depends on. If there is a requirement for a
+specific version of an application that should be placed in the
+"versioned_dependencies" tuple.  Besides having a `src, ebin,` and `.app` file
+there is really nothing more needed to publish an application.
+
+## Preparing & Publishing a Release Package
+
+A release is a collection of applications, configuration, and optionally some
+template information to tell Faxien how to start the release.  Basically it is a
+self contained Erlang service or services that run on a single node.  The
+ability to publish and install releases is probably the most important function
+of Faxien.
+
+A release contains at minimum a `releases/<release_vsn>` directory
+containing a `.rel` file.  A `.rel` file contains a specification of the
+applications that are part of a release.  Here is the `.rel` file for
+the a Faxien release. Which for this example is contained in
+`faxien-0.10.0/releases/0.10.0`
+
+
+    {release,{"faxien","0.10.0"},
+             {erts,"5.5.4"},
+             [{stdlib,"1.14.4"},
+              {kernel,"2.11.4"},
+              {xmerl,"1.1.2"},
+              {sasl,"2.1.5"},
+              {ibrowse,"1.2.5"},
+              {ewrepo,"0.8.3"},
+              {eunit,"2.0"},
+              {ewlib,"0.3.0"},
+              {gas,"4.8.0"},
+              {faxien,"0.10.0"}]}.
+
+Releases published to a repository do not contain a lib directory which contains
+these applications you see in the release (`.rel`) file above.  Instead when a
+release is installed from a repository faxien reads this release file and
+downloads the applications specified within into the `erlware/lib`
+directory. The `<release>releases/<release_vsn>` directory can also contain a
+`.config` file. The `.config` file contains erlang terms used to configure a
+release.
+
+A release to be published can also contain any number of other
+directories, really anything but a `lib` directory. `lib` is a special
+directory reserved only for releases to be installed locally.  `cmds`
+is another special directory it contains template information to show
+faxien how to start a particular release.  Faxien will generate a
+startup script on install that sits in; `erlware/bin.` For an
+example of a `cmds` template file see the
+[Full Cycle Tutorial]({relocatable: /erlware/tutorial.page})
+
+That is really it, a `.rel` file placed in the
+`<release_name>-<release_version>/releases/<release_version>` directory
+and template code placed in the `<release_name>-<release_version>/cmds`
+directory.  Faxien will do the rest.  When faxien performs an install
+on a release the `.script` and `.boot` files will be generated, startup
+scripts will be generated, and all the required applications will be
+installed as well, among other things. Once published other users will
+be able to install and start the release simply by running a Faxien
+installation command like `faxien install <release_name>.`
+
+A sample release can be found [here.]({relocatable: /full_cycle/full_cycle.tar.gz})
+
+![Troubleshooting]({relocatable:/images/troubleshooting.jpg})
+
+The log files for faxien are located in the `log` directory under erlware, by
+default, `/usr/local/erlware/log.` The log directory contains 2 files:
+`faxien.sasl_log` and `faxien.err_log.` To learn more about `sasl` logs check
+out the docs at erlware.org for sasl.  The `err_log` file contains all the
+faxien application specific logging, it will be most useful in tracking down the
+reasons for failures should they occur.
+
+## Common failures
+
+### Bad connection
+
+If an application or release fails to install check the faxien.err_log
+file. Towards the bottom look for a connection failed message.  If
+this message is present it indicates that Faxien could not make a
+connection with a remote repository to download a particular package.
+
+### No such package
+
+Sometimes a particular package is simply not present in the
+repository. To see of a package you are trying to install is in a
+repository run
+
+
+    faxien list

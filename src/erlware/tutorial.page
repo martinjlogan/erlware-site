@@ -492,5 +492,5 @@ Happy Erlanging.
 ***
 
 The source code for this application can be found
-[here](http://www.erlware.org/full_cycle/full_cycle.tar.gz) and for the release
-[here](http://www.erlware.org/full_cycle/full_cycle_app.tar.gz).
+[here]({relocatable: /full_cycle/full_cycle.tar.gz}) and for the release
+[here]({relocatable: /full_cycle/full_cycle_app.tar.gz}).
