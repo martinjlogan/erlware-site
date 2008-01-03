@@ -4,24 +4,6 @@ directoryName: Erlware
 inMenu: true
 ---
 
-# Erlware Quick Start
-
-## Step 1: Get Faxien
- [Download](http://code.google.com/p/faxien/downloads/list) the
-platform specific Faxien boostrapper from
-http://code.google.com/p/faxien/downloads/list then run
-
-
-    $ sudo sh ./faxien-bootstrap-<platform>.sh
-
-
-## Step 2: Install Sinan
- Type
-
-
-    $ sudo /usr/local/erlware/bin/faxien install sinan.
-
-
 # The Full Development & Release Cycle
 
 This tutorial will go through a real world example of installing Erlware development tools, creating a release, creating an application, and publishing the release and application for others to use. The full cycle.
@@ -32,8 +14,9 @@ This tutorial will go through a real world example of installing Erlware develop
 ## Installing Faxien
 
 First thing to do is install the Faxien package manager. Download the latest
-Faxien installer for your platform from [Google Code](http://code.google.com/p/faxien/downloads
-list). Now run the bootstrap command.
+Faxien bootstrap installer for your platform from [Google
+Code](http://code.google.com/p/faxien/downloads/list). Now run the bootstrap
+command.
 
 
     $ ./faxien_launcher # installs to `/usr/local/erlware.`
