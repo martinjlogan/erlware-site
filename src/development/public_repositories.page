@@ -1,0 +1,22 @@
+---
+title: Public Repositories
+directoryName: Development
+inMenu: true
+---
+
+# Public Repositories for Erlware Development
+
+## Official Repositories
+
+These are the repositories with the [official Erlware code][erlware]; their
+master's head compose the head of Erlware's development.
+
+[Erlware site][site] builds regularly from `erlware-site` head every four hours.
+
+## Public Repositories from Contributors
+
+ * **Dave Peticolas:** [http://git.krondo.com/erlware/][dave]
+
+[erlware]: http://git.erlware.org "Erlware Repositories"
+[site]: http://erlware.org "Erlware Site"
+[dave]: http://git.krondo.com/erlware/ "Dave Peticolas' Repositories"
