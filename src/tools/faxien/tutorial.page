@@ -239,7 +239,7 @@ installed as well, among other things. Once published other users will
 be able to install and start the release simply by running a Faxien
 installation command like `faxien install <release_name>.`
 
-A sample release can be found [here.]({relocatable: /full_cycle/full_cycle.tar.gz})
+A sample release can be found [here.]({relocatable: /files/full_cycle/full_cycle.tar.gz})
 
 ![Troubleshooting]({relocatable:/images/troubleshooting.jpg})
 

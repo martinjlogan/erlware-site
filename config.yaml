@@ -2,5 +2,8 @@ File/PageHandler:
   defaultMetaInfo:
     blocks: [[content, markdown]]
 
+File/CopyHandler:
+    paths: ["**/*.css", "**/*.jpg", "**/*.tar.gz", "**/*.gif"]
+
 MenuStyle/Vertical:
   maxLevels: 4
