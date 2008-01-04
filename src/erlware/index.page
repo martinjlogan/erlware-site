@@ -12,6 +12,31 @@ management tool. Sinan, and Faxien support and encourage OTP application and
 release structure. All systems embody the [Erlang/OTP design
 principles](http://www.erlang.org/doc/design_principles/part_frame.html).
 
+# Ultra Quick Start
+
+You may have a very basic idea of how Faxien works by running two simple steps:
+
+## Step 1: Get Faxien
+
+[Download](http://code.google.com/p/faxien/downloads/list) the platform specific
+Faxien boostrapper and run it
+
+
+    $ sudo sh ./faxien-bootstrap-<platform>.sh
+
+
+## Step 2: Install Sinan
+
+Now you are read to install Erlware packages. To install Sinan, the project
+build system, type
+
+
+    $ sudo /usr/local/erlware/bin/faxien install sinan.
+
+Now you have last Sinan version ready to run. For more advanced use of Erlware,
+check out the [complete tutorial.]({relocatable: /erlware/tutorial.page})
+
+
 # Intent
 
 Helping to create a system of leadership for the Erlang open source community.
