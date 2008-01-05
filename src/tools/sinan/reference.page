@@ -4,4 +4,285 @@ directoryName: Sinan
 inMenu: true
 ---
 
-Sinan reference manual goes here
+# Project Layout
+
+Sinan projects have a pretty flexible layout. For the most part you can put your
+OTP applications anywhere you like. The only real requirement is that the
+`_build.cfg` be at the root of your project. I tend to put my OTP apps in a lib
+directory so I will give an example of a project with that format.
+
+Lets start out with project foo, that has libraries bar1 and bar2. My
+layout would look as follows
+
+
+    foo
+     |-_build.cfg
+     |-lib
+        |-bar1
+           |-ebin
+              |- bar1.app
+              |- *.beam
+           |-src
+              |-*.erl
+        |-bar2
+           |-ebin
+              |- bar2.app
+              |- *.beam
+           |-src
+              |-*.erl
+
+
+This layout works just fine. However, you could just as easily have
+the OTP applications at the same level as the build config or buried
+under twenty superfluous directories. It doesn't matter. Sinan will
+discover your projects without any problem at all.
+
+Now lets say you have a very simple project that consists of just a
+single OTP application. You don't really want it bury it under a
+normal layout you just want to build right in the OTP app itself. This
+is just fine. All you need to do is drop a build config into the top
+level of the OTP app and you are golden.
+
+
+    bar1
+     |-_build.cfg
+        |-ebin
+           |- bar1.app
+           |- *.beam
+        |-src
+           |-*.erl
+
+Things will be built into the build directory just like normal and all
+of the usual tasks work.
+
+# Anatomy of an Application
+
+## Application Details
+
+An OTP application must have at least the following directories.
+
+
+  * **src/**: contains erlang sources (`.erl` files)
+  * **ebin/**: compiled beam files are placed here
+
+An OTP application may also have any one of the following directories.
+
+  * **include/**: contains shared `.hrl` files
+  * **c_src/**: contains C sources
+  * **priv/**: contains files you want at run-time
+
+## Mandatory Conventions
+
+Applications under a Sinan project must follow a few conventions. They have a
+`src` and an `ebin` directory and they must have an `ebin/<appname>.app.` The
+erlang source files, under `src,` should follow the OTP naming conventions.  If
+the name of the application is `my_app` then there should exist an erlang file
+with `-behaviour(application)` of the name `my_app.erl.` All other files should
+have a prefix representing the namespace of the application.
+
+Under the `ebin` directory you must also find the `<appname>.app` file. This
+file is used heavily by the sinan build system as well as otp. To find out more
+about this see the documentation at [the erlang site.][erlang]
+
+Following a build, the `<project-root>/_build` directory will be created. Under
+the build directory will be several directories used by the build system. In
+this case the `apps` directory will be of interest. In the
+`<project-root>/_build/apps/<appname-vsn>` will be a distribution read version
+of the app. The `ebin` directory will contain the `.app` and `.beam` files. The
+`src` directory will contain symlinks to this source and other required
+directories will be present.
+
+# The Build Config
+
+The build config syntax for Sinan is really just a slightly simplified
+version of [JSON](http://www.json.org/). In my opinion, this makes it
+much more readably then the alternatives (XML and deeply nested Erlang
+tuples). It also helps that I already had a nice
+[JSON Parser](http://code.google.com/p/ktuo/) laying around that I could
+pick up and plug in.
+
+## The Syntax
+
+The syntax is pretty much the same as JSON. The main difference is that you may
+omit double quotes from single words if you wish. I think this makes the config
+files much, much easier to read. Usually, JSON would also require that the root
+object be surrounded by curly braces, just like any other object. I have made
+the config parser slightly smarter then that. So for the base object you can
+omit the curly braces.
+
+## Parts of the Config
+
+The basic build config is seperated into seven parts. For the most
+part these parts are pretty self explainitory. However, I will take a
+bit of time and go through each part and explain what it is and how
+its used. Some third-party tasks may require additional configuration
+info.
+
+
+### Project Section
+
+    project : {
+       name : <your project name>,
+       vsn  : "<your project version>"
+    },
+
+
+The project section of the build config is mainly used by the release
+task during generation of the release artifacts. The name of the
+project and the version are the only thing that needs to be specified
+here.
+
+### Repositories
+
+    repositories : ["http://repo.erlware.org/pub"],
+
+
+The repositories part is a list of urls that point to valid erlware
+repositories. The dependency tasks will search the repositories from
+right to left until it finds what it requires. Repositories can be
+hosted anywhere. As long as they are in the right format sinan doesn't
+care where they are.
+
+
+### Build Dir
+
+    build_dir : _build,
+
+The build_dir part simply tells sinan where to output its build
+artifacts. It defaults to _build even if the part isn't in the build
+config. However, you can override it to be whatever you like.
+
+### Ignore Dirs
+
+    ignore_dirs : ["_",
+                   "."],
+
+Sinan searches the project root to find otp applications to
+build. There may be some directories that you don't want sinan to
+search in. That is what this part is for. It tells sinan to ignore
+directories with those prefixes during its search phase. For right
+now, it only recognizes directory prefixes, though you can also put
+full directory names.
+
+### Ignore Apps
+
+    ignore_apps : [],
+
+The ignore apps part of the build config details a list of those OTP
+applications that you **do not want to build**. Sinan will just ignore
+any applications listed in this part.
+
+### Default Task
+
+    default_task :  build,
+
+The default task part details the task sinan should run if no task is
+specified on the command line. 'build' is probably a good default most
+of the time, though you may change it if required.
+
+### Tasks
+
+The tasks section lists all of the tasks that sinan knows about along
+with its dependencies and handlers. For the most part you should
+probably leave this section alone unless you know what you are doing.
+
+# Sinan Base Tasks
+
+Sinan ships with a number of base tasks. Some of these tasks rely on
+other tasks. Other tasks are standalone. All of them provide some
+useful information. What follows is a list of default tasks and a
+reasonably detailed description of what each task does and the
+artifacts it creates.
+
+
+## discover
+
+Discover is a 'prerequisite' task. It doesn't actually provide
+anything that the user would be interested. However, what it does do
+is very important to almost any other task that may need to
+run. Basically, it searches the project directory to discover the otp
+applications that make up the project.
+
+
+## depends
+
+Depends is another 'prerequisite' task. this one, as you would
+probably guess, figures out all of the dependencies for an
+application. You may run it directly as needed however. Its is useful
+to generate dependency information when you have connectivity and use
+it when you do not.
+
+
+## build
+
+Well, this one should be pretty obvious. It does the actual
+build. However, it doesn't modify anything in the top level. It builds
+all project apps into the _build/apps/<appname>-<vsn> directory. It
+makes a complete copy of the application. This allows for a 'binary'
+version of the application to be always available. This is good as its
+used in quite a number of places.
+
+
+## test
+
+The test task runs is another obvious task. It runs any and all
+[eunit](http://support.process-one.net/doc/display/CONTRIBS/EUnit)
+tasks that it finds. Assuming all eunit tests run correctly it outputs
+code coverage information to _build/docs/coverage in html format.
+
+
+## doc
+
+The doc task runs
+[edoc](http://www.erlang.org/doc/doc-5.5.5/lib/edoc-0.7.1/doc/html/index.html)
+across the project and outputs the information to
+_build/info/docs. Unfortunately, edoc does not work in Erlang R11B-3
+though it does in all versions pre and post.
+
+
+## clean
+
+Clean removes the _build directory and everything under it. It
+basically removes all build artifacts from the project.
+
+
+## analyze
+
+Analyze runs dialyzer across the application. The first time it runs
+it generates a plt file to _build/info/dialyzer_plt. This can take a
+significant amount of time. In subsequent runs it reuses the existing
+plt file. If the plt gets somehow out of date you can run 'analyze
+init' to rebuild the plt file. Currently output is just to the
+console.
+
+
+## release
+
+Release creates an OTP release for the file. It generates the *.rel,
+*.script, and *.boot and then tars up the entire project into a
+release handler tar file. It puts this in _build/tar/release.tar.gz
+
+
+## dist
+
+Dist builds up a tarball of your applications. The tar contents are in
+the form <project-name>-<project-version>/lib/erlang/<apps>. It also
+includes anything specified in
+
+
+    dirs : {
+       include_dirs : [<dir-list>]
+    }
+
+
+part of the configuration under the
+<project-name>-<project-version>. It puts all of this in
+_build/tar/dist.tar.gz.
+
+## shell
+
+Shell simply sets up all of the correct code paths and then starts a
+shell. This way the user can fiddle with project as needed without the
+setting up the paths manually.
+
+[erlang]: http://www.erlang.org "Erlang Site"
