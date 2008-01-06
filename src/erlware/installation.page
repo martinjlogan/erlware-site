@@ -3,4 +3,13 @@ title: Installation
 inMenu: true
 ---
 
-Erlware installation
+# Erlware installation
+
+Simply download the faxien bootstraper for your platform from
+[Google Code](http://code.google.com/p/faxien/downloads/list) and run it.
+
+    $ ./faxien_launcher # installs to `/usr/local/erlware.`
+
+You may use `--prefix|-p <directory>` to install in non default location.  Also,
+you may add `<prefix>/bin` to your path to be able to execute erlware
+applications without typing the whole path to them.
