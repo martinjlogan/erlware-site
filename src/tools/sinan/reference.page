@@ -92,6 +92,64 @@ of the app. The `ebin` directory will contain the `.app` and `.beam` files. The
 `src` directory will contain symlinks to this source and other required
 directories will be present.
 
+# Releases
+
+## What is an OTP Release
+
+Let's say you wrote a web server called `webby` in Erlang and you want the world
+to get a hold of it and be able to start and run it with a command like
+`webbystart.` The way to accomplish this is to package it as a release
+consisting of all the OTP applications that comprise your web server along with
+configuration and optionally some information on how to start the release.
+Sinan can help you do this.  Once done you could then publish it out with Faxien
+for others to download.  Your release would stand on its own and run as a
+service for whomever installs it either manually or with `faxien install webby.`
+
+A release is a collection of applications and configuration that can start
+within an Erlang runtime system and stand on its own.
+
+
+## Anatomy of a Release
+
+Lets deep dive now for an explanation of how a release works with Erlware tools
+to allow distribution of complete Erlang OTP services.  At any time in a project
+you can type `sinan dist` to create a release tarball that faxien can publish
+for others to install. (make sure that your `_build.cfg` file contains the
+proper dist config, to see an example look
+[here.]({relocatable: /erlware/tutorial.page}) When a release is installed it is
+placed by default into `/usr/local/erlware` (this location is configurable and
+may vary by system). Once placed into the install directory Faxien prepares it
+for execution which involves creation of script and boot files and the
+installation of the applications specified in the `.rel` file into, by default,
+`/usr/local/erlware/lib.` The `lib` dir is common to all releases on a system.
+The final step in the build process is that an executable start script is placed
+in the `erlware/bin` directory.
+
+A sample release can be found [here.]({relocatable: /files/full_cycle/full_cycle.tar.gz})
+
+## Release Details
+
+A release sits under a root directory of the form
+`<release-name>-<release-version>.` A release must have at least the
+following directory:
+
+   1. **`release_packages/<release>/<vsn>/release`**: contains the release file
+   (`.rel`) and optionally the OTP config file (`.config`)
+
+Releases may also contain the following standard directories:
+
+   1. **`cmds/`**: template code for the executable script generation lives
+   here.
+   1. **`lib/`**: optionally library code may be included in a release, these
+   releases are not to be stored in repo's, but instead should exist as tar.gz
+   files on a filesystem outside of a repo. Packages of this form can exist and
+   be installed with no internet connection.
+
+Releases may contain any other directories the designer of the release desires.
+These directories will be ignored by faxien but still included in the installed
+release.
+
+
 # The Build Config
 
 The build config syntax for Sinan is really just a slightly simplified
