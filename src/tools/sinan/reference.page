@@ -74,8 +74,8 @@ An OTP application may also have any one of the following directories.
 
 ## Mandatory Conventions
 
-Applications under a Sinan project must follow a few conventions. They have a
-`src` and an `ebin` directory and they must have an `ebin/<appname>.app.` The
+OTP Applications under a Sinan project must follow a few conventions. They have
+a `src` and an `ebin` directory and they must have an `ebin/<appname>.app.` The
 erlang source files, under `src,` should follow the OTP naming conventions.  If
 the name of the application is `my_app` then there should exist an erlang file
 with `-behaviour(application)` of the name `my_app.erl.` All other files should
