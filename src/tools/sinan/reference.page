@@ -97,6 +97,13 @@ directories will be present.
 
 ## What is an OTP Release
 
+At its heart a release is a collection of OTP applications.  These applications
+comprise the functionality that will run on a single erlang VM.
+
+An OTP release contains a `.rel` file which specifies the erlang run time system
+version and the applications that will be running on an instance of the Erlang
+VM. A release is really a set of packaging meta information.
+
 Let's say you wrote a web server called `webby` in Erlang and you want the world
 to get a hold of it and be able to start and run it with a command like
 `webbystart.` The way to accomplish this is to package it as a release
