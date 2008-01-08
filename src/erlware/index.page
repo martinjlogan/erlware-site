@@ -20,6 +20,7 @@ You may have a very basic idea of how Faxien works by running two simple steps:
 
 ## Step 1: Get Faxien
 
+![Faxien Icon]({relocatable:/images/icon-faxien-small.jpg})
 [Download](http://code.google.com/p/faxien/downloads/list) the platform specific
 Faxien boostrapper and run it
 
@@ -29,8 +30,8 @@ Faxien boostrapper and run it
 
 ## Step 2: Install Sinan
 
-Now you are read to install Erlware packages. To install Sinan, the project
-build system, type
+![Sinan Icon]({relocatable:/images/icon-sinan-small.jpg}) Now you are read to
+install Erlware packages. To install Sinan, the project build system, type
 
 
     $ sudo /usr/local/erlware/bin/faxien install sinan.
