@@ -13,9 +13,14 @@ interface.
 
 # Frequently Used Command Summary
 
+Type `faxien help commands` from the command line to get a list of Faxien
+commands.
+
 ## help
 
     $ faxien help
+    $ faxien help commands
+    $ faxien help <command>
 
 Prints out help information for Faxien.
 
