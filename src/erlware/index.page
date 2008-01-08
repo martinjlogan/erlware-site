@@ -190,8 +190,9 @@ Constitute the Erlware 'Stable' Repository
   * An application must not generate excessive warnings when compiled.
 
 # Erlware Licenses
- All projects under the Erlware umbrella use the mit license. An example is available below.
 
+Most projects under the Erlware umbrella use the mit license. An example is
+available below.
 
 ## MIT License
 
