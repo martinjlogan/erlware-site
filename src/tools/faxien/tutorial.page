@@ -265,8 +265,7 @@ connection with a remote repository to download a particular package.
 ### No such package
 
 Sometimes a particular package is simply not present in the
-repository. To see of a package you are trying to install is in a
+repository. To see if a package you are trying to install is in a
 repository run
 
-
-    faxien list
+    faxien search <package-name>
