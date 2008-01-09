@@ -57,7 +57,7 @@ will install that package from the hard disk.
     $ faxien install /home/martin/sinan.tar.gz  ## installs a local release tarball
 
 
-## install_app
+## install-app
 
     $ faxien install <app_name|path_to_app_package> \[version\]
 
@@ -67,11 +67,11 @@ package from the local file system.
 
 **Example Usage**
 
-    $ faxien install_app fslib  ## Installs the application from
+    $ faxien install-app fslib  ## Installs the application from
                                 ## a remote repository
-    $ faxien install_app fslib 5.7.3 ## Installs version 5.7.3 of the
+    $ faxien install-app fslib 5.7.3 ## Installs version 5.7.3 of the
                                      ## application from a remote repository
-    $ faxien install_app /home/martin/fslib.tar.gz  ## installs a local
+    $ faxien install-app /home/martin/fslib.tar.gz  ## installs a local
                                                     ## application tarball
 
 
@@ -217,7 +217,7 @@ set the repo to publish to when the publish command is run.
 
     $ faxien show_repos <repo>
 
-show the list of repos to fetch from when the install and install_app
+show the list of repos to fetch from when the install and install-app
 commands are executed.
 
 ### add_repo
@@ -225,11 +225,11 @@ commands are executed.
     $ faxien add_repo <repo>
 
 add a repo to the list of repos to fetch from when the install and
-install_app commands are executed.
+install-app commands are executed.
 
 ### remove_repo
 
     $ faxien remove_repo <repo>
 
 remove a repo from the list of repos to fetch from when the install
-and install_app commands are executed.
+and install-app commands are executed.
