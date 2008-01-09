@@ -21,9 +21,10 @@ modify your .emacs file to load the mode:
     (setq load-path (cons "<path-to-mode>/erlware-mode" load-path))
     (require 'erlang-start)
 
-For XEmacs users, you can use:
+For XEmacs users, you modify .xemacs/init.el:
 
     (add-to-list 'load-path "<path-to-mode>/erlware-mode")
+    (require 'erlang-start)
 
 If your XEmacs installation already has the default Erlang mode
 installed, you will probably need to put the erlware mode directory
@@ -33,3 +34,38 @@ at the front of the path:
 
 Now if you start your editor and load an Erlang file (or create
 an empy .erl file), you will see an Erlang menu in the menubar.
+
+
+# Accessing the Erlang man pages
+
+The Emacs mode supports displaying the Erlang man pages. To do this,
+the Erlang man pages must be available in uncompressed form. Also, the
+mode will include any man pages it finds, even if they have nothing to
+do with Erlang, so the Erlang man pages must be installed by
+themselves.
+
+If you do not already have the Erlang man pages installed this way,
+you can obtain a copy of them on the
+[erlware.org](http://www.erlang.org/download/)
+download area in files like:
+
+    http://www.erlang.org/download/otp_doc_man_R11B-5.tar.gz
+
+You should choose the version of the man pages that corresponds
+to the version of Erlang/OTP you are using, and untar the file
+wherever you choose.
+
+Once you have the man pages installed, you must tell the Emacs
+mode where they are. You can add this line to your startup file:
+
+    (setq erlang-man-root-dir "/path/to/man-pages")
+
+The path should be the directory containing the 'man' directory,
+with no trailing slash.
+
+
+# Getting Help
+
+If you need help installing the mode, or have questions about using
+it, you can contact the Erlware Google group
+[erlware-questions](http://groups.google.com/group/erlware-questions).
