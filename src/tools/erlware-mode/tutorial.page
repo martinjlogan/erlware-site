@@ -13,7 +13,7 @@ You can download the latest release from the
 page for the mode. Or, you can use the [git](http://git.or.cz) to
 stay on the bleeding edge:
 
-    $ git clone http://git.erlware.org/anon/erlware-mode.git
+    $ git clone http://git.erlware.org/erlware-mode.git
 
 Once you have the source on your local system, you need to
 modify your .emacs file to load the mode:
