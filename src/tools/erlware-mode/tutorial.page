@@ -1,7 +1,8 @@
 ---
-title: Getting Started
+title: Tutorial
 directoryName: Erlware Emacs Mode
 inMenu: true
+orderInfo: 2
 ---
 
 # Getting Started (Installing the Erlware Emacs mode)
