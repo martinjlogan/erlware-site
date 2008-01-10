@@ -12,5 +12,5 @@ directoryName: Home
 [tools section]({relocatable:/tools}) to choose that application.
 
 **If you want to contribute,** please take a look to
-[developer's section]{relocatable:/development} to learn about the developing
+[developer's section]({relocatable:/development}) to learn about the developing
 process, the repositories, etc.
