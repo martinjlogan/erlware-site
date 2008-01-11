@@ -1,0 +1,78 @@
+---
+title: Erlware Web Site
+directoryName: Development
+inMenu: true
+orderInfo: 3
+---
+
+# The Erlware Public Web Site
+
+Erlware Web site is yet another open project in the Erlware suite. It is
+generated from sources using [webgen][]. Those sources are kept in a git
+repository, `erlware-site`, so that the development is open to all as any other
+Erlware project.
+
+# Development Model
+
+As any other Erlware project, follow the standard
+[workflow]({relocatable:standards.page}) to send your patches to the
+[erlware-dev@googlegroups.com][development] mailing list.  The site is
+generated every four hours from the contents of the canonical repository. So
+it will pass some time since your patches are approved until they show in the
+site.
+
+# Documentation Structure
+
+The goal is promoting Erlware as a whole and provide tutorials to let new people
+start using Erlware without effort.
+
+There are three sections:
+
+  * Erlware section contains tutorials and reference information about
+    erlware. That is, how to use the main tools (faxien, sinan, and, probably,
+    erlware-mode) together to increase the productivity and quality or erlang
+    Projects. There are some subsections in there with howtos, tutorial and
+    documentation about the project.
+
+  * Tools section contains a place for each individual tool. Typically, each
+    tool section will have an introduction, one or more tutorials, and one or
+    more reference manuals.
+
+  * Developers section contains information and guidance on how to contribute to
+    the Erlware project.
+
+# Quick Guide
+
+Follow next steps to clone erlware-site repository and generate a local copy of
+the web site.
+
+  1. Clone erlware-site
+
+        git clone http://git.erlware.org/erlware-site.git
+
+  1. Download and install ruby gems. It will probably be packetised for your
+     GNU/Linux distribution (e.g. `apt-get install rubygems` in Debian).
+  1. Install webgen and bluecloth (the markdown text-to-html engine).
+
+        $ gem install bluecloth
+        $ gem install webgen
+
+  1. Run webgen in the top level of the project (you may need to write the whole
+  path to webgen):
+
+        $ webgen run
+
+Page sources are under `src`. They are written using [markdown][]
+notation. After running webgen, the site root is in `output.`
+
+If you are planning to contribute documentation:
+
+  * Read other pages similar to the one you are going to write to get in touch
+    with the structure, style, etc.
+  * Drop some lines in the development list if you plan to work some time
+    changing things to avoid collisions with other developers.
+
+[webgen]: http://webgen.rubyforge.org/ "webgen"
+[erlware-site]: http://git.erlware.org/erlware-site.git "erlware repository"
+[development]: http://groups.google.com/group/erlware-dev "development mailing list"
+[markdown]: http://daringfireball.net/projects/markdown/ "markdown"
