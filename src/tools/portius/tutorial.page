@@ -1,0 +1,36 @@
+---
+title: Tutorial
+directoryName: Portius
+inMenu: true
+orderInfo: 2
+---
+
+# Getting Started
+
+The main reason to use Portius are:
+
+ - Allow users to host a read only repository containing vetted apps and a write only repo containing published un-tested packages.
+ - Validate packages and move them from the write only repo to the read only repo.
+ - Generate documentation that is placed in a known location
+
+Assuming you already have a web-server fronting at least one repo we will progress from there. The first step is to install Portius on your system. This is done via
+
+    faxien install portius
+
+Next Portius needs to be configured. To do this we edit "erlware/release_packages/portius/<vsn>/release/sys.config". The config section for Portius is listed below.
+
+    {portius,
+     [
+      {inspection_frequency, 240000},
+      {transitions,
+       [
+        %% <from-repo>, <to-repo>, <generated-docs-base-dir>
+        {"/var/www/htdocs/repo/writable", "/var/www/htdocs/repo/pub", "/var/www/htdocs/erlware-doc"}
+       ]
+      }
+     ]
+    }
+
+By default Portius is configured to check the <from-repo> every 4 minutes (240,000 milliseconds). The next entry is for 'transitions' which define a repo to transition files from, a repo to transition them to, and a location for any documentation that is generated along the way. Alter the default transition to mirror your system setup.
+
+Once this is done all that is left to do is to run the server.  This is done by typing "portius" on the command line (assuming erlware/bin is in your path).  By default Portius logs to portius.err_log and portius.sasl_log in your machines temporary directory. You may view those files to see how things are progressing.
