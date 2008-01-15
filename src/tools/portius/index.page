@@ -11,7 +11,9 @@ Portius is simply about taking packages from one repo, filtering out the bad one
 
 # Features
 
-under development
+ - Move packages from one repo to another.
+ - Validate the packages before moving them
+ - Generate documentation for each application package and place it in a known location.
 
 # Whats in a Name?
 
