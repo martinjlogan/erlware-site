@@ -17,7 +17,7 @@ Erlware project.
 As any other Erlware project, follow the standard
 [workflow]({relocatable:standards.page}) to send your patches to the
 [erlware-dev@googlegroups.com][development] mailing list.  The site is
-generated every four hours from the contents of the canonical repository. So
+generated every night from the contents of the canonical repository. So
 it will pass some time since your patches are approved until they show in the
 site.
 
