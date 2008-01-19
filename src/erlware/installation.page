@@ -9,8 +9,13 @@ orderInfo: 3
 Simply download the faxien bootstraper for your platform from
 [Google Code](http://code.google.com/p/faxien/downloads/list) and run it.
 
-    $ ./faxien_launcher # installs to `/usr/local/erlware.`
+    $ sh ./faxien_launcher # installs to /usr/local/erlware
 
-You may use `--prefix|-p <directory>` to install in non default location.  Also,
-you may add `<prefix>/bin` to your path to be able to execute erlware
-applications without typing the whole path to them.
+By default, the installer places all files under the prefix `/usr/local/erlware`.
+You may add a single argument to the launcher script to specify an
+alternate prefix.
+
+    $ sh ./faxien_launcher /opt/erlware # installs to /opt/erlware
+
+Also, it is a good idea to add `<prefix>/bin` to your PATH to be able
+to execute Erlware applications without typing the whole path to them.
