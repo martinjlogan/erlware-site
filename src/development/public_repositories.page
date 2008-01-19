@@ -32,27 +32,27 @@ information about this.
 
 We use Google Code to host downloads and issues for the next sub-projects:
 
-  * [Reverl][reverl] - proxy, load balancer and HTTPS front-end for Web
-    server(s).
-  * [Ktuo][ktuo] - This library implements a library for parsing and encoding
-    JSON and tuple objects.
-  * [Fconf][fconf] - A highly flexible general configuration system for Erlang
-    applications.
-  * [Tercio][tercio] - Erlang centric web application system.
-  * [Portius][portius] - Erlware repository management.
-  * [Sinan][sinan] - Erlware's application and release build system.
   * [Faxien][faxien] - Erlware repository client, or, in other words, the
     Erlware packaging system.
+  * [Fconf][fconf] - A highly flexible general configuration system for Erlang
+    applications.
+  * [Ktuo][ktuo] - This library implements a library for parsing and encoding
+    JSON and tuple objects.
+  * [Portius][portius] - Erlware repository management.
+  * [Reverl][reverl] - proxy, load balancer and HTTPS front-end for Web
+    server(s).
+  * [Sinan][sinan] - Erlware's application and release build system.
+  * [Tercio][tercio] - Erlang centric web application system.
 
 
-[erlware]: http://git.erlware.org "Erlware Repositories"
-[site]: http://erlware.org "Erlware Site"
 [dave]: http://git.krondo.com/erlware/ "Dave Peticolas' Repositories"
 [eric]: http://git.krondo.com/erlware/ "Eric Merritt's Repositories"
-[reverl]: http://code.google.com/p/reverl/ "Reverl Page"
-[ktuo]: http://code.google.com/p/ktuo/ "Ktuo Page"
-[fconf]: http://code.google.com/p/fconf/ "Fconf Page"
-[tercio]: http://code.google.com/p/tercio/ "Tercio Page"
-[portius]: http://code.google.com/p/portius/ "Porius Page"
-[sinan]: http://code.google.com/p/sinan/ "Sinan Page"
+[erlware]: http://git.erlware.org "Erlware Repositories"
 [faxien]: http://code.google.com/p/faxien/ "Faxien Page"
+[fconf]: http://code.google.com/p/fconf/ "Fconf Page"
+[ktuo]: http://code.google.com/p/ktuo/ "Ktuo Page"
+[portius]: http://code.google.com/p/portius/ "Porius Page"
+[reverl]: http://code.google.com/p/reverl/ "Reverl Page"
+[sinan]: http://code.google.com/p/sinan/ "Sinan Page"
+[site]: http://erlware.org "Erlware Site"
+[tercio]: http://code.google.com/p/tercio/ "Tercio Page"
