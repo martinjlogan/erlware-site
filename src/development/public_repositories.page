@@ -12,7 +12,14 @@ orderInfo: 3
 These are the repositories with the [official Erlware code][erlware]; their
 master's head compose the head of Erlware's development.
 
-[Erlware site][site] builds regularly from `erlware-site` head every four hours.
+If you are going to contribute code to any application, please take a look at
+[development model]({relocatable:index.page}) and
+[standards]({relocatable:standards.page}) first.
+
+Apart from application repositories, `erlware-site` repository contains the
+sources to build [Erlware site;][site] see
+[Erlware Site's Documentation]({relocatable:erlware-site.page}) for more
+information about this.
 
 ## Public Repositories from Contributors
 
@@ -25,12 +32,17 @@ master's head compose the head of Erlware's development.
 
 We use Google Code to host downloads and issues for the next sub-projects:
 
-  * [Reverl][reverl] proxy, load balancer and HTTPS front-end for Web server(s).
+  * [Reverl][reverl] - proxy, load balancer and HTTPS front-end for Web
+    server(s).
   * [Ktuo][ktuo] - This library implements a library for parsing and encoding
     JSON and tuple objects.
   * [Fconf][fconf] - A highly flexible general configuration system for Erlang
     applications.
   * [Tercio][tercio] - Erlang centric web application system.
+  * [Portius][portius] - Erlware repository management.
+  * [Sinan][sinan] - Erlware's application and release build system.
+  * [Faxien][faxien] - Erlware repository client, or, in other words, the
+    Erlware packaging system.
 
 
 [erlware]: http://git.erlware.org "Erlware Repositories"
@@ -41,3 +53,6 @@ We use Google Code to host downloads and issues for the next sub-projects:
 [ktuo]: http://code.google.com/p/ktuo/ "Ktuo Page"
 [fconf]: http://code.google.com/p/fconf/ "Fconf Page"
 [tercio]: http://code.google.com/p/tercio/ "Tercio Page"
+[portius]: http://code.google.com/p/portius/ "Porius Page"
+[sinan]: http://code.google.com/p/sinan/ "Sinan Page"
+[faxien]: http://code.google.com/p/faxien/ "Faxien Page"
