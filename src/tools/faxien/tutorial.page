@@ -68,7 +68,7 @@ a release package is as follows:
 The most basic way to install an application package is as follows:
 
 
-    faxien install_app <app_name>
+    faxien install-app <app_name>
 
 
 Both of these commands will result in the latest version of the package
@@ -89,7 +89,7 @@ as it is from a remote repository. Lets say you have an application called
 needs to be installed into the erlware directory, this can accomplished by:
 
 
-    faxien install_app work/my_app-1.0.3
+    faxien install-app work/my_app-1.0.3
 
 
 Faxien will recognize that you are pointing to an application that resides
@@ -120,7 +120,7 @@ of a package is to be installed.
 
 or
 
-    faxien install_app gas 6.7.0
+    faxien install-app gas 6.7.0
 
 For a full and detailed listing of all installation command see the [Faxien reference page.]({relocatable: /tools/faxien/reference.page})
 
@@ -130,12 +130,12 @@ Faxien provides the ability to publish packages, applications and releases, to
 remote repositories for others in your organization or across the world to use.
 To see which repositories Faxien is set to publish to run
 
-    faxien show_publish_repos
+    faxien show-publish-repos
 
 These locations can be changed with
 
-    faxien add_publish_repo <repo>
-    faxien remove_publish_repo <repo>
+    faxien add-publish-repo <repo>
+    faxien remove-publish-repo <repo>
 
 Once in a repository the release or application is ready for immediate access by
 other users of Faxien set to download from that repository (the main Erlware

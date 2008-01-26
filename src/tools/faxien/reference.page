@@ -180,9 +180,9 @@ a specific release if a release name is provided.
     $ faxien upgrade sinan
 
 
-### upgrade_app
+### upgrade-app
 
-    $ faxien upgrade_app [app_name]
+    $ faxien upgrade-app [app_name]
 
 Upgrades all installed applications when used with no argument.
 Upgrades a specific application if an application name is provided.
@@ -190,8 +190,8 @@ Upgrades a specific application if an application name is provided.
 
 **Example Usage**
 
-    $ faxien upgrade_app
-    $ faxien upgrade_app gas
+    $ faxien upgrade-app
+    $ faxien upgrade-app gas
 
 
 ### version
@@ -200,36 +200,36 @@ Upgrades a specific application if an application name is provided.
 
 Prints out the current Faxien version.
 
-### show\_publish\_repo
+### show-publish-repos
 
-    $ faxien show_publish_repo
+    $ faxien show-publish-repos
 
-show the repo that will be published to when the publish command is
+show the repos that will be published to when the publish command is
 run.
 
-### set\_publish\_repo
+### add-publish-repo
 
-    $ faxien set_publish_repo <repo>
+    $ faxien add-publish-repo <repo>
 
-set the repo to publish to when the publish command is run.
+add a repo to publish to when the publish command is run.
 
-### show_repos
+### show-repos
 
-    $ faxien show_repos <repo>
+    $ faxien show-repos <repo>
 
 show the list of repos to fetch from when the install and install-app
 commands are executed.
 
-### add_repo
+### add-repo
 
-    $ faxien add_repo <repo>
+    $ faxien add-repo <repo>
 
 add a repo to the list of repos to fetch from when the install and
 install-app commands are executed.
 
-### remove_repo
+### remove-repo
 
-    $ faxien remove_repo <repo>
+    $ faxien remove-repo <repo>
 
 remove a repo from the list of repos to fetch from when the install
 and install-app commands are executed.
