@@ -24,7 +24,7 @@ command.
 
     $ ./faxien_launcher # installs to `/usr/local/erlware.`
 
-You may use `--prefix|-p <directory>` to install in non default location.
+You may use `faxien_launcher <directory>` to install in non default location.
 
 
 **Tip**
@@ -41,11 +41,11 @@ line.
 You need to make sure that you have permissions to write to /usr/local to
 install Faxien.  Linux/Unix users will probably need to use the 'sudo' command.
 Without the correct permissions the install will fail.  If you cannot get write
-permissions to `/usr/local` then use the `--prefix option.` The example below
-demonstrates installing faxien into `/home/martin/erlware.`
+permissions to `/usr/local,` you can install Erlware in another directory. The
+example below demonstrates installing faxien into `/home/martin/erlware.`
 
 
-    ./faxien_launcher --prefix /home/martin
+    ./faxien_launcher /home/martin/erlware
 
 *****
 

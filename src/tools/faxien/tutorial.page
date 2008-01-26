@@ -28,9 +28,9 @@ prefix.  For example if I want Faxien to be installed into
 
 ## A Tour of the Installed Faxien Release
 
-Lets take a look at what the install script has done.  Change directories into
-`/usr/local/erlware` (if you used the `--prefix` switch then change to the
-directory you specified).  Execute a directory listing in that directory.
+Lets take a look at what the install script has done.  Change to the directory
+where you installed erlware (`/usr/local/erlware` by default). Then, execute a
+directory listing in that directory.
 
 
     /usr/local/erlware$ ls
