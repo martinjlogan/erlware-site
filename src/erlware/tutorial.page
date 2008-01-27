@@ -16,16 +16,17 @@ the release and application for others to use. The full cycle.
 
 ## Installing Faxien
 
-First thing to do is install the Faxien package manager. Download the latest
-Faxien bootstrap installer for your platform from [Google
-Code](http://code.google.com/p/faxien/downloads/list). Now run the bootstrap
-command.
+First thing to do is install the Erlware package manager; Faxien. Download the latest
+Faxien bootstrap installer for your platform or the Meta Bootstrapper from [Google
+Code](http://code.google.com/p/faxien/downloads/list). Now bootstrap with one of the 
+following commands.
 
+    $ ./metabootstrap.py # installs to `/usr/local/erlware by default.`
 
-    $ ./faxien_launcher # installs to `/usr/local/erlware.`
+or use an arch specific bootstrapper 
 
-You may use `--prefix|-p <directory>` to install in non default location.
-
+    $ ./faxien-launcher-<os-type-info>.sh # installs to `/usr/local/erlware.`
+    $ ./faxien-launcher-<os-type-info>.sh /home/martinjlogan/erlware # installs into the supplied path
 
 **Tip**
 
@@ -41,11 +42,10 @@ line.
 You need to make sure that you have permissions to write to /usr/local to
 install Faxien.  Linux/Unix users will probably need to use the 'sudo' command.
 Without the correct permissions the install will fail.  If you cannot get write
-permissions to `/usr/local` then use the `--prefix option.` The example below
-demonstrates installing faxien into `/home/martin/erlware.`
+permissions to `/usr/local` then use the prefix option to install into another directory.
+ The example below demonstrates installing faxien into `/home/martinjlogan/erlware.`
 
-
-    ./faxien_launcher --prefix /home/martin
+    $ ./faxien-launcher-<os-type-info>.sh /home/martinjlogan/erlware # installs into the supplied path
 
 *****
 
@@ -99,10 +99,10 @@ application (that's if you have erlang installed at
 Erlang from source at all with Erlware)
 
 
-    $ faxien publish /usr/local/lib/erlang/lib/tools-2.5.4
+    $ faxien publish /usr/local/lib/erlang/lib/tools-2.5.4 infinity
 
 
-Assuming, of course, that erlang is installed at
+where `infinity` is the remote request timeout length. The above example is assuming, of course, that erlang is installed at
 `/usr/local/lib/erlang.` Now re-run the install script to see a
 successful installation.
 
@@ -119,57 +119,13 @@ Sinan release.
 
 
 
-## Using Singen to Create a Project
+## Create a Project
 
-*Sinan Gen Is broken these steps must be done manually. This will be fixed with our next major release.*
+The next version of Sinan will have a project generation utility.  The current version does not.  The easiest way to create a project is to checkout an existing project like faxien or sinan and then modify the directory structure to suit your needs.  Be on the look out for version 0.9.0 of Sinan which will fix this. 
 
-The following code listing demonstrates how it is done. I have added
-comments for explanation they start with the # sign.  Do not add these
-comments when you create your own project.
-
-
-    $ sinan gen
-    Please specify your name
-    your name> Martin Logan
-    Please specify your email address
-    your email> martinjlogan@erlware.org
-    Please specify the copyright holder
-    copyright holder> Erlware # This will typically be yourself
-                              # or your company
-    Where is the remote code repository?  # Remote code repositories
-                                          # are where Sinan will look
-                                          # to download your development
-					  # dependencies.
-    Please specify the locations of the repositories.
-    One repository to a line. Finish with a blank line.
-    repo> http://repo.erlware.org/pub
-    repo> http://www.martinjlogan.com/pub
-    repo>
-    Please specify name of your project
-    project name> full_cycle  # this is the name of your project and should
-                              # typically be the name of your release
-                              # (more on that later)
-    Please specify version of your project
-    project version> 0.1.0
-    Please specify the names of the OTP apps that belong to this project.
-    One application to a line. Finish with a blank line.
-    app> hello_world # Here you specify all OTP applications you will
-                     # be creating as part of your project.  For this
-                     # example we have only one.
-    app>
-    /home/martinjlogan/work/full_cycle created ok.
-    /home/martinjlogan/work/full_cycle/doc created ok.
-    /home/martinjlogan/work/full_cycle/lib/hello_world created ok.
-    /home/martinjlogan/work/full_cycle/lib/hello_world/ebin created ok.
-    /home/martinjlogan/work/full_cycle/lib/hello_world/include created ok.
-    /home/martinjlogan/work/full_cycle/lib/hello_world/src created ok.
-    Project was created, you should be good to go!
-    $
-
-
-Once completed you will have a directory named `full_cycle` sitting in
-the directory you ran the `sinan gen` command from.  In the next
-section we will explore the contents of this project.
+So for now run git clone http://git.erlware.org/faxien.git and then rename faxien to full_cycle and alter all references to faxien
+making them full_cycle instead.  This is a good way to get down and dirty familiar with OTP structure anyhow so the work will be 
+worth it.
 
 # A Brief Look at the Anatomy of a Project
 
@@ -177,8 +133,6 @@ A project is at its heart an organized collection of configuration and
 code.  To really understand what a project is we need to dig a little
 deeper though. First let me say, projects are simple; just want to set
 the tone.
-
-
 
 ## What's inside
 
