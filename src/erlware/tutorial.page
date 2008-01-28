@@ -17,11 +17,11 @@ the release and application for others to use. The full cycle.
 ## Installing Faxien
 
 First thing to do is install the Erlware package manager; Faxien. Download the latest
-Faxien bootstrap installer for your platform or the Meta Bootstrapper from [Google
+Faxien bootstrap installer for your platform or the Universal Bootstrapper from [Google
 Code](http://code.google.com/p/faxien/downloads/list). Now bootstrap with one of the 
 following commands.
 
-    $ ./metabootstrap.py # installs to `/usr/local/erlware by default.`
+    $ python ./faxien-launcher-universal.py # installs to `/usr/local/erlware by default.`
 
 or use an arch specific bootstrapper 
 
