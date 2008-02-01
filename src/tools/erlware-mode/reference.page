@@ -1,0 +1,46 @@
+---
+title: Reference Manual
+directoryName: Erlware Emacs Mode
+inMenu: true
+orderInfo: 3
+---
+
+# Introduction
+
+Erlware mode is an enhanced version of the official [erlang mode.][erlang-mode]
+Much of the original documentation documentation still applies for erlware mode.
+
+# Function List
+
+## Templates
+
+Templates are skeletons for typical Erlang modules and sentences. Unlike
+official erlang mode, erlware emacs mode uses [edoc][] compliant documentation.
+
+You may write skeletons to current buffer calling any of the next functions:
+
+ * tempo-template-erlang-after
+ * tempo-template-erlang-application
+ * tempo-template-erlang-author
+ * tempo-template-erlang-case
+ * tempo-template-erlang-ct-test-suite
+ * tempo-template-erlang-function
+ * tempo-template-erlang-gen-corba-cb
+ * tempo-template-erlang-gen-event
+ * tempo-template-erlang-gen-fsm
+ * tempo-template-erlang-gen-lib
+ * tempo-template-erlang-generic-server
+ * tempo-template-erlang-if
+ * tempo-template-erlang-large-header
+ * tempo-template-erlang-loop
+ * tempo-template-erlang-module
+ * tempo-template-erlang-normal-header
+ * tempo-template-erlang-receive
+ * tempo-template-erlang-small-header
+ * tempo-template-erlang-small-server
+ * tempo-template-erlang-supervisor
+ * tempo-template-erlang-supervisor-bridge
+ * tempo-template-erlang-ts-test-suite
+
+[erlang-mode]: http://www.erlang.org/doc/man/erlang_mode.html "erlang mode"
+[edoc]: http://erlang.org/doc/apps/edoc/index.html "edoc"
