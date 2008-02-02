@@ -25,6 +25,9 @@ general, but are a must for those developing on Erlware itself.
 using emacs, you can use `delete-trailing-witespace` function to get rid of all
 offending spaces in a buffer.
 
+**Indentation:** We prefer the automatic indentation of
+[erlware-mode]({relocatable:../tools/erlware-mode}).
+
 # Documentation Standards
 
 Erlware requires a certain level of documentation for all code
