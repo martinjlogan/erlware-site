@@ -20,6 +20,11 @@ general, but are a must for those developing on Erlware itself.
 **Terminal size**: 132 is the erlware standard.  Lines should not
   exceed this character max. For erlware-site, terminal size is 80 columns.
 
+**Trailing whitespace:** You must not check in code with trailing whitespace
+(space between last printable character and the end of the line. If you are
+using emacs, you can use `delete-trailing-witespace` function to get rid of all
+offending spaces in a buffer.
+
 # Documentation Standards
 
 Erlware requires a certain level of documentation for all code
