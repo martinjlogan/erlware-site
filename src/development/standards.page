@@ -18,7 +18,7 @@ general, but are a must for those developing on Erlware itself.
 # Coding Standards
 
 **Terminal size**: 132 is the erlware standard.  Lines should not
-  exceed this character max.
+  exceed this character max. For erlware-site, terminal size is 80 columns.
 
 # Documentation Standards
 
