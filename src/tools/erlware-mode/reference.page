@@ -7,17 +7,15 @@ orderInfo: 3
 
 # Introduction
 
-Erlware mode is an enhanced version of the official [erlang mode.][erlang-mode]
-Much of the original documentation documentation still applies for erlware mode.
+Erlware mode is an enhanced version of the official [erlang mode][erlang-mode].
+Much of the original documentation still applies for erlware mode.
 
-# Function List
+# Templates
 
-## Templates
-
-Templates are skeletons for typical Erlang modules and sentences. Unlike
+Templates are skeletons for typical Erlang modules and sentences. Unlike the
 official erlang mode, erlware emacs mode uses [edoc][] compliant documentation.
-
-You may write skeletons to current buffer calling any of the next functions:
+The skeletons are accessible from the 'Erlang' menu and may also be inserted
+into the current buffer by calling any of the following functions:
 
  * tempo-template-erlang-after
  * tempo-template-erlang-application
@@ -42,5 +40,13 @@ You may write skeletons to current buffer calling any of the next functions:
  * tempo-template-erlang-supervisor-bridge
  * tempo-template-erlang-ts-test-suite
 
+# Man Pages
+
+If the erlang man pages are installed, you can view them from the
+Erlang menu. See the [tutorial][tutorial] for instructions on
+installing them for the mode.
+
+
 [erlang-mode]: http://www.erlang.org/doc/man/erlang_mode.html "erlang mode"
 [edoc]: http://erlang.org/doc/apps/edoc/index.html "edoc"
+[tutorial]: ./tutorial.html
