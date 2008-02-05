@@ -13,17 +13,17 @@ our ideas into reality.
 ## Communication for Users and Developers
 
 The
-[erlware-dev@googlegroups.com](http://groups.google.com/group/erlware-dev?hl=en)
+[erlware-dev@googlegroups.com][erlware-dev]
 mailing list is the primary means of communication. Bugs and
 enhancements from users should be placed on the appropriate issues
 list at code.google.com/p/<project>.  Developers and users both should
 subscribe to the issues they are interested in or have created by
 using a *.  If a user or developer wants to monitor all issues they
 should subscribe to
-[erlware-artifacts@googlegroups.com](http://groups.google.com/group/erlware-artifacts?hl=en).
+[erlware-artifacts@googlegroups.com][erlware-artifacts].
 To spur discussion on a particular issue, send an email to
-[erlware-dev](http://groups.google.com/group/erlware-dev?hl=en) or
-[erlware-questions](http://groups.google.com/group/erlware-questions?hl=en)
+[erlware-dev][erlware-dev] or
+[erlware-questions][erlware-questions]
 with a link to the issue, and ask that further discussion take place
 on the issue itself; preferably not over email.
 
@@ -57,3 +57,61 @@ configure a subject line.
     $ git config format.subjectprefix "<repo_name> PATCH"
 
 
+### Providing access to your public git repository
+
+Although all patches which are accepted into canonical sources must be
+sent to the list, it can be useful to publish your intermediate work
+on your own public repository. See the [git][public-git] documentation
+on how to set up a public repo that other people can pull from. See
+the other developers' [public repos][dev-repos] for examples.
+
+
+### Publishing a work branch
+
+Let's say you have a branch called 'work' that you want to make
+available for others to pull from. If you are in your working
+repository, you can do this:
+
+    git checkout work
+    git push <url-for-my-public-repo> work
+
+Your public repository URL for this operation will probably be
+something like:
+
+    username@my.public.server.com:path/to/my/public/repo
+
+Note the URL that others use to pull your repository will be different,
+probably something starting with 'http://' or 'git://'.
+
+
+### Pulling from another developer's public branch
+
+Let's say another developer has published some work you
+would like to merge into your own tree. Add the developer's
+public repo to your working repo as a remote:
+
+    git remote add krondo http://git.krondo.com/erlware/faxien.git
+
+Above we are adding the faxien repo at git.krondo.com as a remotely
+tracked branch to our repo. We have named it 'krondo', but we could
+name it whatever we want to. Now we can use the name to fetch the
+latest work from that repo:
+
+    git fetch krondo
+
+Now the patches from that repository are in our tree, but none
+of our local branches or working directory has been changed.
+We can merge the changes on a branch of the remote repository
+into our current branch with git merge:
+
+    git merge krondo/next
+
+That command merges the 'next' branch from the remote repository
+into our current branch.
+
+
+[erlware-artifacts]: http://groups.google.com/group/erlware-artifacts?hl=en
+[erlware-dev]: http://groups.google.com/group/erlware-dev?hl=en
+[erlware-questions]: http://groups.google.com/group/erlware-questions?hl=en
+[public-git]: http://www.kernel.org/pub/software/scm/git/docs/user-manual.html#setting-up-a-public-repository
+[dev-repos]: public_repositories.html
