@@ -42,6 +42,16 @@ into the current buffer by calling any of the following functions:
  * tempo-template-erlang-ts-test-suite
 
 
+## Email address
+
+The templates for complete erlang files, such as for the gen_server module,
+include a header with your name and email address. If your email address is
+not correct, you need to set the user-mail-address variable in your Emacs/XEmacs
+startup file:
+
+    (setq user-mail-address "myname@mydomain.com")
+
+
 ## Horizontal separators
 
 By default, the skeletons include horizontal separators to
