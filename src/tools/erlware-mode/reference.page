@@ -10,6 +10,7 @@ orderInfo: 3
 Erlware mode is an enhanced version of the official [erlang mode][erlang-mode].
 Much of the original documentation still applies for erlware mode.
 
+
 # Templates
 
 Templates are skeletons for typical Erlang modules and sentences. Unlike the
@@ -39,6 +40,36 @@ into the current buffer by calling any of the following functions:
  * tempo-template-erlang-supervisor
  * tempo-template-erlang-supervisor-bridge
  * tempo-template-erlang-ts-test-suite
+
+
+## Horizontal separators
+
+By default, the skeletons include horizontal separators to
+delimit function and section header comments. For example:
+
+    %%--------------------------------------------------------------------
+    %% @doc
+    %% Creates an event manager
+    %%
+    %% @spec start_link() -> {ok, Pid} | {error, Error}
+    %% @end
+    %%--------------------------------------------------------------------
+
+Now some people like separators and some people don't. If you don't
+like them, you can turn them off with the erlang-skel-use-separators
+variable:
+
+    (setq erlang-skel-use-separators nil)
+
+By setting that variable to nil, you will get:
+
+    %% @doc
+    %% Creates an event manager
+    %%
+    %% @spec start_link() -> {ok, Pid} | {error, Error}
+
+instead.
+
 
 # Man Pages
 
