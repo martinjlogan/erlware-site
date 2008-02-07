@@ -1,0 +1,24 @@
+---
+title: FAQ
+inMenu: true
+orderInfo: 4
+---
+
+# Frequently Asked Questions
+
+## What is the relation between sinan and OTPbase?
+
+Sinan is our flagship 100% erlang build system.  OTP Base is a make based build
+system.  We encourage most people to use Sinan.  There are those that need make,
+or simply like make, OTP Base is for them.
+
+There are other differences as well.  OTP Base does not do any fetching of apps,
+dependency checking, or the like.  It relies on the applications found on the
+system, in the faxien repo most significantly to find all its dependencies.
+There are a few other differences but in general OTP Base is less full featured
+than Sinan though it does have its own flair.  OTP Base is still quite easy to
+use, it generates applications and releases for you, it handles all fundamental
+aspects of building OTP software.  I personally use Sinan for most of my
+projects but I use OTP Base for about 1/4th of them.  They are two different
+takes on the same thing - OTP complient Erlang build systems.
+
