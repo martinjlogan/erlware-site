@@ -1,0 +1,53 @@
+---
+title: Introduction
+directoryName: OTP Base
+inMenu: true
+orderInfo: 1
+---
+![OTP-Base Icon]({relocatable:/images/icon-otp-base3-with-text.jpg})
+
+    "It is preferable to build an expensive residence on a foundation of sand 
+     then to undertake the construction multiple software applications without 
+     a common build structure and environment."
+
+# Overview 
+
+OTP Base is our make based build system as differentiated from Sinan is our 
+pure Erlang flagship build system. The OTP Base is a build environment that 
+supports the OTP way of building applications with the Erlang programming 
+language. The reason to use OTP Base is that it makes creating OTP applications 
+very simple and it is written with Make.  You no longer have to wade through 
+docs trying to figure out what a .script file is for.  
+
+OTP Base provides the following core tree structure which should be relatively 
+familiar to those versed in the Erlang OTP
+<a href="http://www.erlang.org/doc/doc-5.5.1/doc/design_principles/part_frame.html">design principles</a>
+<center>![Structure Icon]({relocatable:/images/otp-basic-structure.jpg})</center>
+The release directory specific to an application contains further directories 
+for configuration and logging.  These are discussed in more detail further on.
+
+# Features
+
+The main reasons to use OTP Base are:
+
+  * Erlang/OTP build system written with Make
+  * Enforces OTP standards and also automates them
+  * Automated application and release generation
+  * Easy to generate installable or publishable OTP Release packages
+  * Good integration with Faxien
+
+# Download
+
+An OTP Base installer can be found at http://code.google.com/p/otp-base
+
+# What's in a Name
+
+We have established a tradition at Erlware in that we typically name our 
+projects after historical figures that have something to do with the function 
+of the software.  Sinan, Faxien, and Crary are all good examples of this 
+convention. OTP Base has been around in one form or another for over 8 years.  
+It has seen both production and hobby environments and has been used in one 
+form or another by many erlang developers. It was around well before Eric and 
+I ever decided to form Erlware or any of the core developers had heard of it. 
+So even though OTP Base has a new face we are going to give grandfather a pass 
+and let the name OTP Base stick (-:  
