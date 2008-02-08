@@ -1,3 +1,6 @@
+Core/FileHandler:
+  ignorePaths: ["**/otp-base/**"]
+
 File/PageHandler:
   defaultMetaInfo:
     blocks: [[content, markdown]]
