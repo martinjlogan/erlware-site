@@ -1,9 +1,17 @@
 ---
-title: Erlware
+title: Welcome
 directoryName: Home
 ---
 
-# Directory
+# Welcome
+
+Erlware provides a community for erlang oriented open source projects. The [Erlware projects]({relocatable:/tools}) are defined by there transparent, community based development process and liberal license. We hope to foster a community of accomplished dedicated open source developers that provide projects and tools that the Erlang community sorely needs.
+
+# Latest News
+
+Dave Peticolas has taken over maintainership of erlware-mode. Our homegrown emacs mode for Erlang!
+
+# Getting Around
 
 **If you are new to Erlware,** look into the [Erlware section]({relocatable:/erlware})
   to be introduced to the project.
@@ -17,3 +25,7 @@ directoryName: Home
 **If you want to contribute,** take a look at the
 [developer's section]({relocatable:/development}) to learn about the development
 process, the repositories, etc.
+
+# Erlware Repositories
+
+[Repositories and Maintainers]({relocatable:/development/public_repositories.page})
