@@ -5,14 +5,11 @@ inMenu: true
 orderInfo: 1
 ---
 
-# Erlware is now BETA!!  Test and submit bugs
+# Welcome - Erlware is now BETA!!  Test and submit bugs
 
-Free and open source Erlware is software that makes writing Erlang/OTP
-applications easy. At the core of Erlware are our build system and our package
-management tool; Sinan (our flagship buildsystem) and Faxien our package
-management tool. Sinan, and Faxien support and encourage OTP application and
-release structure. All systems embody the [Erlang/OTP design
-principles](http://www.erlang.org/doc/design_principles/part_frame.html).
+Erlware provides a community for erlang oriented open source projects. The [Erlware projects]({relocatable:/tools}) are defined by a transparent, community based development process and permissive licensing. We hope to foster a community of accomplished dedicated open source developers that provide projects and tools that will directly aid in the flourishing of the Erlang community.
+
+Free and open source Erlware also provides software that makes writing Erlang/OTP applications easy. At the core of Erlware tools are our build system, Sinan, and our package management tool, Faxien. Sinan, and Faxien support and encourage OTP application and release structure. All systems embody the [Erlang/OTP design principles](http://www.erlang.org/doc/design_principles/part_frame.html).
 
 # Ultra Quick Start
 
