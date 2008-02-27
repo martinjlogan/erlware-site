@@ -5,8 +5,8 @@ inMenu: true
 orderInfo: 5
 ---
 
-# Erlware Repository Applications
+# Erlware Erlang/OTP Repository Applications
 
-Currently, next applications are available to download with faxien:
+Currently, the following applications are available for download with Faxien:
 
 $app_list$
