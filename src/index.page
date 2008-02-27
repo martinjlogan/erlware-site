@@ -3,18 +3,10 @@ title: Welcome
 directoryName: Home
 ---
 
-# Welcome
-
-Erlware provides a community for erlang oriented open source projects. The [Erlware projects]({relocatable:/tools}) are defined by there transparent, community based development process and liberal license. We hope to foster a community of accomplished dedicated open source developers that provide projects and tools that the Erlang community sorely needs.
-
-# Latest News
-
-Dave Peticolas has taken over maintainership of erlware-mode. Our homegrown emacs mode for Erlang!
-
 # Getting Around
 
 **If you are new to Erlware,** look into the [Erlware section]({relocatable:/erlware})
-  to be introduced to the project.
+  to be introduced to the project. 
 
 **If you would like to learn about Erlware comunity repository,** look into the [Erlware section,]({relocatable:/erlware})
   it contains the reference manual and the list of available applications.
@@ -26,6 +18,9 @@ Dave Peticolas has taken over maintainership of erlware-mode. Our homegrown emac
 [developer's section]({relocatable:/development}) to learn about the development
 process, the repositories, etc.
 
-# Erlware Repositories
+# Latest News
 
-[Repositories and Maintainers]({relocatable:/development/public_repositories.page})
+**Feb 27, 2008** - Documentation for [Edoc'd Erlang/OTP applications contained in our repositories]({relocatable:/erlware/repository_applications.page}) is autogenrated. The docs are located under the Erlware section on the main menu under the "Repository Applications" menu heading.
+
+**Feb 20, 2008** - The erl-5.6.1 release is out. It supplies erts-5.6.1, erlc, and erl shell from R12B-1. To install run `faxien set-target-erts-vsn 5.6.1` and then `faxien install erl 5.6.1`
+
