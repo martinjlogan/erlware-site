@@ -1,0 +1,12 @@
+---
+title: Repository Releases
+directoryName: Erlware
+inMenu: true
+orderInfo: 5
+---
+
+# Erlware Erlang/OTP Repository Releases
+
+Currently, the following releases are available for download and installation with Faxien:
+
+$release_list$
