@@ -18,12 +18,12 @@ the release and application for others to use. The full cycle.
 
 First thing to do is install the Erlware package manager; Faxien. Download the latest
 Faxien bootstrap installer for your platform or the Universal Bootstrapper from [Google
-Code](http://code.google.com/p/faxien/downloads/list). Now bootstrap with one of the 
+Code](http://code.google.com/p/faxien/downloads/list). Now bootstrap with one of the
 following commands.
 
     $ python ./faxien-launcher-universal.py # installs to `/usr/local/erlware by default.`
 
-or use an arch specific bootstrapper 
+or use an arch specific bootstrapper
 
     $ ./faxien-launcher-<os-type-info>.sh # installs to `/usr/local/erlware.`
     $ ./faxien-launcher-<os-type-info>.sh /home/martinjlogan/erlware # installs into the supplied path
@@ -102,9 +102,9 @@ Erlang from source at all with Erlware)
     $ faxien publish /usr/local/lib/erlang/lib/tools-2.5.4 infinity
 
 
-where `infinity` is the remote request timeout length. The above example is assuming, of course, that erlang is installed at
-`/usr/local/lib/erlang.` Now re-run the install script to see a
-successful installation.
+where `infinity` is the remote request timeout length. The above example is
+assuming, of course, that erlang is installed at `/usr/local/lib/erlang.` Now
+re-run the install script to see a successful installation.
 
 *****
 
@@ -121,11 +121,17 @@ Sinan release.
 
 ## Create a Project
 
-The next version of Sinan will have a project generation utility.  The current version does not.  The easiest way to create a project is to checkout an existing project like faxien or sinan and then modify the directory structure to suit your needs.  Be on the look out for version 0.9.0 of Sinan which will fix this. 
+The next version of Sinan will have a project generation utility.  The current
+version does not.  The easiest way to create a project is to checkout an
+existing project like faxien or sinan and then modify the directory structure to
+suit your needs.  Be on the look out for version 0.9.0 of Sinan which will fix
+this.
 
-So for now run git clone http://git.erlware.org/faxien.git and then rename faxien to full_cycle and alter all references to faxien
-making them full_cycle instead.  This is a good way to get down and dirty familiar with OTP structure anyhow so the work will be 
-worth it.
+So for now run git clone http://git.erlware.org/sinan.git and then rename sinan
+to full_cycle and alter all references to sinan making them full_cycle instead
+and delete all .erl files. Make sure to delete all the applications under `lib`
+with the exception of sinan as well.  This is a good way to get down and dirty
+familiar with OTP structure anyhow so the work will be worth it.
 
 # A Brief Look at the Anatomy of a Project
 
