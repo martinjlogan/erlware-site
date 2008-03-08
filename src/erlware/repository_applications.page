@@ -7,6 +7,9 @@ orderInfo: 5
 
 # Erlware Erlang/OTP Repository Applications
 
-Currently, the following applications are available for download with Faxien:
+Currently, the following applications in the repo contain valid Edoc and are
+available for you to study here as well as download. For a list of all the
+applications available for you to download including these but also those
+without valid edoc type `faxien search`.
 
 $app_list$
