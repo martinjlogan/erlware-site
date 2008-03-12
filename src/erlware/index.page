@@ -22,8 +22,10 @@ You may have a very basic idea of how Faxien works by running two simple steps:
 Faxien boostrapper and run it
 
 
-    $ sudo sh ./faxien-bootstrap-<platform>.sh
+    $ sh ./faxien-bootstrap-<platform>.sh [user-specified-install-location]
 
+Note* if you don't spefify an install location Faxien will be installed in
+/usr/local/erlware and so you may need sudo perms.
 
 ## Step 2: Install Sinan
 
@@ -31,7 +33,7 @@ Faxien boostrapper and run it
 install Erlware packages. To install Sinan, the project build system, type
 
 
-    $ sudo /usr/local/erlware/bin/faxien install sinan.
+    $ <erlware-install-location>/bin/faxien install sinan.
 
 Now you have last Sinan version ready to run. For more advanced use of Erlware,
 check out the [complete tutorial.]({relocatable: /erlware/tutorial.page})
