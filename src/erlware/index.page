@@ -24,7 +24,7 @@ Faxien boostrapper and run it
 
     $ sh ./faxien-bootstrap-<platform>.sh [user-specified-install-location]
 
-Note* if you don't spefify an install location Faxien will be installed in
+**Note:** if you don't spefify an install location Faxien will be installed in
 /usr/local/erlware and so you may need sudo perms.
 
 ## Step 2: Install Sinan
