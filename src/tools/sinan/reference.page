@@ -111,7 +111,7 @@ consisting of all the OTP applications that comprise your web server along with
 configuration and optionally some information on how to start the release.
 Sinan can help you do this.  Once done you could then publish it out with Faxien
 for others to download.  Your release would stand on its own and run as a
-service for whomever installs it either manually or with `faxien install webby.`
+service for whomever installs it either manually or with `faxien install-release webby.`
 
 A release is a collection of applications and configuration that can start
 within an Erlang runtime system and stand on its own.

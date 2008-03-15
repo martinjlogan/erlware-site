@@ -64,7 +64,7 @@ Once Faxien is installed you can use it to easily install Sinan, our
 flagship build system.
 
 
-    $ faxien install sinan
+    $ faxien install-release-release sinan
 
 
 This will install Sinan into your erlware directory and place a link
@@ -77,7 +77,7 @@ path.
 If your Sinan install halts with the following error:
 
 
-    $ faxien install sinan
+    $ faxien install-release sinan
     Installing Application sgte-0.2.1 -> ok
     Installing Application projgen-0.1.3 -> ok
     Installing Application syntax_tools-1.5.3 -> ok
@@ -394,7 +394,7 @@ lib directory. The compiled version of `hello_world` can be found in
 apps in published and installed packages must have the <name>-<vsn> format.  Now
 lets install our release.
 
-    $ faxien install full_cycle-0.1.0/
+    $ faxien install-release full_cycle-0.1.0/
     Installing Application hello_world-0.1.0 -> ok
 
     Installing Release full_cycle-0.1.0 -> ok

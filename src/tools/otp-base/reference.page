@@ -15,9 +15,9 @@ these applications we use Erlware Faxien which can be downloaded from
 
 1. Bootstrap Faxien with the appropriate bootstrapper from the download site.
 
-2. Use faxien install to install the erl release which provides the Erlang 
+2. Use faxien install-release to install the erl release which provides the Erlang 
    shell and the erlc compiler.
-    * `sudo /usr/local/erlware/bin/faxien install erl`
+    * `sudo /usr/local/erlware/bin/faxien install-release erl`
 
 3. Install the following apps with 'faxien install-app'.
     * `sudo /usr/local/erlware/bin/faxien install-app fslib`

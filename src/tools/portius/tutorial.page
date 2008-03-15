@@ -15,7 +15,7 @@ The main reason to use Portius are:
 
 Assuming you already have a web-server fronting at least one repo we will progress from there. The first step is to install Portius on your system. This is done via
 
-    faxien install portius
+    faxien install-release portius
 
 Next Portius needs to be configured. To do this we edit "erlware/release_packages/portius/<vsn>/release/sys.config". The config section for Portius is listed below.
 

@@ -63,7 +63,7 @@ and **releases**.  For more info on [[:documentation:release_anatomy|the
 structure and definition of a release see here]].  The most basic way to install
 a release package is as follows:
 
-    faxien install <release_name>
+    faxien install-release <release_name>
 
 The most basic way to install an application package is as follows:
 
@@ -97,7 +97,7 @@ locally and will install it directly instead of consulting an online repository.
 The same applies for releases
 
 
-    faxien install work/my_release-2.1.3
+    faxien install-release work/my_release-2.1.3
 
 
 This will install `home/martin/opt/my_release-2.1.3` from `/home/martin/opt`
@@ -116,7 +116,7 @@ Faxien install commands will also take a version argument if a specific version
 of a package is to be installed.
 
 
-    faxien install sinan 0.8.3
+    faxien install-release sinan 0.8.3
 
 or
 
@@ -240,7 +240,7 @@ on a release the `.script` and `.boot` files will be generated, startup
 scripts will be generated, and all the required applications will be
 installed as well, among other things. Once published other users will
 be able to install and start the release simply by running a Faxien
-installation command like `faxien install <release_name>.`
+installation command like `faxien install-release <release_name>.`
 
 A sample release can be found [here.]({relocatable: /files/full_cycle/full_cycle.tar.gz})
 

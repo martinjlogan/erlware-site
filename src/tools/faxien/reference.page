@@ -43,7 +43,7 @@ thing I don't know.
 
 ## install
 
-    $ faxien install <release_name|path_to_package> [version]
+    $ faxien install-release <release_name|path_to_package> [version]
 
 This command fetches a release from a respository and installs it onto
 the local file system if you specify a release name. The default
@@ -53,13 +53,13 @@ will install that package from the hard disk.
 
 **Example Usage**
 
-    $ faxien install sinan  ## Installs the release from a remote repository
-    $ faxien install /home/martin/sinan.tar.gz  ## installs a local release tarball
+    $ faxien install-release sinan  ## Installs the release from a remote repository
+    $ faxien install-release /home/martin/sinan.tar.gz  ## installs a local release tarball
 
 
 ## install-app
 
-    $ faxien install <app_name|path_to_app_package> \[version\]
+    $ faxien install-release <app_name|path_to_app_package> \[version\]
 
 This command fetches an application from a respository and installs it
 onto the local file system.  This will also install an application
