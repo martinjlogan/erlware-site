@@ -65,9 +65,17 @@ on sasl, erts, kernel, and stdlib in addition to its own code for functionality.
 Mnesia on its own would not stand up and run until all applications it depends
 on are up and running.
 
+There is more information about writing applications in
+[Sinan's reference page.][sinan] For a complete description of Erlang OTP
+applications, take a look at the [official OTP documentation.][applications]
+
 A release, on the other hand, is a collection of applications and configuration
 that stand up and run on its own. If you wanted to write a service in Erlang
 that would sit on your network somewhere you would do it with a release. A
 release is generally a collection of applications, configuration, and executable
 startup code, that all conform to the OTP standards for releases. Faxien is a
 powerful tool to automate the installation and publication of entire releases.
+
+[applications]: http://www.erlang.org/doc/design_principles/applications.html#7 (Erlang OTP Applications)
+
+[sinan]: {relocatable:/tools/sinan/reference.page} (Sinan's reference)
