@@ -56,21 +56,18 @@ packages to distant repositories wherein others may benefit.
 
 # Faxien (OTP) Packages
 
-Faxien deals with two types of packages, **OTP applications** and
-**OTP releases**. Both of these packages conform to OTP standards. Full details
-on the structure of an application are found here on the
-[[documentation:application_anatomy|Application Details]] page. In a nutshell
+Faxien deals with two types of packages, **OTP applications** and **OTP
+releases**. Both of these packages conform to OTP standards. In a nutshell
 applications are a collections of code, typically Erlang modules, with related
-functionality.  An application typically relies on other applications and does
+functionality. An application typically relies on other applications and does
 not run on its own.  For example Mnesia is a database application but it depends
 on sasl, erts, kernel, and stdlib in addition to its own code for functionality.
-Mnesia on its own would not stand up and run.
+Mnesia on its own would not stand up and run until all applications it depends
+on are up and running.
 
-A release on the other hand is a collection of applications and configuration
-that can stand up and run on its own. For more info on
-[[:documentation:release_anatomy|the structure and definition of a release see
-here]]. If you wanted to write a service in Erlang that would sit on your
-network somewhere you would do it with a release. A release is generally a
-collection of applications, configuration, and executable startup code, that all
-conform to the OTP standards for releases. The ability of Faxien to allow a user
-to install as well as publish entire releases is very powerful.
+A release, on the other hand, is a collection of applications and configuration
+that stand up and run on its own. If you wanted to write a service in Erlang
+that would sit on your network somewhere you would do it with a release. A
+release is generally a collection of applications, configuration, and executable
+startup code, that all conform to the OTP standards for releases. Faxien is a
+powerful tool to automate the installation and publication of entire releases.
