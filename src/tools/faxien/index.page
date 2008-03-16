@@ -56,8 +56,8 @@ packages to distant repositories wherein others may benefit.
 
 # Faxien (OTP) Packages
 
-Faxien deals with two types of packages, **OTP applications** and **OTP
-releases**. Both of these packages conform to OTP standards. In a nutshell
+Faxien deals with two types of packages, **OTP applications** and
+**OTP releases**. Both of these packages conform to OTP standards. In a nutshell
 applications are a collections of code, typically Erlang modules, with related
 functionality. An application typically relies on other applications and does
 not run on its own.  For example Mnesia is a database application but it depends
