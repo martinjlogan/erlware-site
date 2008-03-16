@@ -76,6 +76,12 @@ release is generally a collection of applications, configuration, and executable
 startup code, that all conform to the OTP standards for releases. Faxien is a
 powerful tool to automate the installation and publication of entire releases.
 
-[applications]: http://www.erlang.org/doc/design_principles/applications.html#7 (Erlang OTP Applications)
+There is also more information about configuring releases in
+[Sinan's reference page][sinan] and in the
+[official OTP documentation.][releases]
+
+[applications]: http://www.erlang.org/doc/design_principles/applications.html (Erlang OTP Applications)
+
+[releases]: http://www.erlang.org/doc/design_principles/release_structure.html (Erlang OTP Applications)
 
 [sinan]: {relocatable:/tools/sinan/reference.page} (Sinan's reference)
