@@ -38,10 +38,10 @@ through its release upgrade process.
 **March 10, 2008—**Initial versions of the Crary webserver app published to
 the repositories. Docs in the Repository Applications section under Erlware.
 
-**Feb 27, 2008—**Documentation for [Edoc'd Erlang/OTP applications contained
-in our repositories]({relocatable:/erlware/repository_applications.page}) is
-autogenrated. The docs are located under the Erlware section on the main menu
-under the "Repository Applications" menu heading.
+**Feb 27, 2008—**Documentation for Edoc'd Erlang/OTP applications contained in
+our repositories is autogenrated. The docs are located under the Erlware
+section on the main menu under the [Repository
+Applications]({relocatable:/erlware/repository_applications.page}) menu heading.
 
 **Feb 20, 2008—**The erl-5.6.1 release is out. It supplies erts-5.6.1, erlc,
 and erl shell from R12B-1. To install run `faxien set-target-erts-vsn 5.6.1`
