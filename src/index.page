@@ -35,8 +35,8 @@ process, the repositories, etc.
 **March 19, 2008** - Faxien now supports configuration file diffs and management
 through its release upgrade process.
 
-March 10, 2008** - Initial versions of the Crary webserver app published to the
-repositories. Docs in the Repository Applications section under Erlware.
+**March 10, 2008** - Initial versions of the Crary webserver app published to
+the repositories. Docs in the Repository Applications section under Erlware.
 
 **Feb 27, 2008** - Documentation for [Edoc'd Erlang/OTP applications contained
 in our repositories]({relocatable:/erlware/repository_applications.page}) is
