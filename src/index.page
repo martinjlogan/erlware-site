@@ -5,12 +5,12 @@ directoryName: Home
 
 # What's Erlware
 
-Erlware is Erlang/OTP developer central. We are open source and mostly MIT 
-licenced. At our core we host public repositories containing reliable Erlang OTP 
-complient applications. Our repositories enable developers to use software 
-written by the Erlang community and to publish and distribute their own software.  
+Erlware is Erlang/OTP developer central. We are open source and mostly MIT
+licenced. At our core we host public repositories containing reliable Erlang OTP
+complient applications. Our repositories enable developers to use software
+written by the Erlang community and to publish and distribute their own software.
 
-We also feature a number of supported projects developed by our members.  Most 
+We also feature a number of supported projects developed by our members.  Most
 notably right now are:
 
  * Erlware Mode - an enhanced emacs mode for Erlang development
@@ -20,7 +20,7 @@ notably right now are:
 # Getting Around
 
 **If you are new to Erlware,** look into the
-[Erlware section]({relocatable:/erlware}) to be introduced to the project or 
+[Erlware section]({relocatable:/erlware}) to be introduced to the project or
 to browse repository package docs.
 
 **If you would like to learn more about a single Erlware tool,** view the
@@ -32,10 +32,10 @@ process, the repositories, etc.
 
 # Latest News
 
-**March 19, 2008** - Faxien now supports configuration file diffs and management 
+**March 19, 2008** - Faxien now supports configuration file diffs and management
 through its release upgrade process.
 
-March 10, 2008** - Initial versions of the Crary webserver app published to the 
+March 10, 2008** - Initial versions of the Crary webserver app published to the
 repositories. Docs in the Repository Applications section under Erlware.
 
 **Feb 27, 2008** - Documentation for [Edoc'd Erlang/OTP applications contained
