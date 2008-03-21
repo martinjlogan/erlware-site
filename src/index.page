@@ -8,10 +8,10 @@ directoryName: Home
 Erlware is Erlang/OTP developer central. We are open source and mostly MIT 
 licenced. At our core we host public repositories containing reliable Erlang OTP 
 complient applications. Our repositories enable developers to use software 
-written by the erlang community and to publish and distribute their own software.  
+written by the Erlang community and to publish and distribute their own software.  
 
 We also feature a number of supported projects developed by our members.  Most 
-notibly right now are:
+notably right now are:
 
  * Erlware Mode - an enhanced emacs mode for Erlang development
  * Faxien - the Erlang/OTP package manager
