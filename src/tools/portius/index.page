@@ -14,8 +14,9 @@ into another repo in the correct place.
 # Features
 
  - Move packages from one repo to another.
- - Validate the packages before moving them
- - Generate documentation for each application package and place it in a known location.
+ - Validate the packages before moving them.
+ - Generate documentation for each application package and place it in a known
+   location.
 
 # Whats in a Name?
 
