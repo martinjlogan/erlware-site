@@ -64,14 +64,14 @@ configure a subject line.
 ### Emailing patches
 
 When you're ready to email a set of patches, first figure out how many
-you'd like to send. 'git log', 'git show' and 'git show-branch' can be
+you'd like to send. `git log, git show` and `git show-branch` can be
 helpful in figuring that out. Let's say you want to email 3 patches:
 
     $ git format-patch HEAD~3
     $ git send-email 0*.patch
 
 Send-email will ask you where to send the patch to; send it to
-'erlware-dev@googlegroups.com'.
+`erlware-dev@googlegroups.com.`
 
 
 ### Providing access to your public git repository
@@ -85,7 +85,7 @@ the other developers' [public repos][dev-repos] for examples.
 
 ### Publishing a work branch
 
-Let's say you have a branch called 'work' that you want to make
+Let's say you have a branch called `work` that you want to make
 available for others to pull from. If you are in your working
 repository, you can do this:
 
@@ -98,7 +98,7 @@ something like:
     username@my.public.server.com:path/to/my/public/repo
 
 Note the URL that others use to pull your repository will be different,
-probably something starting with 'http://' or 'git://'.
+probably something starting with `http://` or `git://.`
 
 
 ### Pulling from another developer's public branch
@@ -123,7 +123,7 @@ into our current branch with git merge:
 
     git merge krondo/next
 
-That command merges the 'next' branch from the remote repository
+That command merges the `next` branch from the remote repository
 into our current branch.
 
 
