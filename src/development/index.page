@@ -34,6 +34,15 @@ conversations][irc_archive] or find them when searching the web.
 
 ## Git and the Patch Process
 
+We maintain Erlware code in git repositories. This eases free development,
+anyone can clone the repository and contribute patches with minimum effort
+(apart from the coding time ;)). Whenever you are the main developer of a
+Erlware subproject, or you want we to apply a patch in the main stream, the way
+to go is sending it to the development list.
+
+
+### Configuring Git to Email Patches
+
 First make sure to install msmtp (on debian or ubuntu just type sudo
 apt-get install msmtp) Place the following in a config file with the
 name .msmtprc in your home directory:
