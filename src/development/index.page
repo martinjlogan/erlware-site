@@ -61,6 +61,19 @@ configure a subject line.
     $ git config format.subjectprefix "<repo_name> PATCH"
 
 
+### Emailing patches
+
+When you're ready to email a set of patches, first figure out how many
+you'd like to send. 'git log', 'git show' and 'git show-branch' can be
+helpful in figuring that out. Let's say you want to email 3 patches:
+
+    $ git format-patch HEAD~3
+    $ git send-email 0*.patch
+
+Send-email will ask you where to send the patch to; send it to
+'erlware-dev@googlegroups.com'.
+
+
 ### Providing access to your public git repository
 
 Although all patches which are accepted into canonical sources must be
