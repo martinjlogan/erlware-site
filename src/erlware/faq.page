@@ -22,6 +22,27 @@ aspects of building OTP software.  I personally use Sinan for most of my
 projects but I use OTP Base for about 1/4th of them.  They are two different
 takes on the same thing - OTP compliant Erlang build systems.
 
+## Faxien
+
+### I installed faxien and sinan, but i can't find an 'erl' command to run; how I start an erlang shell?
+
+Erlware is designed around making erlang releases. Releases are full
+fledged software stacks that are designed to run on their own in much
+the same way that Apache or Sendmail run. While this is the best way
+to write software in erlang, it can be very useful to pull up an
+erlang shell for experimentation and learning.
+
+To install the scripts to launch the erlang shell, run the following
+command:
+
+      faxien install erl
+
+You should now be able to run "erl" to start the erlang shell.
+
+Additionally, sinan has a 'sinan shell' command, which will also setup
+the path for the applications in your current project.
+
+
 ## Sinan
 
 ### How can I co-develop separate applications?
