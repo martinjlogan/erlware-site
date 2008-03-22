@@ -100,108 +100,10 @@ spread across different websites, establish availability of standardized tools,
 and in general level the playing field between the Erlang open source community
 and Ericsson Erlang.
 
-# Why a Centralized Repository?
-
-It's not really a centralized repository. Erlware is the community repository,
-it is a well known place to get OTP applications provided by the Erlang
-community. In fact, we expect individual developers and enterprises alike to
-provide a local repository for their own purposes. We document the repository
-layout so people can do just that. With
-[Sinan.]({relocatable:/tools/sinan} "Sinan") our build system, you can specify
-as many repositories as you like and it will search them in the order you
-specify. So there although Erlware is and should be a well known widely
-available repository it shouldn't be seen as a centralized solution.
-
-# Why Not Existing Repositories?
-
-The repository you are probably thinking of is [CEAN][cean] which is owned by
-Process One and maintained by Mickaël Rémond and Christophe Romain. CEAN is
-actually a pretty interesting system with quit a large number of packages
-available. Unfortunately, it doesn't actually fit our needs for three main
-reasons.
-
-  * Its backend format isn't publicly specified, so third parties cannot host
-    repositories of their own.
-  * It doesn't ensure/require that applications that are part of CEAN follow OTP
-    standards.
-  * It doesn't expose dependency information for its packages (basically it has
-    no exposed metadata, probably due to point #2).
-  * It does not store executable releases i.e standalone Erlang services.
-
-Point #1 is one of the biggest problems for us. Based on our development
-experience we know that it is very important for an entity to be able to host
-their own repositories. This is especially true of companies that build
-proprietary software. They need to be able to host their internal code on their
-own repositories with no chance of that code leaking out of their firewalls. Its
-also important for individuals working on open source projects who's code may
-not be ready for distribution into a widely available repository. Perhaps they
-have a small private developer group that needs access to the code. In any case,
-We think that the best way to allow these use cases is to document the
-repository format well and let people host their own. CEAN plans to provide
-documentation for their backend at some point in the future. When that happens
-this issue may no longer be an issue.
-
-Point #2 A very important feature of our build system is the ability to just 'do
-the right thing' with minimal user input during the build process. Like one of
-the popular web development frameworks out today we favor convention over
-configuration. We rely on a well defined structure to the project as well as the
-use of metadata. OTP provides that structure and metadata for us. Therefore we
-require that the applications we work with follow OTP standards. We also hope
-that this encourages the spread of OTP and OTP knowledge through out the Erlang
-community - one of Erlware's main goals. CEAN also requires an OTP layout though
-not `*.app` files. It doesn't expose this data in a programmatically useful way
-however.
-
-Point #3 One of the big features of our build system is the ability to manage
-dependencies. This is a very nice feature that we need to support and we can't
-do that without easily accessible metadata on remotely available dependencies.
-
-This is in no way meant as a criticism of CEAN. CEAN and our repository where
-created with very different goals in mind. CEAN was created as a CPAN like
-structure for Erlang where as our repository follows something more akin to
-Maven's repository model. Each has evolved to fill its own niche.
-
-# Goals and Requirements of the Repository Project
-
-## Requirements of the Repository
-
-  * The OTP application is the central unit of distribution
-  * Multiple versions of the repository may exist for various levels of
-    stability i.e stable and unstable.
-  * The version and metadata of each OTP Application must be exposed and
-    available
-  * The repository must have an open, accessible and predictable structure so
-    that it is programatically accessible
-
-## Admission into Erlware
-
-If you want to submit your application or release (from now on applications and
-releases will be generically referred to as "packages") to Erlware for inclusion
-in the main repository; Congratulations! This is what Erlware is all about. When
-a package is submitted to Erlware it must meet certain standards in order to be
-included. That applications conform to these standards is ensured through our
-verification process. Unlike with a package that is stored in a local repository
-a package submitted to Erlware does not go straight into the repo, instead it is
-placed in a special staging area. From there community members work to ensure
-the application meets the minimum requirements.  Requirements for the Apps That
-Constitute the Erlware 'Stable' Repository
-
-  * Erlware ensures that packages within the repository are well structured;
-    that they follow OTP standards
-  * Erlware will accept only source applications and leverage our own hardware
-    and that of the communities to build binary applications for different
-    distributions/targets through a build farm. Volunteers always welcome!
-  * Erlware will only accept applications with, at minimum, well documented
-    API's. Edoc is our preferred format.
-
-  * An application must not generate excessive warnings when compiled.
-
 # Erlware Licenses
 
 Most projects under the Erlware umbrella use the mit license. An example is
 available below.
-
-## MIT License
 
 The MIT License
 
@@ -225,19 +127,15 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 
+# Our Team
+
 ## Founders
 
 Martin Logan & Eric Merritt
 
-## Project Owners
+## Core Developers
 
-Dave Peticolas - Erlware Mode
-
-Eric Merritt - Sinan
-
-Martin Logan - Faxien
-
-Samuel Rivas - Erlware Site
+Dave Peticolas, Eric Merritt, Martin Logan, Samuel Rivas, Scott Parish
 
 ## Site Layout & Graphic Design
 
