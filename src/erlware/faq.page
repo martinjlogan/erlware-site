@@ -42,7 +42,7 @@ erlang shell for experimentation and learning.
 To install the scripts to launch the erlang shell, run the following
 command:
 
-      faxien install erl
+      faxien install-release erl
 
 You should now be able to run "erl" to start the erlang shell.
 
