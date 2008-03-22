@@ -6,7 +6,14 @@ orderInfo: 4
 
 # Frequently Asked Questions
 
-## What is the relation between sinan and OTP Base?
+## Erlware
+
+### Where can I get help with erlware at?
+
+You can send questions to 'erlware-questions@googlegroups.com', there's
+also an '#erlware' IRC channel on 'irc.freenode.net'.
+
+### What is the relation between sinan and OTP Base?
 
 Sinan is our flagship 100% erlang build system.  OTP Base is a make based build
 system.  We encourage most people to use Sinan.  There are those that need make,
