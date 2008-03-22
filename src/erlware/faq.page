@@ -22,3 +22,94 @@ aspects of building OTP software.  I personally use Sinan for most of my
 projects but I use OTP Base for about 1/4th of them.  They are two different
 takes on the same thing - OTP complient Erlang build systems.
 
+## Sinan
+
+### How can I co-develop separate applications?
+
+The easiest way to do this is to create a build directory which
+contains a stock '_build.cfg' and symlinks to the applications you
+wish to co-develop.
+
+For instance, I might be working on crary_dav, and at the same time by
+adding features to expat to immediately be consumed by crary_dav. By
+creating the build directory with symlinks to the co-developed
+applications, I can be improving expat and immediately take advantage
+of the new features and/or bug fixes without having to push out a new
+version of expat for each and every one. Once things stabilize, i can
+then work on cleaning up both sets of patches, send them out for
+review, and release new versions of these applications
+
+### How do I test my software?
+
+Sinan gives you easy access to
+[eunit](https://support.process-one.net/doc/display/CONTRIBS/EUnit).
+While you should ultimately read the [eunit
+documentation](http://erlware.org/lib/5.6/eunit-2.0/), minimally you
+can add the following line to each erlang source file you wish to
+test:
+
+    -include("eunit.hrl").
+
+Next add functions with '_test' suffixes:
+
+     my_add_test() ->
+         ?assertMatch(5, my_add(2, 3)),
+         ?assertMatch(1, my_add(3, -2)).
+
+Finally, to run the tests:
+
+     $ sinan test
+
+You should see something like the following if your tests pass:
+
+      Running tests for my_math.
+      All 1 tests successful.
+
+And the following if your tests don't pass:
+
+       Running tests for my_math.
+       my_math:my_add...*failed*
+       ::{error,{assertMatch_failed,[{module,my_add},
+                                     {line,8},
+                                     {expression,"my_add ( 2, 3 )"},
+                                     {expected,"5"},
+                                     {value,"6"}]},
+                [{my_math,'-my_add_test/0-fun-0-',0},
+                 {eunit_test,'-function_wrapper/2-fun-0-',2}]}
+       =======================================================
+       Failed: 1.  Aborted: 0.  Skipped: 0.  Succeeded: 9.
+
+Note that the output that you see above is reported separately for
+each source file, so if you have multiple source file be sure you
+check that each one prints success, not just the final one.
+
+
+### What is the best way to include static content in my application?
+
+Static files can be placed in a 'priv' directory, which will sinan
+will copy automatically into a 'priv' directory in the built
+application. The suggested way to locate the path to these files is
+to use the following idiom:
+
+       FilePath = code:priv_dir(my_application_name) ++ "/my-file.txt".
+
+Note that code:priv_dir/1 will only work after your application has
+been started. If you're running under an erlware release this should
+be done automatically for you. This may not be done automatically in
+the context of eunit, or in an erlang shell. You can start your application
+by doing the following:
+
+       application:start(my_application_name).
+
+### Why don't I see any output from io:format() when running tests?
+
+Sinan redirects its output to its log file in
+"_build/development/log/build.log", although at the moment even that
+appears to be broken. You'd be better off using the
+[error_logger](http://erlang.org/doc/man/error_logger.html) to display
+output during unit tests as well as during the run time of your application.
+
+Example:
+
+      error_logger:info_msg("val = ~p~n", [Val]).
+ 
