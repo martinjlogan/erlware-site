@@ -27,6 +27,10 @@ To spur discussion on a particular issue, send an email to
 with a link to the issue, and ask that further discussion take place
 on the issue itself; preferably not over email.
 
+Erlware developers are often online in the #erlware IRC channel. Feel free to
+drop by and ask questions, suggest enhancements, etc. We log public
+conversations for the record, so that you can browse
+[old conversations][irc_archive] or find them when searching the web.
 
 ## Git and the Patch Process
 
@@ -115,3 +119,4 @@ into our current branch.
 [erlware-questions]: http://groups.google.com/group/erlware-questions?hl=en
 [public-git]: http://www.kernel.org/pub/software/scm/git/docs/user-manual.html#setting-up-a-public-repository
 [dev-repos]: public_repositories.html
+[irc_archive]: http://erlware.org/irclogs (IRC archive)
