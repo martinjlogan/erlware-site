@@ -20,7 +20,7 @@ than Sinan though it does have its own flair.  OTP Base is still quite easy to
 use, it generates applications and releases for you, it handles all fundamental
 aspects of building OTP software.  I personally use Sinan for most of my
 projects but I use OTP Base for about 1/4th of them.  They are two different
-takes on the same thing - OTP complient Erlang build systems.
+takes on the same thing - OTP compliant Erlang build systems.
 
 ## Sinan
 
