@@ -40,8 +40,14 @@ anyone can clone the repository and contribute patches with minimum effort
 Erlware subproject, or you want we to apply a patch in the main stream, the way
 to go is sending it to the development list.
 
+### Setting up outgoing SMTP
 
-### Configuring Git to Email Patches
+The easiest way to send patches is using the git commands
+'format-patch' and 'send-email', but first you need to be set up to
+send email. Pick one of the following two sections for getting email
+working:
+
+#### MSMTP
 
 First make sure to install msmtp (on debian or ubuntu just type sudo
 apt-get install msmtp) Place the following in a config file with the
@@ -63,6 +69,34 @@ Now configure git to use msmtp.  You must do this for each separate
 repository/project
 
     $ git config sendemail.smtpserver <path_to_msmtp>
+
+#### Postfix
+
+If you work on Mac OS X, it comes with postfix already installed, you
+just need to set it up. Here are some instructions on how to enable it:
+
+[Enable the postfix MTA](http://www.macosxhints.com/article.php?story=20031025022626398)
+
+Most linux operating systems allow for postfix to be installed,
+instructions will vary.
+
+If your ISP is blocking your access to port 25, as many are these
+days, you're going to need to relay through them, or whoever you
+typically send email through. Here are some instructions on setting up
+postfix to use SMTP Auth and relay through another server:
+
+[SMTP Authentication for Mail servers](http://postfix.state-of-mind.de/patrick.koetter/smtpauth/smtp_auth_mailservers.html)
+
+Note that in addition to the above instructions, I had to add the
+following line to my 'main.cf':
+
+    relayhost = [mail.my-isp.com]
+
+If you need to specify a non-standard port:
+
+    relayhost = [mail.my-isp.com]:2500
+
+### Setting the default git subject line
 
 For each project you will be submitting patches for you need to
 configure a subject line.
