@@ -77,7 +77,7 @@ verification process. Unlike with a package that is stored in a local repository
 a package submitted to Erlware does not go straight into the repo, instead it is
 placed in a special staging area. From there community members work to ensure
 the application meets the minimum requirements.  Requirements for the Apps That
-Constitute the Erlware 'Stable' Repository
+Constitute the Erlware `Stable` Repository
 
   * Erlware ensures that packages within the repository are well structured;
     that they follow OTP standards
@@ -158,8 +158,8 @@ enough information for dependency management while remaining easily accessible.
 
 Tag file(s) are simple files that give additional metadata about the
 package. One file that is almost always present is the license file. Another is
-the 'native' file that indicates that this package contains native code. There
-is also the 'deprecated' file that indicates that a package has been deprecated.
+the `native` file that indicates that this package contains native code. There
+is also the `deprecated` file that indicates that a package has been deprecated.
 
 # ERTS in The Repository
 
@@ -216,7 +216,7 @@ to specify these dependencies. In our experience this is usually not necessary.
 of the version number or by adding gte no the tuple. Using part of a version
 number indicates that anything within that range is acceptable. For example, if
 you specify stdlib 1.14 then either stdlib 1.14.34 and 1.14.99 but not 1.15.0
-are acceptable. 'gte' works a bit similarly. If you wish to say that any version
+are acceptable. `gte` works a bit similarly. If you wish to say that any version
 greater then or equal to sasl 2.1.4 is acceptable just add gte no the tuple.
 
 # Hosting Your Own Repository
