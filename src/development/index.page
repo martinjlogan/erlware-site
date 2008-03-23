@@ -10,7 +10,7 @@ orderInfo: 1
 This page contains information on our process.  Basically how we turn
 our ideas into reality.
 
-## Communication for Users and Developers
+# Communication for Users and Developers
 
 The
 [erlware-dev@googlegroups.com][erlware-dev]
@@ -32,7 +32,7 @@ irc.freenode.net. Feel free to drop by and ask questions, suggest enhancements,
 etc. We log public conversations for the record, so that you can browse [old
 conversations][irc_archive] or find them when searching the web.
 
-## Git and the Patch Process
+# Git and the Patch Process
 
 We maintain Erlware code in git repositories. This eases free development,
 anyone can clone the repository and contribute patches with minimum effort
@@ -40,14 +40,18 @@ anyone can clone the repository and contribute patches with minimum effort
 Erlware subproject, or you want we to apply a patch in the main stream, the way
 to go is sending it to the development list.
 
-### Setting up outgoing SMTP
+## Setting Up Git to Send Emails
 
 The easiest way to send patches is using the git commands
-'format-patch' and 'send-email', but first you need to be set up to
-send email. Pick one of the following two sections for getting email
-working:
+`format-patch` and `send-email,` but first you need to be set up to
+send email.
 
-#### MSMTP
+### Setting Up Outgoing SMTP
+
+Pick one of the following two sections for getting email working:
+
+**MSMTP**
+*********
 
 First make sure to install msmtp (on debian or ubuntu just type sudo
 apt-get install msmtp) Place the following in a config file with the
@@ -66,12 +70,12 @@ name .msmtprc in your home directory:
     account default : gmail
 
 Now configure git to use msmtp.  You must do this for each separate
-repository/project
+repository/project:
 
     $ git config sendemail.smtpserver <path_to_msmtp>
 
-#### Postfix
-
+**Postfix**
+***********
 If you work on Mac OS X, it comes with postfix already installed, you
 just need to set it up. Here are some instructions on how to enable it:
 
@@ -88,7 +92,7 @@ postfix to use SMTP Auth and relay through another server:
 [SMTP Authentication for Mail servers](http://postfix.state-of-mind.de/patrick.koetter/smtpauth/smtp_auth_mailservers.html)
 
 Note that in addition to the above instructions, I had to add the
-following line to my 'main.cf':
+following line to my `main.cf:`
 
     relayhost = [mail.my-isp.com]
 
@@ -96,7 +100,7 @@ If you need to specify a non-standard port:
 
     relayhost = [mail.my-isp.com]:2500
 
-### Setting the default git subject line
+### Setting the Default Git Subject Line
 
 For each project you will be submitting patches for you need to
 configure a subject line.
@@ -104,7 +108,7 @@ configure a subject line.
     $ git config format.subjectprefix "<repo_name> PATCH"
 
 
-### Emailing patches
+### Emailing Patches
 
 When you're ready to email a set of patches, first figure out how many
 you'd like to send. `git log, git show` and `git show-branch` can be
@@ -117,7 +121,7 @@ Send-email will ask you where to send the patch to; send it to
 `erlware-dev@googlegroups.com.`
 
 
-### Providing access to your public git repository
+## Providing Access to Your Public Git Repository
 
 Although all patches which are accepted into canonical sources must be
 sent to the list, it can be useful to publish your intermediate work
@@ -126,7 +130,7 @@ on how to set up a public repo that other people can pull from. See
 the other developers' [public repos][dev-repos] for examples.
 
 
-### Publishing a work branch
+### Publishing a Work Branch
 
 Let's say you have a branch called `work` that you want to make
 available for others to pull from. If you are in your working
@@ -144,7 +148,7 @@ Note the URL that others use to pull your repository will be different,
 probably something starting with `http://` or `git://.`
 
 
-### Pulling from another developer's public branch
+### Pulling From Another Developer's Public Branch
 
 Let's say another developer has published some work you
 would like to merge into your own tree. Add the developer's
