@@ -10,8 +10,8 @@ orderInfo: 4
 
 ### Where can I get help with erlware at?
 
-You can send questions to 'erlware-questions@googlegroups.com', there's
-also an '#erlware' IRC channel on 'irc.freenode.net'.
+You can send questions to `erlware-questions@googlegroups.com,` there's
+also an `#erlware` IRC channel on `irc.freenode.net.`
 
 ### What is the relation between sinan and OTP Base?
 
@@ -31,7 +31,7 @@ takes on the same thing - OTP compliant Erlang build systems.
 
 ## Faxien
 
-### I installed faxien and sinan, but i can't find an 'erl' command to run; how I start an erlang shell?
+### I installed faxien and sinan, but i can't find an `erl` command to run; how I start an erlang shell?
 
 Erlware is designed around making erlang releases. Releases are full
 fledged software stacks that are designed to run on their own in much
@@ -46,7 +46,7 @@ command:
 
 You should now be able to run "erl" to start the erlang shell.
 
-Additionally, sinan has a 'sinan shell' command, which will also setup
+Additionally, sinan has a `sinan shell` command, which will also setup
 the path for the applications in your current project.
 
 
@@ -55,7 +55,7 @@ the path for the applications in your current project.
 ### How can I co-develop separate applications?
 
 The easiest way to do this is to create a build directory which
-contains a stock '_build.cfg' and symlinks to the applications you
+contains a stock `_build.cfg` and symlinks to the applications you
 wish to co-develop.
 
 For instance, I might be working on crary_dav, and at the same time by
@@ -70,15 +70,15 @@ review, and release new versions of these applications
 ### How do I test my software?
 
 Sinan gives you easy access to
-[eunit](https://support.process-one.net/doc/display/CONTRIBS/EUnit).
+[eunit.](https://support.process-one.net/doc/display/CONTRIBS/EUnit)
 While you should ultimately read the [eunit
-documentation](http://erlware.org/lib/5.6/eunit-2.0/), minimally you
+documentation,](http://erlware.org/lib/5.6/eunit-2.0/) minimally you
 can add the following line to each erlang source file you wish to
 test:
 
     -include("eunit.hrl").
 
-Next add functions with '_test' suffixes:
+Next add functions with `_test` suffixes:
 
      my_add_test() ->
          ?assertMatch(5, my_add(2, 3)),
@@ -114,8 +114,8 @@ check that each one prints success, not just the final one.
 
 ### What is the best way to include static content in my application?
 
-Static files can be placed in a 'priv' directory, which will sinan
-will copy automatically into a 'priv' directory in the built
+Static files can be placed in a `priv` directory, which will sinan
+will copy automatically into a `priv` directory in the built
 application. The suggested way to locate the path to these files is
 to use the following idiom:
 
@@ -132,7 +132,7 @@ by doing the following:
 ### Why don't I see any output from io:format() when running tests?
 
 Sinan redirects its output to its log file in
-"_build/development/log/build.log", although at the moment even that
+`_build/development/log/build.log,` although at the moment even that
 appears to be broken. You'd be better off using the
 [error_logger](http://erlang.org/doc/man/error_logger.html) to display
 output during unit tests as well as during the run time of your application.
@@ -140,4 +140,3 @@ output during unit tests as well as during the run time of your application.
 Example:
 
       error_logger:info_msg("val = ~p~n", [Val]).
- 
