@@ -163,7 +163,7 @@ is also the 'deprecated' file that indicates that a package has been deprecated.
 
 # ERTS in The Repository
 
-    <repo>/<erts-vsn>/erts/<arch>/erts.tar.gz
+    <repo>/<erts-vsn>/<arch>/erts.tar.gz
 
 Under the erts directory is a tarball containing the latest erts version
 compiled for the architecture specified by arch. The version-list file is a list
