@@ -49,6 +49,19 @@ You should now be able to run "erl" to start the erlang shell.
 Additionally, sinan has a `sinan shell` command, which will also setup
 the path for the applications in your current project.
 
+### I installed Faxien and but all the packages it pulls are for an Erlang
+release other than the one I want; how do I pull for a different version?
+
+Faxien separates packages based on the erts vsn that they are compiled for.
+If you want to target a different erts vsn you can tell Faxien this by
+running:
+
+    faxien set-target-erts-vsn <erts-vsn>
+
+this will tell Faxien to seek to pull packages compiled for the target 
+version and all lower compatible versions.  For example setting the target
+erts vsn to 5.5.3 would tell Faxien to pull for 5.5.3, 5.5.2, 5.5.1, and 5.0
+preferring of course the exact verison you specified.
 
 ## Sinan
 
