@@ -41,7 +41,7 @@ would yield "yaws" as a result.
 would also yeild "yaws," though why anyone would ever type such a
 thing I don't know.
 
-## install
+## install-release
 
     $ faxien install-release <release_name|path_to_package> [version]
 
@@ -50,6 +50,11 @@ the local file system if you specify a release name. The default
 location is `/usr/local/erlware.` If you specify the path to an
 untarred package or a tarred package with the extension `.tar.gz` Faxien
 will install that package from the hard disk.
+
+**Note** Note if you want to install for an erts vsn other than the default
+erts vsn you must tell faxien that. To see the default erts vsn use 
+`faxien show-target-erts-vsn` and to set a new one use 
+`faxien set-target-erts-vsn <erts-vsn>`. For example 5.6.1 is for R12B-1.
 
 **Example Usage**
 
@@ -105,79 +110,43 @@ compatible such as Sinan.
                                                     ## remote repo with a
                                                     ## request timeout of 10
                                                     ## seconds
-    $ faxien publish http://erlware.org/pub /home/martin/my_release  ## publish
+    $ faxien publish http://erlware.org/writable /home/martin/my_release  ## publish
                                                     ## an untarred release
                                                     ## package to a specific
                                                     ## remote repository
 
+## set-target-erts-vsn
+
+    $ faxien set-target-erts-vsn <erts-vsn> 
+
+Sets the upper limit on the erts vsn that faxien will seek to pull packages 
+for. For example if a user wants to target R12B for which the latest release is
+R12B-1 which carries an erts vsn of 5.6.1 the target erts vsn should be set to
+5.6.1. Faxien will then seek to pull packages in decending order from 5.6.1 to 
+5.6. 
+
+**Note** to see the current target erts vsn type `faxien show-target-erts-vsn`
+
+**Example Usage**
+
+    $ faxien set-target-erts-vsn 5.5.5
+
 ## More Commands
 
-### publish_erlware ** Deprecated **
+For a complete listing of all commands type `faxien help commands` at the 
+commandline. Here are a few. 
 
-    $ faxien publish_erlware <path_to_application> [request_timeout]
+### upgrade-release
 
-This command publishes an application to the main erlware repository
-staging area.  From there the code will be reviewed and if all
-criteria are met included in the Erlware repository. Any application
-that is to be considered for inclusion in the Erlware main repo must
-include source code.
-
-**Note** Timeout values are in milliseconds
-
-**Example Usage**
-
-    $ faxien publish_erlware lib/faxien-0.8.0
-    $ faxien publish_erlware lib/faxien.tar.gz
-    $ faxien publish_erlware lib/faxien.tar.gz 15000
-
-
-### publish_source
-
-    $ faxien publish_source [repo_url] <path_to_application> [request_timeout]
-
-Publishes an unbuilt application containing source code to a remote
-repository.  This will publish source code into the Source area within
-a repo.  This code is then available for immediate use by any
-application that uses erlware ewrepo code such as Sinan.
-
-**Note** Timeout values are in milliseconds
-
-**Example Usage**
-
-    $ faxien publish_source http://www.jdoe.org/stable lib/faxien 25000
-    $ faxien publish_source http://www.jdoe.org/stable lib/faxien
-
-
-### publish\_arch\_specific\_binary
-
-    $ faxien publish_arch_specific_binary( [repo_url] <path_to_application> [request_timeout]
-
-Publishes an architecture specific pre-built applications to a remote
-repository.  This will publish a pre-built application into a
-directory <arch> within a repo that is named after the architecture
-from which the application is published from.  This code is then
-available for immediate use by any application that uses erlware
-ewrepo code such as Sinan.
-
-**Note** Timeout values are in milliseconds
-
-**Example Usage**
-
-    $ faxien publish_arch_specific_binary lib/ewrepo
-    $ faxien publish_arch_specific_binary lib/ewrepo 10000
-    $ faxien publish_arch_specific_binary http://www.jdoe.org/stable lib/ewrepo 10000
-
-### upgrade
-
-    $ faxien upgrade [release_name]
+    $ faxien upgrade-release [release_name]
 
 Upgrades all installed releases when used with no argument.  Upgrades
 a specific release if a release name is provided.
 
 **Example Usage**
 
-    $ faxien upgrade
-    $ faxien upgrade sinan
+    $ faxien upgrade-release
+    $ faxien upgrade-release sinan
 
 
 ### upgrade-app
