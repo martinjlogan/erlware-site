@@ -38,7 +38,7 @@ would yield "yaws" as a result.
 
     $ faxien list regexp y[aw]*s
 
-would also yeild "yaws," though why anyone would ever type such a
+would also yield "yaws," though why anyone would ever type such a
 thing I don't know.
 
 ## install-release
