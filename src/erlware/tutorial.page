@@ -64,7 +64,7 @@ Once Faxien is installed you can use it to easily install Sinan, our
 flagship build system.
 
 
-    $ faxien install-release-release sinan
+    $ faxien install-release sinan
 
 
 This will install Sinan into your erlware directory and place a link
@@ -122,15 +122,15 @@ Sinan release.
 ## Create a Project
 
 The next version of Sinan will have a project generation utility.  The current
-version does not.  The easiest way to create a project is to checkout an
+version does not.  The easiest way to create a project is to pull down an
 existing project like faxien or sinan and then modify the directory structure to
 suit your needs.  Be on the look out for version 0.9.0 of Sinan which will fix
 this.
 
-So for now run git clone http://git.erlware.org/sinan.git and then rename sinan
-to full_cycle and alter all references to sinan making them full_cycle instead
+So for now run git clone http://git.erlware.org/erlware.git and then rename erlware
+to full_cycle and alter all references to erlware making them full_cycle instead
 and delete all .erl files. Make sure to delete all the applications under `lib`
-with the exception of sinan as well.  This is a good way to get down and dirty
+with the exception of gas as well.  This is a good way to get down and dirty
 familiar with OTP structure anyhow so the work will be worth it.
 
 # A Brief Look at the Anatomy of a Project
@@ -152,7 +152,8 @@ directory listing.
 
 
 We see three names, one file, `_build.cfg,` and two directories, `doc,` and
-`lib. _build.cfg` is the project level configuration file. Inside we can see:
+`lib. _build.cfg` is the project level configuration file. Edit the file to
+contain the following code:
 
     project : {
       name : full_cycle
@@ -160,27 +161,27 @@ We see three names, one file, `_build.cfg,` and two directories, `doc,` and
     },
 
     repositories : ["http://repo.erlware.org/pub",
-		    "http://www.martinjlogan.com:8080/pub"],
+		    "http://www.martinjlogan.com/pub"],
 
     dist : {
-      include_dirs : ["cmds"]
+      include_dirs : ["bin"]
     }
 
 `_build.cfg` has a number of other options allowing you to control all phases of
 Sinan project interaction. For most cases however the basic file you see above
-will suffice.  The first thing we see is the project meta information, name and
-version. Following that is a list of repositories that Sinan will seek to
+will suffice.  The first thing we see is the project meta information, name
+and version. Following that is a list of repositories that Sinan will seek to
 download dependencies from; `kernel, stdlib, sasl, gas, fslib` to name a few.
 The last bit of configuration for `dist` is out of the scope of this tutorial.
 
 The `doc` directory is self explanatory so we will move on to the final
 directory in our listing which is `lib.` So change directories into `lib` and do
-a listing.  You will see that lib contains a single directory, `hello_world.`
-This is the application we told singen we were going to be developing as part of
-this project.  This tutorial is going to assume you know at least a little
-something about application structure. If you don't you can either look at our
-`docs` on the subject, or just keep going, you should not have a terrible time
-following.
+a listing.  You will see that lib contains a single directory, `gas.` Rename it
+to `hello_world`, delete the erl files, and rename all other files with gas in
+in the name to read hello_world.  This tutorial is going to assume you know
+at least a little something about application structure. If you don't you can
+either look at our `docs` on the subject, or just keep going, you should not
+have a terrible time following.
 
 # Building the `hello_world` Application
 
@@ -194,11 +195,10 @@ This file is found in `hello_world/ebin/.`  So lets open it up:
     {application, hello_world,
       [{description, "Your Desc HERE"},
        {vsn, "0.1.0"},
-       {modules, [hello_world_app,
-                  hello_world_sup]},
-       {registered,[hello_world_sup]},
+       {modules, []},
+       {registered,[hw_sup]},
        {applications, [kernel, stdlib]},
-       {mod, {hello_world_app,[]}},
+       {mod, {hw_app,[]}},
        {start_phases, []}]}.
 
 Replace the value for the `description` key with `"Says hello to the world".`
@@ -281,12 +281,137 @@ the following code into it.
         end,
         loop().
 
+Now create the files `hw_app` and `hw_sup` which are toe be your application
+and supervisor behaviour start files. The file contents are as follows:
+
+`hw_app.erl`
+
+    %%%-------------------------------------------------------------------
+    %%% @author
+    %%% @doc
+    %%%
+    %%% @end
+    %%%-------------------------------------------------------------------
+    -module(hw_app).
+
+    -behaviour(application).
+
+    %% Application callbacks
+    -export([start/2, stop/1]).
+
+    %%%===================================================================
+    %%% Application callbacks
+    %%%===================================================================
+
+    %%--------------------------------------------------------------------
+    %% @private
+    %% @doc
+    %% This function is called whenever an application is started using
+    %% application:start/[1,2], and should start the processes of the
+    %% application. If the application is structured according to the OTP
+    %% design principles as a supervision tree, this means starting the
+    %% top supervisor of the tree.
+    %%
+    %% @spec start(Type, StartArgs) -> {ok, Pid} |
+    %%                                 {ok, Pid, State} |
+    %%                                 {error, Reason}
+    %% @end
+    %%--------------------------------------------------------------------
+    start(_Type, StartArgs) ->
+        case 'TopSupervisor':start_link(StartArgs) of
+    	{ok, Pid} ->
+    	    {ok, Pid};
+    	Error ->
+    	    Error
+        end.
+
+    %%--------------------------------------------------------------------
+    %% @private
+    %% @doc
+    %% This function is called whenever an application has stopped. It
+    %% is intended to be the opposite of Module:start/2 and should do
+    %% any necessary cleaning up. The return value is ignored.
+    %%
+    %% @spec stop(State) -> void()
+    %% @end
+    %%--------------------------------------------------------------------
+    stop(_State) ->
+        ok.
+
+and `hw_sup.erl`
+
+
+    %%%-------------------------------------------------------------------
+    %%% @author
+    %%% @copyright (C) 2008,
+    %%% @doc
+    %%%
+    %%% @end
+    %%%-------------------------------------------------------------------
+    -module(hw_sup).
+
+    -behaviour(supervisor).
+
+    %% API
+    -export([start_link/0]).
+
+    %% Supervisor callbacks
+    -export([init/1]).
+
+    -define(SERVER, ?MODULE).
+
+    %%%===================================================================
+    %%% API functions
+    %%%===================================================================
+
+    %%--------------------------------------------------------------------
+    %% @doc
+    %% Starts the supervisor
+    %%
+    %% @spec start_link() -> {ok, Pid} | ignore | {error, Error}
+    %% @end
+    %%--------------------------------------------------------------------
+    start_link() ->
+        supervisor:start_link({local, ?SERVER}, ?MODULE, []).
+
+    %%%===================================================================
+    %%% Supervisor callbacks
+    %%%===================================================================
+
+    %%--------------------------------------------------------------------
+    %% @private
+    %% @doc
+    %% Whenever a supervisor is started using supervisor:start_link/[2,3],
+    %% this function is called by the new process to find out about
+    %% restart strategy, maximum restart frequency and child
+    %% specifications.
+    %%
+    %% @spec init(Args) -> {ok, {SupFlags, [ChildSpec]}} |
+    %%                     ignore |
+    %%                     {error, Reason}
+    %% @end
+    %%--------------------------------------------------------------------
+    init([]) ->
+        RestartStrategy = one_for_one,
+        MaxRestarts = 1000,
+        MaxSecondsBetweenRestarts = 3600,
+
+        SupFlags = {RestartStrategy, MaxRestarts, MaxSecondsBetweenRestarts},
+
+        Restart = permanent,
+        Shutdown = 2000,
+        Type = worker,
+
+        AChild = {'AName', {'AModule', start_link, []},
+    	      Restart, Shutdown, Type, ['AModule']},
+
+        {ok, {SupFlags, [AChild]}}.
+
+
 Now if you recall Sinan will only compile modules that are listed in the
 `modules` list within our .app file; `ebin/hello_world.app`.
 
-    {modules, [hello_world_app,
-           hello_world_sup,
-               hw_server]},     # add this entry into modules
+    {modules, [hw_app, hw_sup, hw_server]}, # add this entry into modules
 
 Next we need to tell our top level supervisor to start our server. Edit
 `hello_world_sup.erl` altering the `init/1` function to look like the example
@@ -310,8 +435,8 @@ Now to compile
     Pulling kernel-2.11.4 from repository if non-local
     Executing task build ...
     Starting compilation process ...
-    Building /home/martinjlogan/work/full_cycle/lib/hello_world/src/hello_world_app.erl
-    Building /home/martinjlogan/work/full_cycle/lib/hello_world/src/hello_world_sup.erl
+    Building /home/martinjlogan/work/full_cycle/lib/hello_world/src/hw_app.erl
+    Building /home/martinjlogan/work/full_cycle/lib/hello_world/src/hw_sup.erl
     Building /home/martinjlogan/work/full_cycle/lib/hello_world/src/hw_server.erl
     run complete
 
@@ -333,21 +458,30 @@ Create a directory named `cmds` right underneath the full_cycle directory.  We
 are going to be launching with faxien so we don't really have to worry about any
 of the platform specific shells.
 
-Lets create the `full_cycle` script under the `cmds` directory.
+Lets create the `full_cycle` executable start script under the `bin` directory.
 
-    -name full_cycle
+    #!/bin/sh
 
-    #foreach (arg in argv)
-     ${arg}
-    #end
+    #### Fill in values for these variables ####
+    REL_NAME=full_cycle
+    REL_VSN=0.1.0
+    ERTS_VSN=5.5.5
+    INVOCATION_SUFFIX=""
+    ###########################################
 
-    -detached
+    PROG=$0
+    test -h $0 && PROG=$(readlink $0)
+    PREFIX=$(cd $(dirname $(dirname $PROG)); pwd)
 
-Faxien will do the substitution and flatten out this into a command that is
-passed to the erlang binary. You don't have to worry about the boot or config
-flags because faxien will do that for you. The program arguments are passed in a
-list called argv. We use a foreach loop to unroll argv into a list of commands.
+    export ROOTDIR=$PREFIX/application_packages/$ERTS_VSN
+    export BINDIR=$PREFIX/erts_packages/erts-$ERTS_VSN/bin
+    export EMU=beam
+    export PROGNAME=erl
+    export LD_LIBRARY_PATH=$PREFIX/erts/$ERTS_VSN/lib
 
+    REL_DIR=$PREFIX/release_packages/$REL_NAME-$REL_VSN/release
+
+    $BINDIR/erlexec -config $REL_DIR/faxien.config -boot $REL_DIR/$REL_NAME $INVOCATION_SUFFIX
 
 ## Creating the Release Structure
 
@@ -379,7 +513,7 @@ repository running on your local network someone else doing this tutorial could
 publish right over your release by the time you try to install and run it.
 
 So lets just pretend we published our version of full_cycle into
-`www.erlware.org/pub` and instead utilize the ability of Faxien to install
+`repo.erlware.org/writable` and instead utilize the ability of Faxien to install
 locally resident release packages just as well as it installs them from remote
 repositories. To do this we need to take one more step before installing. We
 need to create a `lib` directory under `full_cycle-0.1.0` and place the
