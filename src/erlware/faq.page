@@ -31,7 +31,7 @@ takes on the same thing - OTP compliant Erlang build systems.
 
 ## Faxien
 
-### I installed faxien and sinan, but i can't find an `erl` command to run; how I start an erlang shell?
+### I installed faxien and sinan, but i can't find an `erl` or `erlc` command to run; how I install an erlang shell and compiler?
 
 Erlware is designed around making erlang releases. Releases are full
 fledged software stacks that are designed to run on their own in much
@@ -39,18 +39,18 @@ the same way that Apache or Sendmail run. While this is the best way
 to write software in erlang, it can be very useful to pull up an
 erlang shell for experimentation and learning.
 
-To install the scripts to launch the erlang shell, run the following
-command:
+To install the scripts to launch the erlang shell or run erlc, run the 
+following command:
 
       faxien install-release erl
 
-You should now be able to run "erl" to start the erlang shell.
+You should now be able to run `erl` to start the erlang shell and `erlc` 
+to run the compiler.
 
 Additionally, sinan has a `sinan shell` command, which will also setup
 the path for the applications in your current project.
 
-### I installed Faxien and but all the packages it pulls are for an Erlang
-release other than the one I want; how do I pull for a different version?
+### I installed Faxien and but all the packages it pulls are for an Erlang release other than the one I want; how do I pull for a different version?
 
 Faxien separates packages based on the erts vsn that they are compiled for.
 If you want to target a different erts vsn you can tell Faxien this by
