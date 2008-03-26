@@ -146,8 +146,7 @@ following directory:
 
 Releases may also contain the following standard directories:
 
-   1. **`cmds/`**: template code for the executable script generation lives
-   here.
+   1. **`bin/`**: executable scripts live here.
    1. **`lib/`**: optionally library code may be included in a release, these
    releases are not to be stored in repo's, but instead should exist as tar.gz
    files on a filesystem outside of a repo. Packages of this form can exist and
