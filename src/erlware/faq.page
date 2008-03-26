@@ -39,12 +39,12 @@ the same way that Apache or Sendmail run. While this is the best way
 to write software in erlang, it can be very useful to pull up an
 erlang shell for experimentation and learning.
 
-To install the scripts to launch the erlang shell or run erlc, run the 
+To install the scripts to launch the erlang shell or run erlc, run the
 following command:
 
       faxien install-release erl
 
-You should now be able to run `erl` to start the erlang shell and `erlc` 
+You should now be able to run `erl` to start the erlang shell and `erlc`
 to run the compiler.
 
 Additionally, sinan has a `sinan shell` command, which will also setup
@@ -58,7 +58,7 @@ running:
 
     faxien set-target-erts-vsn <erts-vsn>
 
-this will tell Faxien to seek to pull packages compiled for the target 
+this will tell Faxien to seek to pull packages compiled for the target
 version and all lower compatible versions.  For example setting the target
 erts vsn to 5.5.3 would tell Faxien to pull for 5.5.3, 5.5.2, 5.5.1, and 5.0
 preferring of course the exact verison you specified.
