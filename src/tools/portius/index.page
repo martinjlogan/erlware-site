@@ -31,3 +31,9 @@ Mr. Portius was a pioneer in filter design and so it is fiting that he
 is the namesake of the Portius application. This application is
 responsible for making sure that only well formed pure OTP apps make
 their way into our public repositories.
+
+# Documentation and How-to
+
+Documentation on the Portius release as well as a basic user guide can be 
+found in the docs for the Portius application itself. This located at 
+[http://erlware.org/lib/5.5.5/portius-0.5.0.1/](http://erlware.org/lib/5.5.5/portius-0.5.0.1/)
