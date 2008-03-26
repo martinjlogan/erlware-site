@@ -128,7 +128,7 @@ suit your needs.  Be on the look out for version 0.9.0 of Sinan which will fix
 this.
 
 So for now run git clone http://git.erlware.org/erlware.git and then rename erlware
-to full_cycle and alter all references to erlware making them full_cycle instead
+to full\_cycle and alter all references to erlware making them full\_cycle instead
 and delete all .erl files. Make sure to delete all the applications under `lib`
 with the exception of gas as well.  This is a good way to get down and dirty
 familiar with OTP structure anyhow so the work will be worth it.
@@ -223,7 +223,7 @@ single simple server that is started by the top level supervisor.  This server
 will respond to a message consisting of a single Pid by sending back the message
 `{ok, hello_world}.`
 
-Create the file `hw_server.erl` in `full_cycle/lib/hello_world/src` and enter
+Create the file `hw_server.erl` in `full\_cycle/lib/hello_world/src` and enter
 the following code into it.
 
     %%%-------------------------------------------------------------------
@@ -442,7 +442,7 @@ Now to compile
 
 Looks good, our application is complete.  At this point we have a working
 application.  Lets assume that we have been good programmers and tested this
-thing somewhat.  Lets further assume that the `full_cycle` release, which
+thing somewhat.  Lets further assume that the `full\_cycle` release, which
 contains our `hello_world` application among other bits of functionality is
 something that we want the community at large to be able to download and run
 similar to the way we downloaded and used Sinan.  To do this we need to take our
@@ -454,11 +454,11 @@ project create a release and then publish it.
 ## Start Up Script
 
 The first thing we will need for a functioning release is a startup script.
-Create a directory named `cmds` right underneath the full_cycle directory.  We
+Create a directory named `cmds` right underneath the full\_cycle directory.  We
 are going to be launching with faxien so we don't really have to worry about any
 of the platform specific shells.
 
-Lets create the `full_cycle` executable start script under the `bin` directory.
+Lets create the `full\_cycle` executable start script under the `bin` directory.
 
     #!/bin/sh
 
@@ -485,20 +485,20 @@ Lets create the `full_cycle` executable start script under the `bin` directory.
 
 ## Creating the Release Structure
 
-Create a release directory called `full_cycle-<vsn>` so in this case
-`full_cycle-0.1.0.`  This version number is essential, you cannot publish a
+Create a release directory called `full\_cycle-<vsn>` so in this case
+`full\_cycle-0.1.0.`  This version number is essential, you cannot publish a
 release if your release directory is not of the form
 `<release_name>-<release_vsn>.`
 
     $ sinan release
 
 This will prompt Sinan to create a .rel file under the directory
-`full_cycle/_build/development/releases/0.1.0.` We are going to need to copy the
-entire "releases" directory under `full_cycle-0.1.0.` Now copy the `bin`
-directory under `full_cycle-0.1.0.`  Finally copy your LICENSE and README files
-if you have them into `full_cycle-0.1.0.`
+`full\_cycle/_build/development/releases/0.1.0.` We are going to need to copy the
+entire "releases" directory under `full\_cycle-0.1.0.` Now copy the `bin`
+directory under `full\_cycle-0.1.0.`  Finally copy your LICENSE and README files
+if you have them into `full\_cycle-0.1.0.`
 
-Running a directory listing in the `full_cycle-0.1.0` directory should yield the
+Running a directory listing in the `full\_cycle-0.1.0` directory should yield the
 following:
 
     $ ls
@@ -506,17 +506,17 @@ following:
 
 To publish our release to the world we type
 
-    $ faxien publish ./full_cycle-0.1.0
+    $ faxien publish ./full\_cycle-0.1.0
 
 Wait a minute though, not so fast, unless you configured Faxien to publish to a
 repository running on your local network someone else doing this tutorial could
 publish right over your release by the time you try to install and run it.
 
-So lets just pretend we published our version of full_cycle into
+So lets just pretend we published our version of full\_cycle into
 `repo.erlware.org/writable` and instead utilize the ability of Faxien to install
 locally resident release packages just as well as it installs them from remote
 repositories. To do this we need to take one more step before installing. We
-need to create a `lib` directory under `full_cycle-0.1.0` and place the
+need to create a `lib` directory under `full\_cycle-0.1.0` and place the
 `hello_world` application underneath it.  Faxien will first look in the `lib`
 directory for applications to install and then in remote repo's for further
 dependencies that do not exist within the `lib` directory.  `hello_world.app`
@@ -528,23 +528,23 @@ lib directory. The compiled version of `hello_world` can be found in
 apps in published and installed packages must have the <name>-<vsn> format.  Now
 lets install our release.
 
-    $ faxien install-release full_cycle-0.1.0/
+    $ faxien install-release full\_cycle-0.1.0/
     Installing Application hello_world-0.1.0 -> ok
 
-    Installing Release full_cycle-0.1.0 -> ok
+    Installing Release full\_cycle-0.1.0 -> ok
     ok
 
 We can now stand up our release and give it a test.
 
 ## Running and Testing the Release
 
-When we execute the full_cycle command, which sits as a soft link in
+When we execute the full\_cycle command, which sits as a soft link in
 `erlware/bin,` we are starting up the entire release we have created. This means
-that every application in the `full_cycle.rel` file starts up in the order they
+that every application in the `full\_cycle.rel` file starts up in the order they
 are listed.
 
-    $ cat /usr/local/erlware/full_cycle-0.1.0/releases/0.1.0/full_cycle.rel
-    {release,{"full_cycle","0.1.0"},
+    $ cat /usr/local/erlware/full\_cycle-0.1.0/releases/0.1.0/full\_cycle.rel
+    {release,{"full\_cycle","0.1.0"},
              {erts,"5.5.5"},
              [{kernel,"2.11.4"},
               {stdlib,"1.14.4"},
@@ -557,28 +557,28 @@ dependency we may want to remove in the future, but for now, it does not
 hurt. To start and test the release we will run the `hello_world` command then
 fire up a Erlang shell to interact with it.
 
-    $ full_cycle
+    $ full\_cycle
     Starting Full Cycle
     $ erl -name try
     Erlang (BEAM) emulator version 5.5.5 [source] [async-threads:0] [hipe] [kernel-poll:false]
 
     Eshell V5.5.5  (abort with ^G)
-    (try@test.erlware.org)1> net_adm:ping('full_cycle@test.erlware.org').
+    (try@test.erlware.org)1> net_adm:ping('full\_cycle@test.erlware.org').
     pong
-    (try@test.erlware.org)2> {hello_world_server, 'full_cycle@test.erlware.org'} ! self().
+    (try@test.erlware.org)2> {hello_world_server, 'full\_cycle@test.erlware.org'} ! self().
     <0.37.0>
     (try@test.erlware.org)3> receive Msg -> Msg end.
     {ok,hello_world}
 
-Looks like we now have the `full_cycle` service running on our network.
+Looks like we now have the `full\_cycle` service running on our network.
 
 
 # Last Words
 
 Today we have run through the full cycle of developing, publishing, and
 installing an Erlang release.  If we had actually run the publish command on
-full_cycle-0.1.0 the rest of the world could have installed it by typing `faxien
-install full_cycle.`  The combination of Sinan and Faxien is quite powerful.  We
+full\_cycle-0.1.0 the rest of the world could have installed it by typing `faxien
+install full\_cycle.`  The combination of Sinan and Faxien is quite powerful.  We
 have scratched the surface of what is possible with these Erlware tools we
 encourage you to dig deeper into the documentation if you want to learn more.
 
