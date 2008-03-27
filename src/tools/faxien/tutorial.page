@@ -34,19 +34,16 @@ directory listing in that directory.
 
 
     /usr/local/erlware$ ls
-    bin  lib erts  log release_packages tmp
+    application_packages  bin  erts_packages  release_packages
 
 
 In the erlware directory we can see the following directories:
 
+ - **application_packages** contains all of the applications the faxien release requires to run.
+ - **bin** contains executable scripts for releases.
+ - **erts_packages** contains versions of the Erlang runtime system.
  - **release_packages** contains the faxien release which houses the .boot file,
-     and Faxien's configuration.
- - **bin** directory contains a soft link to the "faxien" script which lies in
-     faxien-0.10.0/bin.
- - **lib** contains all of the applications the faxien release requires to run.
- - **log** contains the faxien.err_log and faxien.sasl_log files which are a
-     great help in trouble shooting.
- - **tmp** some housekeeping which outside the scope of this document.
+     and Faxien's configuration, plus future release packages you install.
 
 It is advisable that you add the `erlware/bin` directory to your path so that
 you can execute Faxien and any other release you install without having to type
