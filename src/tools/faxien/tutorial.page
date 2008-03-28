@@ -39,7 +39,8 @@ directory listing in that directory.
 
 In the erlware directory we can see the following directories:
 
- - **application_packages** contains all of the applications the faxien release requires to run.
+ - **application_packages** contains all of the applications the faxien release
+     requires to run.
  - **bin** contains executable scripts for releases.
  - **erts_packages** contains versions of the Erlang runtime system.
  - **release_packages** contains the faxien release which houses the .boot file,
