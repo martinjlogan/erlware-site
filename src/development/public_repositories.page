@@ -1,16 +1,16 @@
 ---
-title: Public Repositories
+title: Public Git Repositories
 directoryName: Development
 inMenu: true
 orderInfo: 3
 ---
 
-# Public Repositories for Erlware Development
+# Public Git Repositories for Erlware Development
 
 ## Official Repositories
 
-These are the repositories with the [official Erlware code][erlware]; their
-master's head compose the head of Erlware's development.
+These are the source repositories with the [official Erlware code][erlware];
+their master branches' HEAD is the head of Erlware's development.
 
 If you are going to contribute code to any application, please take a look at
 [development model]({relocatable:index.page}) and
@@ -21,7 +21,7 @@ sources to build [Erlware site;][site] see
 [Erlware Site's Documentation]({relocatable:erlware-site.page}) for more
 information about this.
 
-## Public Repositories from Contributors
+## Public Git Repositories of Contributors
 
  * **Eric Merritt:** [http://git.ericbmerritt.org/][eric]
  * **Dave Peticolas:** [http://git.krondo.com/erlware/][dave]
