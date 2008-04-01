@@ -55,7 +55,7 @@ Pick one of the following two sections for getting email working:
 
 First make sure to install msmtp (on debian or ubuntu just type sudo
 apt-get install msmtp) Place the following in a config file with the
-name .msmtprc in your home directory:
+name .msmtprc and permissions **06000** in your home directory:
 
     account gmail
     host smtp.gmail.com
