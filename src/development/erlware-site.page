@@ -17,7 +17,7 @@ Erlware project.
 As any other Erlware project, follow the standard
 [workflow]({relocatable:standards.page}) to send your patches to the
 [erlware-dev@googlegroups.com][development] mailing list.  The site is
-generated every night from the contents of the canonical repository. So
+generated periodically from the contents of the canonical repository. So
 it will pass some time since your patches are approved until they show in the
 site.
 
@@ -30,13 +30,13 @@ There are three sections:
 
   * Erlware section contains tutorials and reference information about
     erlware. That is, how to use the main tools (faxien, sinan, and, probably,
-    erlware-mode) together to increase the productivity and quality or erlang
-    Projects. There are some subsections in there with howtos, tutorial and
-    documentation about the project.
+    erlware-mode) together to increase the productivity and quality of erlang
+    projects. There are some subsections in there, with howtos, tutorials, and
+    documentation about the Erlware project.
 
   * Tools section contains a place for each individual tool. Typically, each
-    tool section will have an introduction, one or more tutorials, and one or
-    more reference manuals.
+    tool section has an introduction, one or more tutorials, and one or more
+    reference manuals.
 
   * Developers section contains information and guidance on how to contribute to
     the Erlware project.
@@ -65,14 +65,15 @@ the web site.
 Page sources are under `src`. They are written using [markdown][]
 notation. After running webgen, the site root is in `output.`
 
-If you are planning to contribute documentation:
+Finally, if you are planning to contribute documentation, please:
 
   * Read other pages similar to the one you are going to write to get in touch
     with the structure, style, etc.
-  * Drop some lines in the development list if you plan to work some time
-    changing things to avoid collisions with other developers.
+  * Drop some lines in [the development list][erlware-dev] if you plan to work
+    some time changing stuff, to avoid collisions with other developers.
 
 [webgen]: http://webgen.rubyforge.org/ "webgen"
 [erlware-site]: http://git.erlware.org/erlware-site.git "erlware repository"
 [development]: http://groups.google.com/group/erlware-dev "development mailing list"
 [markdown]: http://daringfireball.net/projects/markdown/ "markdown"
+[erlware-dev]: http://groups.google.com/group/erlware-dev?hl=en
