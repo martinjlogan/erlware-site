@@ -17,7 +17,7 @@ general, but are a must for those developing on Erlware itself.
 
 # Coding Standards
 
-**Terminal size**: 132 is the erlware standard.  Lines should not
+**Terminal size:** 132 is the erlware standard.  Lines should not
   exceed this character max. For erlware-site, terminal size is 80 columns.
 
 **Trailing whitespace:** You must not check in code with trailing whitespace
@@ -39,7 +39,7 @@ strongly recommended for all exported functions.
 
 Erlware uses EDoc as its documentation standard.  All code must
 compile with edoc.  To check and see if your docs compile you can use
-the Sinan target **doc**.
+the Sinan target **doc.**
 
 ## Module Documentation
 
