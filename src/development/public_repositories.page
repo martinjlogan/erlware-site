@@ -9,8 +9,9 @@ orderInfo: 3
 
 ## Official Repositories
 
-These are the source repositories with the [official Erlware code][erlware];
-their master branches' HEAD is the head of Erlware's development.
+We host our code in git repositories that are, of course, free to
+[clone][erlware-git] or [browse.][git-web] Their master branches' HEAD are the
+head of Erlware's development.
 
 If you are going to contribute code to any application, please take a look at
 [development model]({relocatable:index.page}) and
@@ -48,7 +49,7 @@ We use Google Code to host downloads and issues for the next sub-projects:
 
 [dave]: http://git.krondo.com/erlware/ "Dave Peticolas' Repositories"
 [eric]: http://git.ericbmerritt.org/ "Eric Merritt's Repositories"
-[erlware]: http://git.erlware.org "Erlware Repositories"
+[erlware-git]: http://git.erlware.org "Erlware Repositories"
 [faxien]: http://code.google.com/p/faxien/ "Faxien Page"
 [fconf]: http://code.google.com/p/fconf/ "Fconf Page"
 [ktuo]: http://code.google.com/p/ktuo/ "Ktuo Page"
@@ -58,3 +59,4 @@ We use Google Code to host downloads and issues for the next sub-projects:
 [sinan]: http://code.google.com/p/sinan/ "Sinan Page"
 [site]: http://erlware.org "Erlware Site"
 [tercio]: http://code.google.com/p/tercio/ "Tercio Page"
+[git-web]: http://git.erlware.org/web" "Git-web for Erlware repositories"
