@@ -5,13 +5,13 @@ directoryName: Home
 
 # What's Erlware
 
-Erlware is Erlang/OTP developer central. We are open source and mostly MIT
-licenced. At our core we host public repositories containing reliable Erlang OTP
-complient applications. Our repositories enable developers to use software
+Erlware is Erlang/OTP developer central. We are open source and mostly
+MIT-licenced. At our core we host public repositories containing reliable Erlang
+OTP-compliant applications. Our repositories enable developers to use software
 written by the Erlang community and to publish and distribute their own software.
 
 We also feature a number of supported projects developed by our members.  Most
-notably right now are:
+notable right now are:
 
  * **Erlware Mode:** an enhanced emacs mode for Erlang development.
  * **Faxien:** the Erlang/OTP package manager.
@@ -46,4 +46,3 @@ Applications]({relocatable:/erlware/repository_applications.page}) menu heading.
 **Feb 20, 2008—**The erl-5.6.1 release is out. It supplies erts-5.6.1, erlc,
 and erl shell from R12B-1. To install run `faxien set-target-erts-vsn 5.6.1`
 and then `faxien install-release erl 5.6.1`
-
