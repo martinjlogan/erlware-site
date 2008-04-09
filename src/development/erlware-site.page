@@ -16,9 +16,15 @@ Erlware project.
 
 Follow the standard [workflow]({relocatable:standards.page}) to send your
 patches to the [erlware-dev@googlegroups.com][development] mailing list.  The
-site is generated periodically from the contents of the canonical repository. So
+site is generated periodically from the contents of the `master` branch. So
 it will pass some time since your patches are approved until they show in the
 site.
+
+Since documentation is normally stable (at least much more stable than code)
+`master` and `next` branches are usually the same. There are situations,
+however, when `next` contains patches that are under revision or that are
+incomplete yet. If you doubt witch branch you should use to generate patches to
+contribute, drop some lines in the development list to ask.
 
 # Documentation Structure
 
