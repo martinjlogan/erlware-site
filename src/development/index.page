@@ -54,8 +54,8 @@ Pick one of the following two sections for getting email working:
 *********
 
 First make sure to install msmtp (on debian or ubuntu just type sudo
-apt-get install msmtp) Place the following in a config file with the
-name .msmtprc and permissions **06000** in your home directory:
+apt-get install msmtp). Then, configure msmtp writing the following lines in
+`$HOME/.msmtprc.`
 
     account gmail
     host smtp.gmail.com
@@ -68,6 +68,8 @@ name .msmtprc and permissions **06000** in your home directory:
     from <your username here>@gmail.com
     maildomain gmail.com
     account default : gmail
+
+Finally, set permissions 0600 in that file.
 
 Now configure git to use msmtp.  You must do this for each separate
 repository/project:
