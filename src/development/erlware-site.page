@@ -14,10 +14,9 @@ Erlware project.
 
 # Development Model
 
-As any other Erlware project, follow the standard
-[workflow]({relocatable:standards.page}) to send your patches to the
-[erlware-dev@googlegroups.com][development] mailing list.  The site is
-generated periodically from the contents of the canonical repository. So
+Follow the standard [workflow]({relocatable:standards.page}) to send your
+patches to the [erlware-dev@googlegroups.com][development] mailing list.  The
+site is generated periodically from the contents of the canonical repository. So
 it will pass some time since your patches are approved until they show in the
 site.
 
