@@ -14,12 +14,6 @@
     position: relative;
 }
 
-#header h1 {
-    color: #CCCCCC;
-    font-weight: bold;
-    border-bottom: 0px;
-}
-
 #toplogo {
     border: 0px;
     float: left;
@@ -168,13 +162,12 @@ h1, h2, h3, h4, h5 {
     color: #0073bb;
 }
 
-
 /* special headlines */
-h1 {font-size: 135%; font-weight: normal;}
-h2 {font-size: 115%; border-bottom: none; font-weight: normal;}
-h3 {font-size: 105%; border-bottom: none; font-weight: normal;}
-h4 {font-size: 90%; border-bottom: none; font-weight: normal;}
-h5 {font-size: 80%; border-bottom: none; font-weight: normal;}
+h1 {font-size: 135%;}
+h2 {font-size: 115%; border-bottom: none;}
+h3 {font-size: 105%; border-bottom: none;}
+h4 {font-size: 90%; border-bottom: none;}
+h5 {font-size: 80%; border-bottom: none;}
 
 
 h1 a, h2 a, h3 a, h4 a, h5 a {color: #0073bb;}
