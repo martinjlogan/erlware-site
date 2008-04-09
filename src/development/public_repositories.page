@@ -10,8 +10,7 @@ orderInfo: 3
 ## Official Repositories
 
 We host our code in git repositories that are, of course, free to
-[clone][erlware-git] or [browse.][git-web] Their master branches' HEAD are the
-head of Erlware's development.
+[clone][erlware-git] or [browse.][git-web]
 
 If you are going to contribute code to any application, please take a look at
 [development model]({relocatable:index.page}) and
