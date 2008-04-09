@@ -1,0 +1,27 @@
+---
+title: Recommended Tools
+directoryName: Development
+inMenu: true
+orderInfo: 5
+---
+
+# Third-Party Recommended Tools
+
+## Emacs Modes and Tools
+
+If you use Emacs to develop for the Erlware project, apart from our [erlang
+mode]({relocatable:/tools/erlware-mode}), you might find useful next
+tools to integrate with git.
+
+### Emacs-git
+
+[Emacs-git](http://mirror.nirv.net/emacs-git/) is an alternative git mode which
+indicates graphically the git status of the current file and provides an
+interactive interface for most of the basic operations.
+
+
+### Gitsum
+
+[Gitsum](http://github.com/chneukirchen/gitsum) is an Emacs mode which allows
+you to do partial commits
+([demo](http://chneukirchen.org/blog/archive/2008/02/introducing-gitsum.html)).
