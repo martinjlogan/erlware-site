@@ -6,7 +6,7 @@ File/PageHandler:
     blocks: [[content, markdown]]
 
 File/CopyHandler:
-    paths: ["**/*.css", "**/*.jpg", "**/*.tar.gz", "**/*.gif"]
+    paths: ["**/*.css", "**/*.jpg", "**/*.tar.gz", "**/*.gif", "**/*.xml"]
 
 MenuStyle/Vertical:
   maxLevels: 4
