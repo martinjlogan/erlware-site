@@ -2,5 +2,7 @@ erlware/:
   orderInfo: 1
 tools/:
   orderInfo: 2
-development/:
+documentation/:
   orderInfo: 3
+development/:
+  orderInfo: 4
