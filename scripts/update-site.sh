@@ -25,17 +25,16 @@ git pull
 logger -t erlware-site "generating site"
 webgen run
 
-# Support for portius
+# Move portius templates to .src files to:
+#  * Avoid overwriting actual html files when installing the site
+#  * Make them available to portius
 logger -t erlware-site "moving templates to .src"
 
-if [ -f "output/erlware/repository_applications.html" ]; then
-    mv output/erlware/repository_applications.html \
-	output/erlware/repository_applications.html.src
-fi
-if [ -f "output/erlware/repository_releases.html" ]; then
-    mv output/erlware/repository_releases.html \
-	output/erlware/repository_releases.html.src
-fi
+for TEMPLATE in \
+    output/documentation/index.html \
+    output/documentation/releases.html; do
+    mv $TEMPLATE $TEMPLATE.src
+done
 
 # Publish the site
 logger -t erlware-site "rsyncing"
