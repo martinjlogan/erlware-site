@@ -204,7 +204,7 @@ here.
 
 The repositories part is a list of urls that point to valid erlware
 repositories. The dependency tasks will search the repositories from
-right to left until it finds what it requires. Repositories can be
+left to right until it finds what it requires. Repositories can be
 hosted anywhere. As long as they are in the right format sinan doesn't
 care where they are.
 
