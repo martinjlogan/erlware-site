@@ -14,6 +14,10 @@
       <changefreq>weekly</changefreq>
    </url>
    <url>
+      <loc>http://erlware.org/documentation/releases.html</loc>
+      <changefreq>weekly</changefreq>
+   </url>
+   <url>
       <loc>http://erlware.org/tools/index.html</loc>
       <changefreq>monthly</changefreq>
    </url>
