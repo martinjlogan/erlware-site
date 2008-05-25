@@ -19,9 +19,9 @@ notable right now are:
 
 # Getting Around
 
-**If you are new to Erlware,** look into the
-[Erlware section]({relocatable:/erlware}) to be introduced to the project or
-to browse repository package docs.
+**If you are new to Erlware,** look into the [Erlware
+section]({relocatable:/erlware}) to be introduced to the project. You can also
+browse [the repository package docs.]({relocatable:/documentation})
 
 **If you would like to learn more about a single Erlware tool,** view the
 [tools section]({relocatable:/tools}) for more detailed information.
