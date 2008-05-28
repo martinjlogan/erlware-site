@@ -21,7 +21,8 @@ notable right now are:
 
 **If you are new to Erlware,** look into the [Erlware
 section]({relocatable:/erlware}) to be introduced to the project. You can also
-browse the [online docs for packages]({relocatable:/documentation}) in the repositories.
+browse the [online docs for packages]({relocatable:/documentation}) in the
+repositories.
 
 **If you would like to learn more about a single Erlware tool,** view the
 [tools section]({relocatable:/tools}) for more detailed information.
@@ -32,13 +33,17 @@ process, the repositories, etc.
 
 # Latest News
 
-**May 24, 2008** Dart an efficient web framework released by Torbjorn Tornkvist (Tobbe). As will all packages you can pull it down with 'faxien install'. 
+**May 24, 2008** Dart an efficient web framework released by Torbjorn Tornkvist
+(Tobbe). As will all packages you can pull it down with 'faxien install'.
 
-**May 23, 2008** Torbjorn Tornkvist releases Domerl a comet library for building event driven web apps.
+**May 23, 2008** Torbjorn Tornkvist releases Domerl a comet library for building
+event driven web apps.
 
-**May 12, 2008** Sinan 0.10.0.0 build system released. Supports a list of features too long to list here.
+**May 12, 2008** Sinan 0.10.0.0 build system released. Supports a list of
+features too long to list here.
 
-**April 19, 2008** gen_socket a generic implementation of a TCP server released by Dave Peticolas.
+**April 19, 2008** gen_socket a generic implementation of a TCP server released
+by Dave Peticolas.
 
 **March 19, 2008—**Faxien now supports configuration file diffs and management
 through its release upgrade process.
