@@ -33,16 +33,16 @@ process, the repositories, etc.
 
 # Latest News
 
-**May 24, 2008** Dart an efficient web framework released by Torbjorn Tornkvist
-(Tobbe). As will all packages you can pull it down with 'faxien install'.
+**May 24, 2008—**Dart an efficient web framework released by Torbjorn Tornkvist
+(Tobbe). As will all packages you can pull it down with `faxien install.`
 
-**May 23, 2008** Torbjorn Tornkvist releases Domerl a comet library for building
+**May 23, 2008—**Torbjorn Tornkvist releases Domerl a comet library for building
 event driven web apps.
 
-**May 12, 2008** Sinan 0.10.0.0 build system released. Supports a list of
+**May 12, 2008—**Sinan 0.10.0.0 build system released. Supports a list of
 features too long to list here.
 
-**April 19, 2008** gen_socket a generic implementation of a TCP server released
+**April 19, 2008—**gen_socket a generic implementation of a TCP server released
 by Dave Peticolas.
 
 **March 19, 2008—**Faxien now supports configuration file diffs and management
