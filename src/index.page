@@ -33,8 +33,8 @@ process, the repositories, etc.
 
 # Latest News
 
-**May 24, 2008—**Dart an efficient web framework released by Torbjorn Tornkvist
-(Tobbe). As will all packages you can pull it down with `faxien install.`
+**May 24, 2008—**Dart an efficient web framework released by Torbjorn
+Tornkvist. As will all packages you can pull it down with `faxien install.`
 
 **May 23, 2008—**Torbjorn Tornkvist releases Domerl a comet library for building
 event driven web apps.
