@@ -115,23 +115,9 @@ The first step in building our software is creating a project to work
 in. A project is at its heart an organized collection of configuration
 and code. To create the project we will be using for this tutorial we
 are going to use the _sinan gen_ utility that is packaged with the
-Sinan release.
-
-
-
-## Create a Project
-
-The next version of Sinan will have a project generation utility.  The current
-version does not.  The easiest way to create a project is to pull down an
-existing project like faxien or sinan and then modify the directory structure to
-suit your needs.  Be on the look out for version 0.9.0 of Sinan which will fix
-this.
-
-So for now run git clone http://git.erlware.org/erlware.git and then rename erlware
-to full\_cycle and alter all references to erlware making them full\_cycle instead
-and delete all .erl files. Make sure to delete all the applications under `lib`
-with the exception of gas as well.  This is a good way to get down and dirty
-familiar with OTP structure anyhow so the work will be worth it.
+Sinan release. In this case the project will be called "full_cycle" 
+and the only app you will include in the project when prompted will
+be called "hello_world".
 
 # A Brief Look at the Anatomy of a Project
 
@@ -162,10 +148,6 @@ contain the following code:
 
     repositories : ["http://repo.erlware.org/pub",
 		    "http://www.martinjlogan.com/pub"],
-
-    dist : {
-      include_dirs : ["bin"]
-    }
 
 `_build.cfg` has a number of other options allowing you to control all phases of
 Sinan project interaction. For most cases however the basic file you see above
