@@ -115,7 +115,7 @@ The first step in building our software is creating a project to work
 in. A project is at its heart an organized collection of configuration
 and code. To create the project we will be using for this tutorial we
 are going to use the _sinan gen_ utility that is packaged with the
-Sinan release. In this case the project will be called "full_cycle" 
+Sinan release. In this case the project will be called "full_cycle"
 and the only app you will include in the project when prompted will
 be called "hello_world".
 
