@@ -10,31 +10,25 @@ MIT-licenced. At our core we host public repositories containing reliable Erlang
 OTP-compliant applications. Our repositories enable developers to use software
 written by the Erlang community and to publish and distribute their own software.
 
-We also feature a number of supported projects developed by our members.  Most
-notable right now are:
+# Getting Started
 
- * **Erlware Mode:** an enhanced emacs mode for Erlang development.
- * **Faxien:** the Erlang/OTP package manager.
- * **Sinan:** the Erlang/OTP build system.
+**If you are new to Erlware,** look at the [Erlware
+section]({relocatable:/erlware})
 
-# Getting Around
-
-**If you are new to Erlware,** look into the [Erlware
-section]({relocatable:/erlware}) to be introduced to the project. You can also
-browse the [online docs for packages]({relocatable:/documentation}) in the
-repositories.
-
-**If you would like to learn more about a single Erlware tool,** view the
-[tools section]({relocatable:/tools}) for more detailed information.
-
-**If you want to contribute,** take a look at the
-[developer's section]({relocatable:/development}) to learn about the development
-process, the repositories, etc.
+**To browse applications and releases** in our [repositories; click here]
+({relocatable:/documentation})
 
 # Latest News
 
+**June 29, 2008—**Erlware talks given at the first ever Erlang Exchange
+conference. Slides from our talk can be seen
+[here](http://docs.google.com/Presentation?docid=ajhm5md85ccg_27g4rrxxv4&hl=en).
+Video to come soon.
+
+
 **May 24, 2008—**Dart an efficient web framework released by Torbjorn
-Tornkvist. As will all packages you can pull it down with `faxien install.`
+Tornkvist. As will all packages you can pull it down with 
+`faxien install-release dart.`
 
 **May 23, 2008—**Torbjorn Tornkvist releases Domerl a comet library for building
 event driven web apps.
