@@ -1,0 +1,12 @@
+---
+title: Downloads
+directoryName: Home
+---
+
+# Installing Software
+
+All Erlware packages can be installed via Faxien. To install faxien download
+the universal bootstrapper and run it. 
+
+The universal boostraper can be found
+[here](http://faxien.googlecode.com/files/faxien-launcher-universal-0.3.4.py)
