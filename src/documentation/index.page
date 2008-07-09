@@ -7,9 +7,7 @@ orderInfo: 1
 
 # Erlware Erlang/OTP Repository Applications
 
-Currently, the following applications in the repo contain valid Edoc and are
-available for you to study here as well as download. For a list of all the
-applications available for you to download including these but also those
-without valid edoc type `faxien search`.
+**This is not** a full list of all applications in the repositories, only those
+that contain valid EDoc!
 
 $app_list$
