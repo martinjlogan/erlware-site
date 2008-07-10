@@ -559,10 +559,11 @@ Looks like we now have the `full\_cycle` service running on our network.
 
 Today we have run through the full cycle of developing, publishing, and
 installing an Erlang release.  If we had actually run the publish command on
-full\_cycle-0.1.0 the rest of the world could have installed it by typing `faxien
-install-release full\_cycle.`  The combination of Sinan and Faxien is quite powerful.  We
-have scratched the surface of what is possible with these Erlware tools we
-encourage you to dig deeper into the documentation if you want to learn more.
+full\_cycle-0.1.0 the rest of the world could have installed it by typing
+`faxien install-release full\_cycle.` The combination of Sinan and Faxien is
+quite powerful.  We have scratched the surface of what is possible with these
+Erlware tools we encourage you to dig deeper into the documentation if you want
+to learn more.
 
 Happy Erlanging.
 
