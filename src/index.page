@@ -18,10 +18,26 @@ section]({relocatable:/erlware})
 **To browse applications and releases** in our repositories, go to the
 [documentation section.]({relocatable:/documentation})
 
+# New Quickstart Video
+
+This video is the first in a series of three screencasts that will get
+you started with Erlang/OTP programming quickly
+
+**Please Note Mac Users** There is a small problem with Sinan on mac.
+The current version requires you to start the Sinan server manually.
+To do this run `sinserv` from the `erlware/bin` directory.
+
+<center>
+<embed id="VideoPlayback" style="width:400px;height:326px" allowFullScreen="true" src="http://video.google.com/googleplayer.swf?docid=5712547925369275281&hl=en&fs=true" type="application/x-shockwave-flash"> </embed>
+</center>
+
 # Latest News
 
+**July 14, 2008** Erlang Exchange Erlware talk video released. View the
+[video here](http://video.google.com/videoplay?docid=-4961003488647506073&q=&hl=en)
+
 **June 29, 2008—**Erlware talks given at the first ever Erlang Exchange
-conference. Slides from our talk can be seen
+conference. Slidues from our talk can be seen
 [here](http://docs.google.com/Presentation?docid=ajhm5md85ccg_27g4rrxxv4&hl=en).
 Video to come soon.
 
