@@ -9,7 +9,7 @@ orderInfo: 6
 
 This checklist is the list of steps that must be taken to upgrade the whole of
 Erlware to a new Erlang release. So for example when R12B-3 became R12B-4 we
-had to go through these steps to be complient with it.
+had to go through these steps to be compliant with it.
 
  * A new Faxien version must be published that codes in the version
    information for the new release.
