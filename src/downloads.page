@@ -36,7 +36,7 @@ bootstrap/	2007-Nov-23 01:19:19	-  	Directory
 
 The numbers are Erlang Runtime System(ERTS) versions. 5.6.3 for example is the
 ERTS version that comes with R12B-3. Remember that if you are running R12B-5
-code from R12B-3 is compatible with it; R13B-X that is a different story. 
+code from R12B-3 is compatible with it; R13B-X that is a different story.
 Code is compatible with patch releases, 5.6.x is backwards compatible.
 
 So, looking for a package choose an ERTS vsn. If you don't find your package
@@ -62,7 +62,7 @@ x86_64-unknown-linux-gnu-glibc-2.7/	2008-Jul-30 01:21:42	-  Directory
 '''
 
 Here you can see a number of different architectures. If the package
-you are seeking to download contains precompiled binary code you would 
+you are seeking to download contains precompiled binary code you would
 search below the string that represented your current architecture of some
 compatible version of it. At the top we see two other strings "Generic" and
 "Meta". Meta contains meta data for all releases and can be used to check to
@@ -83,4 +83,4 @@ lib contains applications and releases contains Erlang releases.  99% of the
 time you are going to be seeking an application and not a release so use lib.
 Underneith lib you will find directories for applications and under
 each application directory you will find versions. Pick a version and the
-package file for that application will be found underneith. 
+package file for that application will be found underneith.
