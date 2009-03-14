@@ -20,19 +20,19 @@ Software can be pulled directly from an Erlware repository. The main repository
 is at erlware.org/pub. Point your browser there and you will see a directory
 listing that looks much like this:
 
-```
-Name	Last Modified	Size	Type
-Parent Directory/	 	-  	Directory
-5.5.4/	2007-Nov-23 01:19:08	-  	Directory
-5.5.5/	2008-Jun-30 17:29:08	-  	Directory
-5.6/	2008-Mar-01 08:41:47	-  	Directory
-5.6.1/	2008-Jun-05 07:55:00	-  	Directory
-5.6.2/	2008-Aug-14 20:08:23	-  	Directory
-5.6.3/	2009-Feb-08 14:04:47	-  	Directory
-5.6.4/	2008-Sep-28 17:58:24	-  	Directory
-5.6.5/	2008-Dec-06 20:49:56	-  	Directory
-bootstrap/	2007-Nov-23 01:19:19	-  	Directory
-'''
+
+    Name	Last Modified	Size	Type
+    Parent Directory/	 	-  	Directory
+    5.5.4/	2007-Nov-23 01:19:08	-  	Directory
+    5.5.5/	2008-Jun-30 17:29:08	-  	Directory
+    5.6/	2008-Mar-01 08:41:47	-  	Directory
+    5.6.1/	2008-Jun-05 07:55:00	-  	Directory
+    5.6.2/	2008-Aug-14 20:08:23	-  	Directory
+    5.6.3/	2009-Feb-08 14:04:47	-  	Directory
+    5.6.4/	2008-Sep-28 17:58:24	-  	Directory
+    5.6.5/	2008-Dec-06 20:49:56	-  	Directory
+    bootstrap/	2007-Nov-23 01:19:19	-  	Directory
+
 
 The numbers are Erlang Runtime System(ERTS) versions. 5.6.3 for example is the
 ERTS version that comes with R12B-3. Remember that if you are running R12B-5
@@ -43,23 +43,22 @@ So, looking for a package choose an ERTS vsn. If you don't find your package
 in that ERTS vsn you can always drop down a version and look there. Clicking
 on 5.6.3 we find the following listing, or something like it.
 
-```
-Name	Last Modified	Size	Type
-Parent Directory/	 	-  	Directory
-Generic/			2008-Jun-29 02:24:09	-  	Directory
-Meta/				2009-Jan-02 15:40:40	-  	Directory
-i386-apple-darwin9.5/		2008-Oct-09 02:20:07	-  	Directory
-i386-apple-darwin9.6/		2009-Feb-08 14:04:47	-  	Directory
-i386-pc-solaris5.11/		2009-Jan-28 11:32:53	-  	Directory
-i386-unknown-freebsd6.2/	2008-Oct-09 03:28:12	-  	Directory
-i686-pc-linux-gnu-glibc-2.3/	2008-Jul-11 13:02:34	-  	Directory
-i686-pc-linux-gnu-glibc-2.6/	2008-Jul-15 01:56:43	-  	Directory
-powerpc-apple-darwin8.11/	2008-Jul-26 03:48:12	-  	Directory
-sparc-sun-solaris5.10/		2009-Jan-28 14:56:32	-  	Directory
-x86_64-unknown-linux-gnu-glibc-2.3/	2008-Nov-11 02:43:13	-  Directory
-x86_64-unknown-linux-gnu-glibc-2.6/	2008-Jul-14 01:16:44	-  Directory
-x86_64-unknown-linux-gnu-glibc-2.7/	2008-Jul-30 01:21:42	-  Directory
-'''
+    Name	Last Modified	Size	Type
+    Parent Directory/	 	-  	Directory
+    Generic/			2008-Jun-29 02:24:09	-  	Directory
+    Meta/				2009-Jan-02 15:40:40	-  	Directory
+    i386-apple-darwin9.5/		2008-Oct-09 02:20:07	-  	Directory
+    i386-apple-darwin9.6/		2009-Feb-08 14:04:47	-  	Directory
+    i386-pc-solaris5.11/		2009-Jan-28 11:32:53	-  	Directory
+    i386-unknown-freebsd6.2/	2008-Oct-09 03:28:12	-  	Directory
+    i686-pc-linux-gnu-glibc-2.3/	2008-Jul-11 13:02:34	-  	Directory
+    i686-pc-linux-gnu-glibc-2.6/	2008-Jul-15 01:56:43	-  	Directory
+    powerpc-apple-darwin8.11/	2008-Jul-26 03:48:12	-  	Directory
+    sparc-sun-solaris5.10/		2009-Jan-28 14:56:32	-  	Directory
+    x86_64-unknown-linux-gnu-glibc-2.3/	2008-Nov-11 02:43:13	-  Directory
+    x86_64-unknown-linux-gnu-glibc-2.6/	2008-Jul-14 01:16:44	-  Directory
+    x86_64-unknown-linux-gnu-glibc-2.7/	2008-Jul-30 01:21:42	-  Directory
+
 
 Here you can see a number of different architectures. If the package
 you are seeking to download contains precompiled binary code you would
@@ -72,12 +71,12 @@ packages that do not contain any non Erlang code.
 
 Moving down the tree into Generic to search for our package we see:
 
-```
-Name	Last Modified	Size	Type
-Parent Directory/	 	-  	Directory
-lib/		2009-Jan-29 23:16:43	-  	Directory
-releases/	2009-Jan-02 15:42:16	-  	Directory
-'''
+
+    Name	Last Modified	Size	Type
+    Parent Directory/	 	-  	Directory
+    lib/		2009-Jan-29 23:16:43	-  	Directory
+    releases/	2009-Jan-02 15:42:16	-  	Directory
+
 
 lib contains applications and releases contains Erlang releases.  99% of the
 time you are going to be seeking an application and not a release so use lib.
