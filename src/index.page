@@ -33,6 +33,8 @@ To do this run `sinserv` from the `erlware/bin` directory.
 
 # Latest News
 
+**April 23, 2009—**Faxien published R13B aware. Repo migration to R13B started.
+
 **March 17, 2009—**Sinan 0.14.x.x line published for R12B-5.
 
 **March 15, 2009—**Martin Logan giving an Erlang/Erlware workshop at the
