@@ -41,7 +41,7 @@ Faxien boostrapper and run it
 install Erlware packages. To install Sinan, the project build system, type
 
 
-    $ <erlware-install-location>/bin/faxien install-release sinan.
+    $ <erlware-install-location>/bin/faxien install-release sinan
 
 Now you have last Sinan version ready to run. For more advanced use of Erlware,
 check out the [complete tutorial.]({relocatable: /erlware/tutorial.page})
