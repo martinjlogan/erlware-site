@@ -12,6 +12,9 @@ generated from sources using [webgen][]. Those sources are kept in a git
 repository, `erlware-site`, so that the development is open to all as any other
 Erlware project.
 
+Currently, erlware-site compiles only with webgen 0.4.x, there are issues to be
+solved to comply with more modern webgen versions.
+
 # Development Model
 
 Follow the standard [workflow]({relocatable:standards.page}) to send your
@@ -53,19 +56,22 @@ the web site.
 
   1. Clone erlware-site
 
-        git clone http://git.erlware.org/erlware-site.git
+        git clone git://github.com/erlware/erlware-site.git
 
   1. Download and install ruby gems. It will probably be packetised for your
-     GNU/Linux distribution (e.g. `apt-get install rubygems` in Debian).
-  1. Install webgen and bluecloth (the markdown text-to-html engine).
+     GNU/Linux distribution (e.g. `apt-get install rubygems` in Debian). You may
+     also need Ruby's development files to install some gems (`apt-get install
+     ruby1.8-dev` in Debian).
+  1. Install webgen and bluecloth (the markdown text-to-html engine). It is
+     important to use a 0.4.x version of webgen.
 
+        $ gem install --version 0.4.7 webgen
         $ gem install bluecloth
-        $ gem install webgen
 
   1. Run webgen in the top level of the project (you may need to write the whole
   path to webgen):
 
-        $ webgen run
+        $ webgen _0.4.7_ run
 
 Page sources are under `src`. They are written using [markdown][]
 notation. After running webgen, the site root is in `output.`
