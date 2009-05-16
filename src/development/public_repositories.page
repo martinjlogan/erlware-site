@@ -9,8 +9,7 @@ orderInfo: 3
 
 ## Official Repositories
 
-We host our code in git repositories that are, of course, free to
-[clone][erlware-git] or [browse.][git-web]
+Erlware code is free to browse and clone from [github.][erlware-git]
 
 If you are going to contribute code to any application, please take a look at
 [development model]({relocatable:index.page}) and
@@ -20,11 +19,6 @@ Apart from application repositories, `erlware-site` repository contains the
 sources to build [Erlware site;][site] see
 [Erlware Site's Documentation]({relocatable:erlware-site.page}) for more
 information about this.
-
-## Public Git Repositories of Contributors
-
- * **Eric Merritt:** [http://git.ericbmerritt.org/][eric]
- * **Dave Peticolas:** [http://git.krondo.com/erlware/][dave]
 
 # Public Development Pages
 
@@ -46,9 +40,7 @@ We use Google Code to host downloads and issues for the next sub-projects:
   * [Tercio][tercio] - Erlang centric web application system.
 
 
-[dave]: http://git.krondo.com/erlware/ "Dave Peticolas' Repositories"
-[eric]: http://git.ericbmerritt.org/ "Eric Merritt's Repositories"
-[erlware-git]: http://git.erlware.org "Erlware Repositories"
+[erlware-git]: http://github.com/erlware "Erlware Repositories"
 [faxien]: http://code.google.com/p/faxien/ "Faxien Page"
 [fconf]: http://code.google.com/p/fconf/ "Fconf Page"
 [ktuo]: http://code.google.com/p/ktuo/ "Ktuo Page"
@@ -58,4 +50,3 @@ We use Google Code to host downloads and issues for the next sub-projects:
 [sinan]: http://code.google.com/p/sinan/ "Sinan Page"
 [site]: http://erlware.org "Erlware Site"
 [tercio]: http://code.google.com/p/tercio/ "Tercio Page"
-[git-web]: http://git.erlware.org/web" "Git-web for Erlware repositories"
