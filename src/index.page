@@ -5,10 +5,13 @@ directoryName: Home
 
 # What's Erlware
 
-Erlware is Erlang/OTP developer central. We are open source and mostly
-MIT-licenced. At our core we host public repositories containing reliable Erlang
-OTP-compliant applications. Our repositories enable developers to use software
-written by the Erlang community and to publish and distribute their own software.
+At our core we host public repositories containing reliable Erlang
+OTP-compliant packages. These packages are ready to download and
+install for end user purposes or for using as development
+dependencies. Erlware is Erlang/OTP developer central.  We are open
+source and mostly MIT-licenced.  Essentially Our repositories enable
+users to use software written by the Erlang community and to publish
+and distribute their own software for use by others.
 
 # Getting Started
 
@@ -32,6 +35,10 @@ To do this run `sinserv` from the `erlware/bin` directory.
 </center>
 
 # Latest News
+
+<a href="http://www.erlang-factory.com/conference/London2009"> <img
+src="http://www.erlang-factory.com/images/lon-see.gif" alt=""
+border="0"/></a>
 
 **April 23, 2009—**Faxien published R13B aware. Repo migration to R13B started.
 
