@@ -17,7 +17,7 @@ The universal launcher can be found
 # Directly downloading software from the Erlware repos with a browser
 
 Software can be pulled directly from an Erlware repository. The main repository
-is at erlware.org/pub. Point your browser there and you will see a directory
+is at repo.erlware.org/pub. Point your browser there and you will see a directory
 listing that looks much like this:
 
 
